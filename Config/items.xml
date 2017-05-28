@@ -1906,7 +1906,7 @@ which does not exist, yet. -->
 	</property>
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="Zoom" />
-		<property name="Zoom_max_out" value="42" />
+		<property name="Zoom_max_out" value="40" />
 		<property name="Zoom_max_in" value="30" />
 	</property>
 	<property class="Attributes">
@@ -3108,7 +3108,7 @@ which does not exist, yet. -->
 	<property name="Weight" value="40" />
 	<property class="Attributes">
 		<property name="EntityDamage" value="6,16" />
-		<property name="BlockDamage" value="40,116" />
+		<property name="BlockDamage" value="40,106" />
 		<property name="Accuracy" value="1, 0.01" />
 		<property name="DegradationMax" value="3000,6000" />
 	</property>
@@ -3938,7 +3938,7 @@ which does not exist, yet. -->
 		<property name="Mesh" value="armor_hazmat_head" />
 		<property name="Overlay0" value="armor_hazmat_hood" />
 		<property name="Layer" value="middle" />
-		<property name="UISlot" value="Headgear" />
+		<property name="UISlot" value="Face" />
 		<property name="Mask0" value="Head" param1="base"/>
 		<property name="Mask1" value="Head" param1="inner"/>
 		<property name="Mask2" value="Face" param1="base"/>
@@ -8886,7 +8886,7 @@ which does not exist, yet. -->
 	<property class="Attributes">
 		<property name="DegradationMax" value="1000,6000" />
 		<property name="VehicleNoise" value="1,0.1" />
-		<property name="VehicleMaxSpeed" value="8,24" />
+		<property name="VehicleMaxSpeed" value="9,27" />
 		<property name="VehicleAcceleration" value="5,14" />
 		<property name="VehicleMetersPerLiter" value="8,12" />
 		<property name="VehicleIdleSecondsPerLiter" value="6,12" />
