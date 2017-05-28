@@ -1104,12 +1104,6 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 	<ingredient name="unit_clay" count="1"/>
 </recipe>
 
-<recipe name="beaker" count="1" craft_area="forge" material_based="true">
-	<ingredient name="unit_glass" count="150"/>
-	<ingredient name="unit_clay" count="25"/>
-	<ingredient name="unit_lead" count="50"/>
-</recipe>
-
 <recipe name="endTable" count="1">
 	<ingredient name="wood" count="5"/>
 </recipe>
@@ -2646,6 +2640,13 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 	<ingredient name="electronicParts" count="2"/>
 	<ingredient name="glassCTRSheet" count="1"/>
 </recipe>
+
+<!-- <recipe name="beaker" count="1" craft_area="forge" material_based="true">
+	<ingredient name="unit_glass" count="150"/>
+	<ingredient name="unit_clay" count="25"/>
+	<ingredient name="unit_lead" count="50"/>
+</recipe> -->
+
 
 </recipes>
 <!-- To do (maybe / later)
