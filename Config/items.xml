@@ -284,7 +284,7 @@ Mesh files no longer used:
 		<property name="DamageBonus.glass" value="25" />
 		<property name="DamageBonus.leaves" value="25" />
 		<property name="DamageBonus.organic" value="8" />
-		<property name="ToolCategory.Butcher" value="0.75" />
+		<property name="ToolCategory.Butcher" value="0.85" />
 		<property name="Sound_harvesting" value="UseActions/open_animal" />
 	</property>
 	<property class="Attributes">
@@ -1192,7 +1192,7 @@ Mesh files no longer used:
 		<property name="DamageBonus.earth" value="0.25" />
 		<property name="DamageBonus.organic" value="1" />
 		<property name="ActionExp" value="2" />
-		<property name="ToolCategory.Butcher" value="0.5" />
+		<property name="ToolCategory.Butcher" value="0.6" />
 	</property>
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="Repair" />
@@ -1256,7 +1256,7 @@ Mesh files no longer used:
 		<property name="DamageBonus.earth" value=".2" />
 		<property name="DamageBonus.organic" value="1" />
 		<property name="ActionExp" value="4" />
-		<property name="ToolCategory.Butcher" value="0.66" />
+		<property name="ToolCategory.Butcher" value="0.75" />
 		<property name="SupportHarvesting" value="true" />
 		<property name="Sound_harvesting" value="UseActions/open_animal" />
 	</property>
