@@ -4,7 +4,7 @@
 <player 
 	max_level="400" 
 	exp_to_level="8000" 
-	experience_multiplier="1.0142" 
+	experience_multiplier="1.0148" 
 	skill_points_per_level="5" 
 	skill_point_multiplier="0"/>
 	<!-- that's 4000 XP for level 1 and 56k for level 199, total cumulative of 3.97MXP -->
@@ -12,7 +12,7 @@
 <skills 
 	max_level="100" 
 	exp_to_level="250" 
-	experience_multiplier="1.03" 
+	experience_multiplier="1.04" 
 	skill_point_cost_multiplier="0"
 	skill_point_cost_per_level="1" > <!-- these are defaults and can be used to modify individual skills as needed -->
 
@@ -760,11 +760,11 @@
 	</perk>
 
 	<crafting_skill name="Armor Smithing" icon="forge" description_key="armorerDesc" title_key="armorer" group="clothing">
-		<recipe name="heavyBanditGasmask" unlock_level="50"/>
-		<recipe name="heavyBanditGloves" unlock_level="50"/>
-		<recipe name="heavyBanditBoots" unlock_level="50"/>
-		<recipe name="heavyBanditLegArmor" unlock_level="50"/>
-		<recipe name="heavyBanditChestArmor" unlock_level="50"/>
+		<recipe name="heavyBanditGasmask" unlock_level="75"/>
+		<recipe name="heavyBanditGloves" unlock_level="75"/>
+		<recipe name="heavyBanditBoots" unlock_level="75"/>
+		<recipe name="heavyBanditLegArmor" unlock_level="75"/>
+		<recipe name="heavyBanditChestArmor" unlock_level="75"/>
 		<effect name="CraftingTime">
 			<multiply skill_level="1,5" value="1,.931" />
 			<multiply skill_level="5,11" value=".931,.871" />

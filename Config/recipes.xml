@@ -2461,7 +2461,7 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 	<ingredient name="oilShale" count="20"/>
 </recipe>
 
-<recipe name="paper" count="20" craft_area="chemistryStation">
+<recipe name="paper" count="10" craft_area="chemistryStation">
 	<ingredient name="wood" count="100"/>
      <ingredient name="bottledRiverWater" count="4"/>
 </recipe>
