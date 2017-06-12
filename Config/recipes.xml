@@ -1440,8 +1440,8 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 	<ingredient name="forgedIron" count="7"/>
 </recipe>
 
-<recipe name="keystoneBlock" count="1" craft_area="workbench">
-	<ingredient name="forgedSteel" count="50"/>
+<recipe name="keystoneBlock" count="1">
+	<ingredient name="forgedSteel" count="25"/>
 </recipe>
 
 <recipe name="ladderMetal" count="1">
@@ -2727,6 +2727,14 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 </recipe>	
 <recipe name="yuccaFibers" count="4">
 	<ingredient name="cottonPlant" count="1"/>
+</recipe>
+<recipe name="leatherDuster" count="1">
+	<ingredient name="leather" count="40"/>
+	<ingredient name="cloth" count="20"/>
+</recipe>
+<recipe name="paper" count="20" craft_area="chemistryStation">
+	<ingredient name="wood" count="100"/>
+     <ingredient name="bottledWater" count="4"/>
 </recipe>
 </recipes>
 <!-- To do (maybe / later)
