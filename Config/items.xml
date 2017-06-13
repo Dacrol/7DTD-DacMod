@@ -156,7 +156,7 @@ Mesh files no longer used:
 	<property class="Action0"> <!-- AttackAction -->
 		<property name="Class" value="Melee"/>
 		<property name="Delay" value="1.8"/>
-		<property name="Range" value="3"/>
+		<property name="Range" value="3.2"/>
 		<property name="Sphere" value="0.3"/>
 		<property name="Block_range" value="4"/>
 		<property name="Sound_start" value="SlowSwoosh"/>
@@ -414,7 +414,7 @@ Mesh files no longer used:
 	<!-- 5 -->
 	<property name="Crosshair_max_distance" value="6"/>
 	<!-- 6 -->
-	<property name="Magazine_size" value="15"/>
+	<property name="Magazine_size" value="16"/>
 	<property name="Magazine_items" value="9mmBullet"/>
 	<property name="Magazine_item_ray_counts" value="1"/>
 	<property name="Magazine_item_ray_spreads" value=".85"/>
@@ -465,7 +465,7 @@ Mesh files no longer used:
 		<property name="Delay" value="0.3"/>
 		<property name="Crosshair_min_distance" value="5"/> <!-- 5 -->
 		<property name="Crosshair_max_distance" value="6"/> <!-- 6 -->
-		<property name="Magazine_size" value="15"/>
+		<property name="Magazine_size" value="16"/>
 		<property name="Magazine_items" value="9mmBullet"/>
 		<property name="Magazine_item_ray_counts" value="1"/>
 		<property name="Magazine_item_ray_spreads" value=".85"/> <!-- .85 -->
@@ -491,7 +491,7 @@ Mesh files no longer used:
 	<property class="Attributes">
 		<property name="FalloffRange" value="22,50"/>
 		<property name="Accuracy" value="1,0.01"/>
-		<property name="EntityDamage" value="13,19"/>
+		<property name="EntityDamage" value="14,31"/>
 		<property name="BlockDamage" value="7,13"/>
 		<property name="DegradationRate" value="10,10"/>
 		<property name="DegradationMax" value="2000,5000"/>
@@ -1512,9 +1512,9 @@ Mesh files no longer used:
 	</property>
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="Repair"/>
-		<property name="Delay" value="0.3"/>
-		<property name="Repair_amount" value="50"/>
-		<property name="Upgrade_hit_offset" value="0"/>
+		<property name="Delay" value="0.2"/>
+		<property name="Repair_amount" value="40"/>
+		<property name="Upgrade_hit_offset" value="1"/>
 		<property name="Sound_start" value="repair_block"/>
 		<property name="Allowed_upgrade_items" value="wood,clayLump,dirtFragment,snowBall,scrapIron,forgedIron,forgedSteel,steelPolish,concreteMix,cobblestones,yuccaFibers"/>
 	</property>
@@ -1539,6 +1539,8 @@ Mesh files no longer used:
 	<property name="RepairTools" value="forgedSteel"/>
 	<property name="EconomicValue" value="760"/>
 	<property class="Action0">
+		<property name="Range" value="3"/>
+		<property name="Block_range" value="4.6"/>
 		<property name="ToolCategory.Butcher" value="0.8" param1="10"/>
 		<property name="ToolCategory.harvestingTools" value="1.4" param1="1"/>
 	</property>
@@ -1599,6 +1601,7 @@ Mesh files no longer used:
 	<property class="Action0">
 		<property name="Delay" value="1.5"/>
 		<property name="Stamina_usage" value="5"/>
+		<property name="Block_range" value="4.6"/>
 		<property name="DamageBonus.head" value="4"/>
 		<property name="ToolCategory.harvestingTools" value="1.4" param1="1"/>
 	</property>
@@ -1706,6 +1709,7 @@ Mesh files no longer used:
 	<property class="Action0">
 		<property name="Delay" value="1.2"/>
 		<property name="Stamina_usage" value="4"/>
+		<property name="Block_range" value="4.6"/>
 		<property name="DamageBonus.earth" value="3"/>
 		<property name="DamageBonus.organic" value="1"/>
 		<property name="ToolCategory.harvestingTools" value="1.4" param1="1"/>
@@ -1899,9 +1903,9 @@ Mesh files no longer used:
 		<property name="Delay" value="0.3"/>
 		<property name="Crosshair_min_distance" value="15"/> <!-- 15 -->
 		<property name="Crosshair_max_distance" value="18"/> <!-- 18 -->
-		<property name="Magazine_size" value="15"/>
+		<property name="Magazine_size" value="25"/>
 		<property name="Magazine_items" value="nail"/>
-		<property name="Rays_spread" value="0.043"/>
+		<property name="Rays_spread" value="0.033"/>
 		<property name="Instantiate_on_load" value="false"/>
 		<property name="Reload_time" value="2"/>
 		<property name="Bullet_icon" value="uzi"/>
@@ -1918,7 +1922,7 @@ Mesh files no longer used:
 	</property>
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="Repair"/>
-		<property name="Delay" value="0.25"/>
+		<property name="Delay" value="0.2"/>
 		<property name="Repair_amount" value="250"/>
 		<property name="Upgrade_hit_offset" value="-3"/>
 		<property name="Repair_action_sound" value="nailgun_fire"/>
@@ -2864,7 +2868,7 @@ Mesh files no longer used:
 	<property name="PartType" value="Barrel"/>
 	<property name="Weight" value="10"/>
 	<property class="Attributes">
-		<property name="EntityDamage" value="13,32"/>
+		<property name="EntityDamage" value="14,32"/>
 		<property name="BlockDamage" value="7,13"/>
 		<property name="DegradationMax" value="2000,5000"/>
 	</property>
