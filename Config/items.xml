@@ -644,6 +644,7 @@ Mesh files no longer used:
 		<property name="Magazine_size" value="8"/>
 		<property name="Magazine_items" value="shotgunShell, shotgunSlug"/>
 		<property name="Magazine_item_ray_counts" value="10, 1"/>
+		<property name="Magazine_item_ray_spreads" value="0.665,0.405"/> <!-- .835 / .605 -->
 		<property name="Reload_time" value="2.6"/>
 		<property name="Bullet_icon" value="uzi"/>
 		<property name="Sound_start" value="pump_shotgun_fire"/>
