@@ -1441,7 +1441,7 @@ Mesh files no longer used:
 		<property name="ActionExp" value="2"/>
 		<property name="ToolCategory.Butcher" value="0.5" param1="3.5"/>
 		<property name="Sound_harvesting" value="open_animal" param1="organic" />
-		<property name="ToolCategory.harvestingTools" value=".67" param1="1"/> <!-- value = harvest event multiplier, param1 = damage multiplier if matching harvest event present ont he block -->
+		<property name="ToolCategory.harvestingTools" value=".85" param1="1"/> <!-- value = harvest event multiplier, param1 = damage multiplier if matching harvest event present ont he block -->
 	</property>
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="Repair"/>
@@ -1507,7 +1507,7 @@ Mesh files no longer used:
 		<property name="DamageBonus.organic" value="1"/>
 		<property name="ActionExp" value="4"/>
 		<property name="ToolCategory.Butcher" value="0.5" param1="10"/>
-		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.harvestingTools" value="1.2" param1="1"/>
 		<property name="Sound_harvesting" value="open_animal" param1="organic" />
 	</property>
 	<property class="Action1"> <!-- UseAction -->
@@ -1572,7 +1572,7 @@ Mesh files no longer used:
 		<property name="DamageBonus.wood" value=".2"/>
 		<property name="DamageBonus.earth" value=".2"/>
 		<property name="DamageBonus.organic" value=".2"/>
-		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.harvestingTools" value="1.2" param1="1"/>
 		<property name="ActionExp" value="4"/>
 		<property name="ToolCategory.Butcher" value="0" param1="10"/>
 	</property>
@@ -1636,7 +1636,7 @@ Mesh files no longer used:
 		<property name="DamageBonus.wood" value=".25"/>
 		<property name="DamageBonus.metal" value=".5"/>
 		<property name="DamageBonus.organic" value=".7"/>
-		<property name="ToolCategory.harvestingTools" value=".67" param1="1"/>
+		<property name="ToolCategory.harvestingTools" value=".8" param1="1"/>
 		<property name="ToolCategory.Butcher" value="0" param1="10"/>
 		<property name="ActionExp" value="3"/>
 	</property>
@@ -1678,7 +1678,7 @@ Mesh files no longer used:
 		<property name="DamageBonus.wood" value=".25"/>
 		<property name="DamageBonus.metal" value=".25"/>
 		<property name="DamageBonus.organic" value=".7"/>
-		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.harvestingTools" value="1.2" param1="1"/>
 		<property name="ToolCategory.Butcher" value="0" param1="10"/>
 		<property name="ActionExp" value="4"/>
 	</property>
@@ -1854,7 +1854,7 @@ Mesh files no longer used:
 		<property name="DamageBonus.metal" value="1"/>
 		<property name="DamageBonus.organic" value=".5"/>
 		<property name="DamageBonus.earth" value="1"/>
-		<property name="ToolCategory.harvestingTools" value=".66" param1="1"/>
+		<property name="ToolCategory.harvestingTools" value=".75" param1="1"/>
 		<property name="ToolCategory.Butcher" value="0" param1="10"/>
 		<property name="ActionExp" value="3"/>
 	</property>
