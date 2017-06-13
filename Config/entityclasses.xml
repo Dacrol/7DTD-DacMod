@@ -1999,7 +1999,7 @@
 	<property name="Prefab" value="Backpack"/>
 	<property name="Class" value="EntityLootContainer"/>
 	<property name="Parent" value="Backpack"/>
-	<property name="TimeStayAfterDeath" value="60"/>
+	<property name="TimeStayAfterDeath" value="600"/>
 	<property name="IsEnemyEntity" value="false"/>
 	<property name="LootListOnDeath" value="47"/> <!-- used to determine container X/Y size -->
 	<property name="Faction" value="none"/>
@@ -2011,7 +2011,7 @@
 	<property name="Prefab" value="Backpack"/>
 	<property name="Class" value="EntityLootContainer"/>
 	<property name="Parent" value="Backpack"/>
-	<property name="TimeStayAfterDeath" value="60"/>
+	<property name="TimeStayAfterDeath" value="600"/>
 	<property name="IsEnemyEntity" value="false"/>
 	<property name="LootListOnDeath" value="47"/> <!-- used to determine container X/Y size -->
 	<property name="Faction" value="none"/>
