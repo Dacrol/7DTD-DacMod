@@ -293,7 +293,7 @@ Mesh files no longer used:
 		<property name="DamageBonus.glass" value="1"/>
 		<property name="DamageBonus.leaves" value="25"/>
 		<property name="DamageBonus.organic" value="8"/>
-		<property name="ToolCategory.Butcher" value="0.75" param1="10"/>
+		<property name="ToolCategory.Butcher" value="0.8" param1="10"/>
 		<property name="Sound_harvesting" value="open_animal" param1="organic" /> <!-- Special harvest sound only plays if the target has ANY matching ToolCategory harvest.
 		Limit it by: if ( Sound_harvesting.param1 = TargetBlockOrEntity.material.surface_category ) -->
 	</property>
@@ -1439,7 +1439,7 @@ Mesh files no longer used:
 		<property name="DamageBonus.earth" value="0.25"/>
 		<property name="DamageBonus.organic" value="1"/>
 		<property name="ActionExp" value="2"/>
-		<property name="ToolCategory.Butcher" value="0.5" param1="3.5"/>
+		<property name="ToolCategory.Butcher" value="0.6" param1="3.5"/>
 		<property name="Sound_harvesting" value="open_animal" param1="organic" />
 		<property name="ToolCategory.harvestingTools" value=".85" param1="1"/> <!-- value = harvest event multiplier, param1 = damage multiplier if matching harvest event present ont he block -->
 	</property>
@@ -1506,7 +1506,7 @@ Mesh files no longer used:
 		<property name="DamageBonus.earth" value=".2"/>
 		<property name="DamageBonus.organic" value="1"/>
 		<property name="ActionExp" value="4"/>
-		<property name="ToolCategory.Butcher" value="0.5" param1="10"/>
+		<property name="ToolCategory.Butcher" value="0.7" param1="10"/>
 		<property name="ToolCategory.harvestingTools" value="1.2" param1="1"/>
 		<property name="Sound_harvesting" value="open_animal" param1="organic" />
 	</property>
@@ -9227,7 +9227,7 @@ Mesh files no longer used:
 	<property class="Attributes">
 		<property name="DegradationMax" value="1000,6000"/>
 		<property name="VehicleNoise" value="1,0.1"/>
-		<property name="VehicleMaxSpeed" value="5,18"/>
+		<property name="VehicleMaxSpeed" value="10,26"/>
 		<property name="VehicleAcceleration" value="7,14"/>
 		<property name="VehicleMetersPerLiter" value="8,12"/>
 		<property name="VehicleIdleSecondsPerLiter" value="6,12"/>
