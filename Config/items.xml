@@ -823,7 +823,7 @@ Mesh files no longer used:
 	<property class="Action0"> <!-- AttackAction -->
 		<property name="Class" value="Ranged"/>
 		<property name="Delay" value="0.1"/>
-		<property name="Crosshair_min_distance" value="30"/> <!-- 30 -->
+		<property name="Crosshair_min_distance" value="25"/> <!-- 30 -->
 		<property name="Crosshair_max_distance" value="36"/> <!-- 36 -->
 		<property name="Magazine_size" value="1"/>
 		<property name="Magazine_items" value="762mmBullet"/>
@@ -879,7 +879,7 @@ Mesh files no longer used:
 	<property class="Action0"> <!-- AttackAction -->
 		<property name="Class" value="Ranged"/>
 		<property name="Delay" value="0.5"/>
-		<property name="Crosshair_min_distance" value="45"/> <!-- 45 -->
+		<property name="Crosshair_min_distance" value="25"/> <!-- 45 -->
 		<property name="Crosshair_max_distance" value="54"/> <!-- 54 -->
 		<property name="Magazine_size" value="5"/>
 		<property name="Magazine_items" value="762mmBullet"/>
@@ -1514,9 +1514,9 @@ Mesh files no longer used:
 		<property name="Class" value="Repair"/>
 		<property name="Delay" value="0.2"/>
 		<property name="Repair_amount" value="40"/>
-		<property name="Upgrade_hit_offset" value="1"/>
+		<property name="Upgrade_hit_offset" value="0"/>
 		<property name="Sound_start" value="repair_block"/>
-		<property name="Allowed_upgrade_items" value="wood,clayLump,dirtFragment,snowBall,scrapIron,forgedIron,forgedSteel,steelPolish,concreteMix,cobblestones,yuccaFibers"/>
+		<property name="Allowed_upgrade_items" value="wood,clayLump,dirtFragment,snowBall,yuccaFibers,nail"/>
 	</property>
 	<property class="Attributes">
 		<property name="EntityDamage" value="8,24"/>
@@ -1864,7 +1864,7 @@ Mesh files no longer used:
 	</property>
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="Repair"/>
-		<property name="Delay" value="0.4"/>
+		<property name="Delay" value="0.36"/>
 		<property name="Repair_amount" value="250"/>
 		<property name="Upgrade_hit_offset" value="-3"/>
 		<property name="Sound_start" value="repair_block"/>
@@ -2127,7 +2127,7 @@ Mesh files no longer used:
 		<!-- Catapult might not be the best name for it but it can also be used for a slingshot -->
 		<property name="Hitmask_override" value="Arrow"/>
 		<property name="Delay" value="1"/>
-		<property name="Crosshair_min_distance" value="30"/> <!-- 30 -->
+		<property name="Crosshair_min_distance" value="25"/> <!-- 30 -->
 		<property name="Crosshair_max_distance" value="30"/> <!-- 30 -->
 		<property name="Magazine_size" value="1"/>
 		<property name="Magazine_items" value="arrow, ironArrow"/>
@@ -2182,7 +2182,7 @@ Mesh files no longer used:
 		<property name="Class" value="Launcher"/>
 		<property name="Hitmask_override" value="Arrow"/>
 		<property name="Delay" value="0.1"/>
-		<property name="Crosshair_min_distance" value="30"/> <!-- 30 -->
+		<property name="Crosshair_min_distance" value="22"/> <!-- 30 -->
 		<property name="Crosshair_max_distance" value="30"/> <!-- 30 -->
 		<property name="Magazine_size" value="1"/>
 		<property name="Magazine_items" value="ironCrossbowBolt, steelCrossbowBolt, explodingCrossbowBolt"/>
@@ -2232,7 +2232,7 @@ Mesh files no longer used:
 		<!-- Catapult might not be the best name for it but it can also be used for a slingshot -->
 		<property name="Hitmask_override" value="Arrow"/>
 		<property name="Delay" value="0.4"/>
-		<property name="Crosshair_min_distance" value="30"/> <!-- 30 -->
+		<property name="Crosshair_min_distance" value="25"/> <!-- 30 -->
 		<property name="Crosshair_max_distance" value="30"/> <!-- 30 -->
 		<property name="Magazine_size" value="1"/>
 		<property name="Magazine_items" value="steelArrow,flamingArrow"/>
