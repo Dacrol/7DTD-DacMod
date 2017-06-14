@@ -1613,13 +1613,13 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 </recipe>
 
 <recipe name="metalTrussingBlock" count="1" craft_area="forge" craft_tool="anvil" material_based="true">
-	<ingredient name="unit_iron" count="40"/>
-	<ingredient name="unit_clay" count="5"/>
+	<ingredient name="unit_iron" count="80"/>
+	<ingredient name="unit_clay" count="15"/>
 </recipe>
 
 <recipe name="metalTrussingRamp" count="1" craft_area="forge" craft_tool="anvil" material_based="true">
-	<ingredient name="unit_iron" count="40"/>
-	<ingredient name="unit_clay" count="5"/>
+	<ingredient name="unit_iron" count="80"/>
+	<ingredient name="unit_clay" count="15"/>
 </recipe>
 
 <recipe name="mineCandyTin" count="1" craft_area="workbench"> <!-- trap size 1 -->
@@ -2785,6 +2785,10 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 <recipe name="emberPile2" count="1">
 	<ingredient name="wood" count="12"/>
 	<ingredient name="coal" count="6"/>
+</recipe>
+<recipe name="metalTrussingSheet" count="1" craft_area="forge" craft_tool="anvil" material_based="true">
+	<ingredient name="unit_iron" count="60"/>
+	<ingredient name="unit_clay" count="10"/>
 </recipe>
 </recipes>
 <!-- To do (maybe / later)

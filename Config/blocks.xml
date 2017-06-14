@@ -3858,7 +3858,7 @@ group desc for stuff like metal siding
 
 <block id="385" name="metalTrussingBlock">
 	<property name="Material" value="Mmetal_medium"/>
-	<property name="MaxDamage" value="2000" />
+	<property name="MaxDamage" value="2000"/>
 	<property name="Shape" value="New"/>
 	<property name="LightOpacity" value="0"/>
 	<property name="Model" value="cube"/>
@@ -3867,12 +3867,12 @@ group desc for stuff like metal siding
 	<property name="ImposterExchange" value="imposterBlock" param1="144"/>
 	<property name="ImposterDontBlock" value="true"/>
 	<property name="Collide" value="movement,melee"/> <!-- -rocket -->
-	<property class="RepairItems"> <property name="forgedIron" value="4"/> </property>
+	<property class="RepairItems"> <property name="forgedIron" value="8"/> </property>
 	<drop event="Destroy" name="scrapIron" count="1,15"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob=".75" stick_chance="1"/>
 	<property name="Group" value="Building"/>
 	<property name="DescriptionKey" value="metalTrussingBlockDesc"/>
-	<property name="EconomicValue" value="20"/>
+	<property name="EconomicValue" value="30"/>
 </block>
 
 <block id="386" name="pouredConcreteHalf">
@@ -4036,6 +4036,7 @@ group desc for stuff like metal siding
 
 <block id="402" name="metalTrussingSheet">
 	<property name="Extends" value="scrapIronNoUpgradeMaster"/>
+	<property name="MaxDamage" value="1500"/>
 	<property name="Shape" value="New"/>
 	<property name="LightOpacity" value="0"/>
 	<property name="Model" value="billboard"/>
@@ -4043,6 +4044,12 @@ group desc for stuff like metal siding
 	<property name="Mesh" value="cutout"/>
 	<property name="Texture" value="310"/>
 	<property name="Collide" value="movement,melee"/> <!-- -rocket -->
+	<property class="RepairItems"> <property name="forgedIron" value="6"/> </property>
+	<drop event="Destroy" name="scrapIron" count="1,15"/>
+	<drop event="Fall" name="scrapMetalPile" count="1" prob=".75" stick_chance="1"/>
+	<property name="Group" value="Building"/>
+	<property name="DescriptionKey" value="metalTrussingBlockDesc"/>
+	<property name="EconomicValue" value="25"/>
 </block>
 
 <block id="403" name="pouredConcreteSupport">
