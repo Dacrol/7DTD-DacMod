@@ -1867,12 +1867,14 @@
 </lootcontainer>
 
 <!-- Treasure chest -->
-<lootcontainer id="70" count="2,5" size="8,9" destroy_on_close="true" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="treasureTemplate">
+<lootcontainer id="70" count="3,6" size="8,9" destroy_on_close="true" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="treasureTemplate">
 	<item group="weaponsMilitaryGuns+ammo"/>
 	<item group="treasureAmmo"/>
-	<item name="casinoCoin" count="3000,8000"/>
-	<item group="rareOres" count="5,11"/>
-	<item name="oldCash" count="50,250" prob=".5"/>
+	<item name="casinoCoin" count="750,2500"/>
+	<item group="books" count="1" prob=".5"/>
+	<item group="rareBooks" count="1,4" prob=".5"/>
+	<item group="rareOres" count="4,8"/>
+	<item name="oldCash" count="50,500" prob=".5"/>
 </lootcontainer>
 
 <!-- bandit melee -->
