@@ -2,7 +2,7 @@
 
 <progression>
 <player
-	max_level="400"
+	max_level="300"
 	exp_to_level="8300"
 	experience_multiplier="1.01536"
 	skill_points_per_level="5"
