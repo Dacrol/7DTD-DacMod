@@ -1433,7 +1433,7 @@ group desc for stuff like metal siding
 		<property name="ToBlock" value="pouredRConcreteMaster"/>
 		<property name="Item" value="concreteMix"/>
 		<property name="ItemCount" value="10"/>
-		<property name="UpgradeHitCount" value="4"/>
+		<property name="UpgradeHitCount" value="5"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_concrete"/>
 	<property name="HarvestOverdamage" value="true"/>
@@ -3866,7 +3866,7 @@ group desc for stuff like metal siding
 	<property name="Texture" value="310"/>
 	<property name="ImposterExchange" value="imposterBlock" param1="144"/>
 	<property name="ImposterDontBlock" value="true"/>
-	<property name="Collide" value="movement,melee,rocket"/> <!-- -rocket -->
+	<property name="Collide" value="movement,melee"/> <!-- -rocket -->
 	<property class="RepairItems"> <property name="forgedIron" value="4"/> </property>
 	<drop event="Destroy" name="scrapIron" count="1,15"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob=".75" stick_chance="1"/>
@@ -4042,7 +4042,7 @@ group desc for stuff like metal siding
 	<property name="Place" value="TowardsPlacerInverted"/>
 	<property name="Mesh" value="cutout"/>
 	<property name="Texture" value="310"/>
-	<property name="Collide" value="movement,melee,rocket"/> <!-- -rocket -->
+	<property name="Collide" value="movement,melee"/> <!-- -rocket -->
 </block>
 
 <block id="403" name="pouredConcreteSupport">
@@ -4341,7 +4341,7 @@ group desc for stuff like metal siding
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="Collide" value="melee"/>
 	<property name="Texture" value="518"/>
-	<property name="OnlySimpleRotations" value="true"/>
+	<property name="OnlySimpleRotations" value="false"/>
 	<property name="FuelValue" value="150"/>
 	<property name="BuffsWhenWalkedOn" value="trapDamage1Trigger"/>
 	<property class="RepairItems"> <property name="wood" value="20"/> <property name="scrapIron" value="8"/> </property>
@@ -5478,7 +5478,7 @@ kind of free
 	<property name="ImposterExclude" value="true"/>
 	<property name="UseGlobalUV" value="Local"/>
 	<property name="Place" value="TowardsPlacer"/>
-	<property name="Collide" value="movement,melee,rocket"/> <!-- -rocket -->
+	<property name="Collide" value="movement,melee"/> <!-- -rocket -->
 	<property class="RepairItems"> <property name="forgedIron" value="10"/> </property>
 	<drop event="Harvest" name="scrapIron" count="32"/>
 	<drop event="Destroy" count="0"/>
@@ -8679,7 +8679,7 @@ kind of free
 	<property name="Extends" value="woodNoUpgradeMaster"/>
 	<property name="Class" value="PlayerSign"/>
 	<property name="Shape" value="ModelEntity"/>
-	<property name="OnlySimpleRotations" value="true"/>
+	<property name="OnlySimpleRotations" value="false"/>
 	<property name="Model" value="Entities/Signs/sign_wood_1x1_Prefab"/>
 	<property name="MultiBlockDim" value="1,1,1"/>
 	<property name="ImposterExchange" value="imposterDontBlockSheet" param1="43"/>
@@ -15405,7 +15405,7 @@ kind of free
 	<drop event="Harvest" name="electricParts" count="3" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob=".75" stick_chance="1"/>
-	<property name="OnlySimpleRotations" value="true"/>
+	<property name="OnlySimpleRotations" value="false"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="EconomicValue" value="310"/>
 	<property name="Group" value="Science"/>

@@ -11,5 +11,7 @@
 * Adds some experimental recipes  
 * Makes casino coins scrappable/meltable (1 coin = 1 brass)  
 * Fireaxe can repair small amounts (great for fixing spike traps)  
+* Enables advanced rotations for more blocks such as spotlights (place them on walls and ceilings for awesome lighting/alarms!)  
   
 For version alpha 16 experimental (b105)  
+  
