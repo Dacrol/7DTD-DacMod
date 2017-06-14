@@ -2736,6 +2736,16 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 	<ingredient name="wood" count="100"/>
      <ingredient name="bottledWater" count="4"/>
 </recipe>
+<recipe name="animalGore" count="1">
+	<ingredient name="rawMeat" count="5"/>
+	<ingredient name="femur" count="2"/>
+</recipe>
+<recipe name="headlight" count="1" craft_area="workbench">
+	<ingredient name="forgedIron" count="1"/>
+	<ingredient name="electricParts" count="5"/>
+	<ingredient name="electronicParts" count="1"/>
+	<ingredient name="glassCTRSheet" count="1"/>
+</recipe>
 </recipes>
 <!-- To do (maybe / later)
 <recipe name="steelArrowHead" count="1" craft_area="forge" craft_tool="calipers" material_based="true">

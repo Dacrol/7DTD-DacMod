@@ -735,6 +735,7 @@
 		<recipe name="ceilingLight07_player" unlock_level="2"/>
 		<recipe name="spotlightPlayer" unlock_level="2"/>
 		<recipe name="speaker" unlock_level="2"/>
+		<recipe name="headlight" unlock_level="2"/>
 	</perk>
 
 	<perk name="electricTriggersPerk" icon="electric_switch" description_key="electricTriggersDesc" title_key="electricTriggersName" max_level="3" skill_point_cost_multiplier="0" skill_point_cost_per_level="3" group="science">
