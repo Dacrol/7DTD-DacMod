@@ -1161,7 +1161,7 @@ group desc for stuff like metal siding
 		<property name="ToBlock" value="pouredConcreteMaster"/>
 		<property name="Item" value="concreteMix"/>
 		<property name="ItemCount" value="10"/>
-		<property name="UpgradeHitCount" value="4"/>
+		<property name="UpgradeHitCount" value="5"/>
 	</property>
 	<property name="HarvestOverdamage" value="true"/>
 	<drop event="Harvest" name="rockSmall" count="16"/>
@@ -1390,7 +1390,7 @@ group desc for stuff like metal siding
 		<property name="ToBlock" value="pouredConcreteMaster"/>
 		<property name="Item" value="concreteMix"/>
 		<property name="ItemCount" value="10"/>
-		<property name="UpgradeHitCount" value="4"/>
+		<property name="UpgradeHitCount" value="5"/>
 	</property>
 	<property name="EconomicValue" value="8"/>
 	<property name="EconomicBundleSize" value="20"/>
@@ -1409,7 +1409,7 @@ group desc for stuff like metal siding
 		<property name="ToBlock" value="pouredConcreteMaster"/>
 		<property name="Item" value="concreteMix"/>
 		<property name="ItemCount" value="7"/>
-		<property name="UpgradeHitCount" value="4"/>
+		<property name="UpgradeHitCount" value="5"/>
 	</property>
 	<property name="HarvestOverdamage" value="true"/>
 	<drop event="Harvest" name="crushedSand" count="4" prob=".4"/>
@@ -1455,7 +1455,7 @@ group desc for stuff like metal siding
 		<property name="ToBlock" value="pouredConcreteMaster"/>
 		<property name="Item" value="concreteMix"/>
 		<property name="ItemCount" value="10"/>
-		<property name="UpgradeHitCount" value="4"/>
+		<property name="UpgradeHitCount" value="5"/>
 	</property>
 	<property name="HarvestOverdamage" value="true"/>
 	<drop event="Harvest" name="scrapIron" count="17"/>
@@ -3858,6 +3858,7 @@ group desc for stuff like metal siding
 
 <block id="385" name="metalTrussingBlock">
 	<property name="Material" value="Mmetal_medium"/>
+	<property name="MaxDamage" value="2000" />
 	<property name="Shape" value="New"/>
 	<property name="LightOpacity" value="0"/>
 	<property name="Model" value="cube"/>
