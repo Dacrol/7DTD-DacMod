@@ -1,13 +1,17 @@
 # DacMod
 ## 7 Days to Die mod  
-
+  
 * Makes guns more realistic  
 * Increases stack sizes  
-* Increases zombie spawns  
 * Faster minibikes  
 * One hit to break rocks with high mining skill and high quality pickaxe  
-* Overall better progression and higher max level
-* Block balance changes
+* Slight resource grind reduction (early tools harvest a bit better)  
+* Overall better progression and higher max level  
+* Many minor block and item balance changes  
 * Adds some experimental recipes  
-
-For version alpha 15.2 b8  
+* Makes casino coins scrappable/meltable (1 coin = 1 brass)  
+* Fireaxe can repair small amounts (great for fixing spike traps)  
+* Enables advanced rotations for more blocks such as spotlights (place them on walls and ceilings for awesome lighting/alarms!)  
+  
+For version alpha 16 experimental (b112)  
+  
