@@ -2134,7 +2134,7 @@ Mesh files no longer used:
 	<property name="DegradationBreaksAfter" value="false"/>
 	<property name="SoundJammed" value="ItemNeedsRepair"/>
 	<property name="SoundDestroy" value="wooddestroy1"/>
-	<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+	<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
 	<property name="CrosshairUpAfterShot" value="false"/>
 	<property class="Action0"> <!-- AttackAction -->
 		<property name="Class" value="Catapult"/>
@@ -2188,7 +2188,7 @@ Mesh files no longer used:
 	<property name="DegradationBreaksAfter" value="false"/>
 	<property name="SoundJammed" value="ItemNeedsRepair"/>
 	<property name="SoundDestroy" value="wooddestroy1"/>
-	<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+	<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
 	<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
 	<property name="Sound_Sight_In" value="crossbow_sight_in"/>
 	<property name="Sound_Sight_Out" value="crossbow_sight_out"/>
