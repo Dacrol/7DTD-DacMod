@@ -2196,12 +2196,12 @@ Mesh files no longer used:
 		<property name="Class" value="Launcher"/>
 		<property name="Hitmask_override" value="Arrow"/>
 		<property name="Delay" value="0.8"/>
-		<property name="Crosshair_min_distance" value="30"/> <!-- 30 -->
+		<property name="Crosshair_min_distance" value="22"/> <!-- 30 -->
 		<property name="Crosshair_max_distance" value="30"/> <!-- 30 -->
 		<property name="Magazine_size" value="1"/>
 		<property name="Magazine_items" value="ironCrossbowBolt, steelCrossbowBolt, explodingCrossbowBolt"/>
 		<property name="Rays_spread" value="0.012"/>
-		<property name="Reload_time" value="2"/>
+		<property name="Reload_time" value="1.6"/>
 		<property name="Bullet_icon" value="uzi"/>
 		<property name="Sound_start" value="crossbow_fire"/>
 		<property name="Sound_repeat" value=""/>
@@ -2468,7 +2468,7 @@ Mesh files no longer used:
 		<property name="LifeTime" value="12"/>
 	</property>
 	<property class="Attributes">
-		<property name="EntityDamage" value="20,45"/>
+		<property name="EntityDamage" value="22,55"/>
 		<property name="BlockDamage" value="5,8"/>
 		<property name="ApplyBuff" value="0.5,0.5" param1="arrowCriticalBleedout"/>
 	</property>
@@ -2576,7 +2576,7 @@ Mesh files no longer used:
 		<property name="LifeTime" value="12"/>
 	</property>
 	<property class="Attributes">
-		<property name="EntityDamage" value="25,55"/>
+		<property name="EntityDamage" value="26,60"/>
 		<property name="BlockDamage" value="6,11"/>
 		<property name="ApplyBuff" value="0.5,0.5" param1="arrowCriticalBleedout"/>
 	</property>
