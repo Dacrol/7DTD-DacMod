@@ -2678,6 +2678,74 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 	<ingredient name="cobblestones" count="4"/>
 </recipe>
 
+<!-- Modded recipes below -->
+
+<recipe name="nail" count="1">
+	<ingredient name="scrapIron" count="3"/>
+</recipe>	
+<recipe name="leatherDuster" count="1">
+	<ingredient name="leather" count="40"/>
+	<ingredient name="cloth" count="20"/>
+</recipe>
+<recipe name="paper" count="20" craft_area="chemistryStation">
+	<ingredient name="wood" count="50"/>
+    <ingredient name="bottledRiverWater" count="4"/>
+</recipe>
+<recipe name="animalGore" count="1">
+	<ingredient name="rawMeat" count="5"/>
+	<ingredient name="femur" count="2"/>
+</recipe>
+<recipe name="headlight" count="1" craft_area="workbench">
+	<ingredient name="forgedIron" count="1"/>
+	<ingredient name="electricParts" count="5"/>
+	<ingredient name="electronicParts" count="1"/>
+	<ingredient name="glassCTRSheet" count="1"/>
+</recipe>
+<recipe name="cntPillCase" count="1">
+	<ingredient name="wood" count="25"/>
+	<ingredient name="nail" count="10"/>
+</recipe>
+<recipe name="cntMunitionsBox" count="1" craft_area="workbench">
+	<ingredient name="forgedIron" count="10"/>
+	<ingredient name="forgedSteel" count="10"/>
+	<ingredient name="mechanicalParts" count="4"/>
+</recipe>
+<recipe name="signShopOpen" count="1" craft_area="workbench">
+	<ingredient name="forgedIron" count="2"/>
+	<ingredient name="scrapPlastics" count="3"/>
+	<ingredient name="electricParts" count="4"/>
+	<ingredient name="electronicParts" count="2"/>
+</recipe>
+<recipe name="curtain_top1Sheet3" count="1" craft_area="workbench">
+	<ingredient name="cloth" count="6"/>
+</recipe>
+<recipe name="curtain_bottom1Sheet3" count="1" craft_area="workbench">
+	<ingredient name="cloth" count="6"/>
+</recipe>
+<recipe name="cntBookcase" count="1">
+	<ingredient name="wood" count="25"/>
+	<ingredient name="nail" count="10"/>
+	<ingredient name="paper" count="20"/>
+</recipe>
+<recipe name="railingBlackSheet" count="1" craft_area="forge" craft_tool="anvil" material_based="true">
+	<ingredient name="unit_iron" count="30"/>
+	<ingredient name="unit_clay" count="15"/>
+</recipe>
+<recipe name="woodCross" count="1">
+	<ingredient name="wood" count="10"/>
+</recipe>
+<recipe name="woodCrossCtr" count="1">
+	<ingredient name="wood" count="10"/>
+</recipe>
+<recipe name="emberPile2" count="1">
+	<ingredient name="wood" count="12"/>
+	<ingredient name="coal" count="6"/>
+</recipe>
+<recipe name="metalTrussingSheet" count="1" craft_area="forge" craft_tool="anvil" material_based="true">
+	<ingredient name="unit_iron" count="60"/>
+	<ingredient name="unit_clay" count="10"/>
+</recipe>
+
 </recipes>
 <!-- To do (maybe / later)
 <recipe name="steelArrowHead" count="1" craft_area="forge" craft_tool="calipers" material_based="true">
