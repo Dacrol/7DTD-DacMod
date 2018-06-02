@@ -986,7 +986,7 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 	<ingredient name="wood" count="10"/>
 </recipe>
 
-<recipe name="fireaxeSteel" count="1" craft_area="workbench">
+<recipe name="fireaxeSteel" count="1">
 	<ingredient name="forgedSteel" count="20"/>
 	<ingredient name="wood" count="10"/>
 </recipe>
@@ -1721,7 +1721,7 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 	<ingredient name="wood" count="10"/>
 </recipe>
 
-<recipe name="pickaxeSteel" count="1" craft_area="workbench">
+<recipe name="pickaxeSteel" count="1">
 	<ingredient name="forgedSteel" count="20"/>
 	<ingredient name="wood" count="10"/>
 </recipe>
@@ -2004,7 +2004,7 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 	<ingredient name="wood" count="10"/>
 </recipe>
 
-<recipe name="shovelSteel" count="1" craft_area="workbench">
+<recipe name="shovelSteel" count="1">
 	<ingredient name="forgedSteel" count="20"/>
 	<ingredient name="wood" count="10"/>
 </recipe>
@@ -2277,7 +2277,7 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 	<ingredient name="wood" count="50"/>
 </recipe>
 
-<recipe name="wrench" count="1" craft_area="workbench">
+<recipe name="wrench" count="1">
 	<ingredient name="forgedSteel" count="12"/>
 	<ingredient name="mechanicalParts" count="4"/>
 </recipe>
