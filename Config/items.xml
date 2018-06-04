@@ -180,7 +180,7 @@ Mesh files no longer used:
 		<property name="BlockDamage" value="82,206"/> <!-- 80% of a steel pick -->
 		<property name="DegradationMax" value="300,1000"/>
 		<property name="DegradationRate" value="1,1"/>
-		<property name="DismembermentBaseChance" value="0,0.05"/>
+		<property name="DismembermentBaseChance" value="0,0.15"/>
 	</property>
 	<property name="Group" value="Ammo/Weapons,Tools/Traps"/>
 	<property name="ActionSkillGroup" value="Blunt Weapons"/>
@@ -1540,7 +1540,7 @@ Mesh files no longer used:
 		<property name="BlockDamage" value="30,60"/>
 		<property name="DegradationMax" value="200,1000"/>
 		<property name="DegradationRate" value="1,1"/>
-		<property name="DismembermentBaseChance" value="0,0.05"/>
+		<property name="DismembermentBaseChance" value="0,0.1"/>
 	</property>
 	<property name="CritChance" value=".25"/>
 	<property name="Group" value="Tools/Traps"/>
