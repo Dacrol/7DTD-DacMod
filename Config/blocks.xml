@@ -56,6 +56,9 @@ tbnsew:
 	<property name="HarvestOverdamage" value="true"/> <!-- default=true -->
 	<drop event="Harvest" name="rockSmall" count="25" tool_category="harvestingTools"/>
 	<drop event="Harvest" name="ironFragment" count="2" tool_category="harvestingTools"/>
+	<drop event="Destroy" name="coal" count="1" tool_category="harvestingTools" prob=".5" />
+	<drop event="Destroy" name="potassiumNitratePowder" count="1" tool_category="harvestingTools" prob=".5" />
+	<drop event="Destroy" name="scrapLead" count="1" tool_category="harvestingTools" prob=".5" />
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="rockSmall" count="50" prob="0.23" stick_chance="0"/>
 	<drop event="Fall" name="ironFragment" count="4" prob="0.23" stick_chance="0"/>
@@ -1362,7 +1365,7 @@ group desc for stuff like metal siding
 		<property name="ToBlock" value="pouredRConcreteMaster"/>
 		<property name="Item" value="concreteMix"/>
 		<property name="ItemCount" value="10"/>
-		<property name="UpgradeHitCount" value="4"/>
+		<property name="UpgradeHitCount" value="5"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_concrete"/>
 	<drop event="Harvest" name="rockSmall" count="25"/>

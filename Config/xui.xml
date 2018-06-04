@@ -1,4 +1,28 @@
 <xui>
+
+	<!-- 
+
+		Origin - "7 Days to Die" UI Mod by Tritox:
+
+		Game version:	A16.2(b7)
+		Mod version:	1.01
+		Date:			4.8.2017
+	
+	-->
+
+	<!-- ====================== xui.xml starts ======================= -->
+
+	<!--	
+		
+		Additions to default content: 
+
+			1) Line: 110   - added: new window (HUDInfoPanel)
+			2) Line: 131  - added: new window (HUDTempWaterFood)
+			3) Line: 132  - added: new window (HUDXpBar) 
+			4) Line: 133  - added: new window (HUDBuffDurations) 
+	
+	-->
+
 	<ruleset name="default" scale="1.255" stackpanel_scale="1.05">
 	
 		<window_group name="crafting" controller="XUiC_CraftingWindowGroup">
@@ -83,6 +107,7 @@
 		
 		<window_group name="compass" actionSet="false">
 			<window name="windowCompass" />
+			<window name="HUDInfoPanel"/>								<!-- 1) added: day, time, world temperature and elevation indicators (top left) -->
 		</window_group>
 		
 		<window_group name="toolTip" actionSet="false">
@@ -103,6 +128,9 @@
 		</window_group>
 		
 		<window_group name="toolbelt" actionSet="false">
+			<window name="HUDTempWaterFood"/>							<!-- 2) added: feels like -temperature, water and food indicators (bottom left) -->
+			<window name="HUDXpBar" />									<!-- 3) added: player level indicator, experience bar and toolbelt numbers (bottom center)  -->
+			<window name="HUDBuffDurations"/>							<!-- 4) added: buff durations (middle center)  -->
 			<window name="windowToolbelt" anchor="CenterBottom" />
 			<window name="HUDLeftStatBars" anchor="LeftBottom" />
 			<window name="HUDRightStatBars" anchor="RightBottom" />
