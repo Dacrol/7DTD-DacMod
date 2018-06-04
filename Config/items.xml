@@ -1522,7 +1522,7 @@ Mesh files no longer used:
 		<property name="Sound_start" value="swoosh"/>
 		<property name="Stamina_usage" value="8.27"/>
 		<property name="DamageBonus.wood" value="1"/>
-		<property name="DamageBonus.head" value="2"/>
+		<property name="DamageBonus.head" value="5"/>
 		<property name="DamageBonus.glass" value="0.25"/>
 		<property name="DamageBonus.stone" value="0.25"/>
 		<property name="DamageBonus.metal" value="0.25"/>
@@ -1562,7 +1562,6 @@ Mesh files no longer used:
 		<property name="Stamina_usage" value="15"/>
 		<property name="ToolCategory.Butcher" value="0.8" param1="10"/>
 		<property name="ToolCategory.harvestingTools" value="1.4" param1="1"/>
-		<property name="DamageBonus.head" value="4"/>
 	</property>
 	<property class="Attributes">
 		<property name="EntityDamage" value="9,26"/>
