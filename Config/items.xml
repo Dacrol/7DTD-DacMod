@@ -1517,7 +1517,7 @@ Mesh files no longer used:
 		<property name="Class" value="Melee"/>
 		<property name="Delay" value="1.1"/>
 		<property name="Range" value="2.7"/>
-		<property name="Sphere" value="0.1"/>
+		<property name="Sphere" value="0.2"/>
 		<property name="Block_range" value="4"/>
 		<property name="Sound_start" value="swoosh"/>
 		<property name="Stamina_usage" value="8.27"/>
