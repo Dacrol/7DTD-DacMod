@@ -1536,7 +1536,7 @@ Mesh files no longer used:
 		<property name="Buff_chance" value=".2,.25,.15"/>
 	</property>
 	<property class="Attributes">
-		<property name="EntityDamage" value="7,22"/>
+		<property name="EntityDamage" value="11,22"/>
 		<property name="BlockDamage" value="30,60"/>
 		<property name="DegradationMax" value="200,1000"/>
 		<property name="DegradationRate" value="1,1"/>
@@ -1564,7 +1564,7 @@ Mesh files no longer used:
 		<property name="ToolCategory.harvestingTools" value="1.4" param1="1"/>
 	</property>
 	<property class="Attributes">
-		<property name="EntityDamage" value="9,26"/>
+		<property name="EntityDamage" value="12,27"/>
 		<property name="BlockDamage" value="30,72"/>
 		<property name="DegradationMax" value="500,1400"/>
 	</property>
