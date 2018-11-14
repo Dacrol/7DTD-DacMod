@@ -592,7 +592,7 @@ Mesh files no longer used:
 		<property name="Crosshair_max_distance" value="49"/> <!-- 49 -->
 		<property name="Magazine_size" value="8"/>
 		<property name="Magazine_items" value="shotgunShell"/>
-		<property name="Magazine_item_ray_counts" value="9"/>
+		<property name="Magazine_item_ray_counts" value="10"/>
 		<property name="Magazine_item_ray_spreads" value="0.74"/> <!-- .74 -->
 		<property name="Reload_time" value="2.6"/>
 		<property name="Bullet_icon" value="uzi"/>
@@ -1016,7 +1016,7 @@ Mesh files no longer used:
 		<property name="EntityDamage" value="8,14"/>
 		<property name="BlockDamage" value="1.6,14"/>
 		<!-- <property name="Accuracy" value="1,0.1"/> -->
-		<property name="FalloffRange" value="15,28"/>
+		<property name="FalloffRange" value="20,36"/>
 		<property name="DegradationMax" value="800,3200"/>
 		<property name="DegradationRate" value="10,10"/>
 	</property>
