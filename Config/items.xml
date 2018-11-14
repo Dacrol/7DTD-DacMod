@@ -2457,7 +2457,7 @@ Mesh files no longer used:
 	</property>
 	<property name="Group" value="Ammo/Weapons"/>
 	<property class="Attributes">
-		<property name="EntityDamage" value="20,35"/>
+		<property name="EntityDamage" value="20,42"/>
 		<property name="BlockDamage" value="3,5"/>
 		<property name="ApplyBuff" value="0.35,0.35" param1="arrowCriticalBleedout"/>
 	</property>
@@ -2581,7 +2581,7 @@ Mesh files no longer used:
 		<property name="LifeTime" value="12"/>
 	</property>
 	<property class="Attributes">
-		<property name="EntityDamage" value="26,60"/>
+		<property name="EntityDamage" value="26,64"/>
 		<property name="BlockDamage" value="6,11"/>
 		<property name="ApplyBuff" value="0.5,0.5" param1="arrowCriticalBleedout"/>
 	</property>
