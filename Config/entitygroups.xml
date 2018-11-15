@@ -233,7 +233,7 @@
 	</entitygroup>
 
 	<entitygroup name="FriendlyAnimalsDesert">
-		<entity name="invisibleAnimal" prob="6" />
+		<entity name="invisibleAnimal" prob="2" />
 		<entity name="animalRabbit" />
 		<entity name="animalChicken" />
 		<entity name="animalBoar" prob="0.4" />
@@ -247,7 +247,7 @@
 	</entitygroup>
 
 	<entitygroup name="FriendlyAnimalsSnow">
-		<entity name="invisibleAnimal" prob="3" />
+		<entity name="invisibleAnimal" prob="1" />
 		<entity name="animalRabbit" />
 		<entity name="animalBoar" prob="0.4" />
 		<entity name="animalStag" prob="0.4" />
@@ -261,7 +261,7 @@
 	</entitygroup>
 
 	<entitygroup name="FriendlyAnimalsForest">
-		<entity name="invisibleAnimal" prob="3" />
+		<entity name="invisibleAnimal" prob="1" />
 		<entity name="animalRabbit" />
 		<entity name="animalBoar" prob="0.4" />
 		<entity name="animalStag" prob="0.4" />
@@ -274,7 +274,7 @@
 	</entitygroup>
 
 	<entitygroup name="FriendlyAnimalsBurntForest">
-		<entity name="invisibleAnimal" prob="6" />
+		<entity name="invisibleAnimal" prob="3" />
 		<entity name="animalChicken" />
 		<entity name="animalStag" prob="0.4" />
 		<entity name="animalBoar" prob="0.4" />
@@ -288,7 +288,7 @@
 	</entitygroup>
 
 	<entitygroup name="FriendlyAnimalsPlains">
-		<entity name="invisibleAnimal" prob="6" />
+		<entity name="invisibleAnimal" prob="1" />
 		<entity name="animalRabbit" />
 		<entity name="animalChicken" />
 		<entity name="animalBoar" />
