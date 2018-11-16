@@ -3148,7 +3148,7 @@ Mesh files no longer used:
 	<property name="PartType" value="Barrel"/>
 	<property name="Weight" value="35"/>
 	<property class="Attributes">
-		<property name="EntityDamage" value="45,75"/>
+		<property name="EntityDamage" value="45,94"/>
 		<property name="BlockDamage" value="8,14"/>
 		<property name="DegradationMax" value="2500,6250"/>
 	</property>
@@ -3196,7 +3196,7 @@ Mesh files no longer used:
 	<property name="PartType" value="Barrel"/>
 	<property name="Weight" value="40"/>
 	<property class="Attributes">
-		<property name="EntityDamage" value="41.4,69"/>
+		<property name="EntityDamage" value="41.4,84"/>
 		<property name="BlockDamage" value="8,14"/>
 		<property name="DegradationMax" value="3500,8750"/>
 	</property>
