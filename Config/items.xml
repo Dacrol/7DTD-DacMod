@@ -1013,7 +1013,7 @@ Mesh files no longer used:
 	</property>
 	<property name="Group" value="Ammo/Weapons"/>
 	<property class="Attributes">
-		<property name="EntityDamage" value="7,13"/>
+		<property name="EntityDamage" value="8,14"/>
 		<property name="BlockDamage" value="1.6,14"/>
 		<!-- <property name="Accuracy" value="1,0.1"/> -->
 		<property name="FalloffRange" value="20,36"/>
