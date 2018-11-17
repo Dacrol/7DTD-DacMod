@@ -2478,7 +2478,7 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 	<ingredient name="unit_clay" count="60"/>
 </recipe>
 
-<recipe name="mechanicalParts" count="1" craft_area="workbench">
+<recipe name="mechanicalParts" count="1">
 	<ingredient name="forgedSteel" count="2"/>
 	<ingredient name="ductTape" count="1"/>
 </recipe>
