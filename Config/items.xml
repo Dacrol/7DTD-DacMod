@@ -163,7 +163,7 @@ Mesh files no longer used:
 	<property class="Action0"> <!-- AttackAction -->
 		<property name="Class" value="Melee"/>
 		<property name="Delay" value="1.8"/>
-		<property name="Range" value="2.4"/>
+		<property name="Range" value="3.1"/>
 		<property name="Sphere" value="0.2"/>
 		<property name="Block_range" value="4"/>
 		<property name="Sound_start" value="SlowSwoosh"/>
@@ -176,7 +176,7 @@ Mesh files no longer used:
 		<property name="ToolCategory.Butcher" value="0" param1="10"/>
 	</property>
 	<property class="Attributes">
-		<property name="EntityDamage" value="20,50"/>
+		<property name="EntityDamage" value="20,52"/>
 		<property name="BlockDamage" value="82,206"/> <!-- 80% of a steel pick -->
 		<property name="DegradationMax" value="300,1000"/>
 		<property name="DegradationRate" value="1,1"/>
@@ -1564,7 +1564,7 @@ Mesh files no longer used:
 		<property name="ToolCategory.harvestingTools" value="1.4" param1="1"/>
 	</property>
 	<property class="Attributes">
-		<property name="EntityDamage" value="12,27"/>
+		<property name="EntityDamage" value="12,28"/>
 		<property name="BlockDamage" value="30,72"/>
 		<property name="DegradationMax" value="500,1400"/>
 	</property>
