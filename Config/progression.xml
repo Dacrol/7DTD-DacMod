@@ -4,7 +4,7 @@
 <player
 	max_level="200"
 	exp_to_level="9545"
-	experience_multiplier="1.0149"
+	experience_multiplier="1.0139"
 	skill_points_per_level="6"
 	skill_point_multiplier="0"/>
 	<!-- A15: 8000 XP for level 1 and 134k for level 199, total cumulative of 9MXP; XPRequired = exp_to_level * experience_multiplier ^ level -->
@@ -342,8 +342,8 @@
 		<recipe name="concreteMix" unlock_level="1"/>
 	</perk>
 	<perk name="Steel Smithing" icon="resource" description_key="steelSmithingDesc" title_key="steelSmithing" max_level="1" skill_point_cost_multiplier="0" skill_point_cost_per_level="15" group="tools">
-		<requirement skill_level="1" required_skill_name="craftSkillTools" required_skill_level="6"/>
-		<requirement skill_level="1" required_skill_name="craftSkillWeapons" required_skill_level="4"/>
+		<requirement skill_level="1" required_skill_name="craftSkillTools" required_skill_level="3"/>
+		<requirement skill_level="1" required_skill_name="craftSkillWeapons" required_skill_level="3"/>
 		<requirement skill_level="1" required_skill_name="craftSkillScience" required_skill_level="3"/>
 		<recipe name="forgeCrucible" unlock_level="1"/>
 		<recipe name="forgedSteel" unlock_level="1"/>
