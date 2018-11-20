@@ -2200,13 +2200,13 @@ Mesh files no longer used:
 	<property class="Action0"> <!-- AttackAction -->
 		<property name="Class" value="Launcher"/>
 		<property name="Hitmask_override" value="Arrow"/>
-		<property name="Delay" value="0.8"/>
+		<property name="Delay" value="0.1"/>
 		<property name="Crosshair_min_distance" value="22"/> <!-- 30 -->
 		<property name="Crosshair_max_distance" value="30"/> <!-- 30 -->
 		<property name="Magazine_size" value="1"/>
 		<property name="Magazine_items" value="ironCrossbowBolt, steelCrossbowBolt, explodingCrossbowBolt"/>
 		<property name="Rays_spread" value="0.012"/>
-		<property name="Reload_time" value="1.6"/>
+		<property name="Reload_time" value="1.4"/>
 		<property name="Bullet_icon" value="uzi"/>
 		<property name="Sound_start" value="crossbow_fire"/>
 		<property name="Sound_repeat" value=""/>
@@ -2250,7 +2250,7 @@ Mesh files no longer used:
 		<property name="Class" value="Catapult"/>
 		<!-- Catapult might not be the best name for it but it can also be used for a slingshot -->
 		<property name="Hitmask_override" value="Arrow"/>
-		<property name="Delay" value="1"/>
+		<property name="Delay" value="0.4"/>
 		<property name="Crosshair_min_distance" value="30"/> <!-- 30 -->
 		<property name="Crosshair_max_distance" value="30"/> <!-- 30 -->
 		<property name="Magazine_size" value="1"/>
