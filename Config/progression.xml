@@ -71,8 +71,8 @@
 		<requirement perk_level="1" required_skill_name="Athletics" required_skill_level="1"/>
 		<requirement perk_level="2" required_skill_name="Athletics" required_skill_level="10"/>
 		<requirement perk_level="3" required_skill_name="Athletics" required_skill_level="20"/>
-		<requirement perk_level="4" required_skill_name="Athletics" required_skill_level="40"/>
-		<requirement perk_level="5" required_skill_name="Athletics" required_skill_level="60"/>
+		<requirement perk_level="4" required_skill_name="Athletics" required_skill_level="30"/>
+		<requirement perk_level="5" required_skill_name="Athletics" required_skill_level="40"/>
 		<effect name="StaminaGain">
 			<add perk_level="0" value="0"/>
 			<add perk_level="1" value="0.1"/>
@@ -288,7 +288,7 @@
 		<requirement perk_level="2" required_skill_name="Mining Tools" required_skill_level="10"/>
 		<requirement perk_level="3" required_skill_name="Mining Tools" required_skill_level="20"/>
 		<requirement perk_level="4" required_skill_name="Mining Tools" required_skill_level="40"/>
-		<requirement perk_level="5" required_skill_name="Mining Tools" required_skill_level="80"/>
+		<requirement perk_level="5" required_skill_name="Mining Tools" required_skill_level="60"/>
 		<effect name="BlockDamage">
 			<multiply perk_level="0" value="1"/>
 			<multiply perk_level="1" value="1.1"/>
