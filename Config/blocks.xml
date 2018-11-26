@@ -4086,7 +4086,7 @@ group desc for stuff like metal siding
 		<property name="ToBlock" value="trapSpikesNew"/>
 		<property name="Item" value="wood"/>
 		<property name="ItemCount" value="3"/>
-		<property name="UpgradeHitCount" value="4"/>
+		<property name="UpgradeHitCount" value="2"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_wood"/>
 </block>
