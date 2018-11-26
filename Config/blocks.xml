@@ -8801,7 +8801,7 @@ kind of free
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="Model" value="OutdoorDecor/tire" param1="main_mesh"/>
 	<property name="Collide" value="melee,bullet,arrow,rocket"/>
-	<drop event="Destroy" name="minibikeWheels" count="1" prob="0.3"/>
+	<drop event="Destroy" name="minibikeWheels" count="1" prob="0.5"/>
 </block>
 
 <block id="899" name="scrapIronArrowSlitHalf">
