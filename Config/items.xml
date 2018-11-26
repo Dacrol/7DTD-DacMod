@@ -1567,7 +1567,7 @@ Mesh files no longer used:
 		<property name="Class" value="Repair"/>
 		<property name="Delay" value="0.3"/>
 		<property name="Repair_amount" value="100"/>
-		<property name="Upgrade_hit_offset" value="0"/>
+		<property name="Upgrade_hit_offset" value="-2"/>
 		<property name="Sound_start" value="repair_block"/>
 		<property name="Allowed_upgrade_items" value="wood,clayLump,dirtFragment,snowBall,scrapIron,forgedIron,forgedSteel,steelPolish,concreteMix,cobblestones,yuccaFibers"/>
 	</property>
