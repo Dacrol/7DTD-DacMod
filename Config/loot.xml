@@ -1307,7 +1307,7 @@
 	<item name="painkillers" count="1,3"/>
 	<item name="firstAidKit" count="1,2"/>
 	<item name="antibiotics" count="1,2"/>
-	<item name="beaker" prob="0.4"/>
+	<item name="beaker" prob="0.8"/>
 </lootgroup>
 
 <lootgroup name="lumberjacks" count="1">
@@ -1405,7 +1405,7 @@
 	<item name="antibiotics" prob="0.5"/>
 	<item name="bloodDrawKit" prob="0.15"/>
 	<item name="firstAidKitSchematic" prob="0.15"/>
-	<item name="beaker" prob="0.15"/>
+	<item name="beaker" prob="0.25"/>
 </lootgroup>
 
 
@@ -1582,10 +1582,10 @@
 <!-- lootcontainer 33 Supply Crate Ranged weapons Day 7 -->
 
 <!-- Supply Crate General, the normal airdrop -->
-<lootcontainer id="34" count="4" size="8,4" destroy_on_close="true" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate" loot_quality_template="baseTemplate">
+<lootcontainer id="34" count="5" size="8,4" destroy_on_close="true" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate" loot_quality_template="baseTemplate">
 	<item group="weaponsMilitaryGuns+ammo" prob="1.2"/>
 	<item group="rareBooks"/>
-	<item group="airdropMedicine" count="1,4"/>
+	<item group="airdropMedicine" count="2,4"/>
 	<item name="flashlight02" prob="0.2"/>
 </lootcontainer>
 
