@@ -1565,7 +1565,7 @@ Mesh files no longer used:
 	</property>
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="Repair"/>
-		<property name="Delay" value="0.3"/>
+		<property name="Delay" value="0.5"/>
 		<property name="Repair_amount" value="100"/>
 		<property name="Upgrade_hit_offset" value="-2"/>
 		<property name="Sound_start" value="repair_block"/>
