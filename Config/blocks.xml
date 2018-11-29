@@ -3868,6 +3868,7 @@ group desc for stuff like metal siding
 
 <block id="389" name="ladderMetal">
 	<property name="Extends" value="corrugatedMetalNoUpgradeMaster" param1="DescriptionKey"/>
+	<property name="FallDamage" value="false"/>
 	<property name="MaxDamage" value="500"/>
 	<property name="Class" value="Ladder"/>
 	<property name="Shape" value="New"/>
@@ -7831,6 +7832,7 @@ kind of free
 
 <block id="788" name="ladderWood">
 	<property name="Group" value="Building,Basics"/>
+	<property name="FallDamage" value="false"/>
 	<property name="Class" value="Ladder"/>
 	<property name="Material" value="wood_ladders"/>
 	<property name="Shape" value="New"/>
@@ -9263,6 +9265,7 @@ kind of free
 
 <block id="949" name="ladderSteel">
 	<property name="Class" value="Ladder"/>
+	<property name="FallDamage" value="false"/>
 	<property name="Material" value="Msteel"/>
 	<property name="MaxDamage" value="2000"/>
 	<property name="PassThroughDamage" value="true"/>
