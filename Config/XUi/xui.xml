@@ -1,28 +1,4 @@
 <xui>
-
-	<!-- 
-
-		Origin - "7 Days to Die" UI Mod by Tritox:
-
-		Game version:	A16.2(b7)
-		Mod version:	1.01
-		Date:			4.8.2017
-	
-	-->
-
-	<!-- ====================== xui.xml starts ======================= -->
-
-	<!--	
-		
-		Additions to default content: 
-
-			1) Line: 110   - added: new window (HUDInfoPanel)
-			2) Line: 131  - added: new window (HUDTempWaterFood)
-			3) Line: 132  - added: new window (HUDXpBar) 
-			4) Line: 133  - added: new window (HUDBuffDurations) 
-	
-	-->
-
 	<ruleset name="default" scale="1.255" stackpanel_scale="1.05">
 	
 		<window_group name="crafting" controller="XUiC_CraftingWindowGroup">
@@ -34,7 +10,7 @@
 		<window_group name="character" controller="XUiC_CharacterSheetWindowGroup">
 			<window name="CharacterFrameWindow"/>
 			<window name="buffInfoPanel"/>
-			<window name="PlayerStatsWindow" />
+			<!-- <window name="PlayerStatsWindow" /> -->
 			<window name="ActiveBuffsWindow" />
 		</window_group>		
 		
@@ -73,7 +49,7 @@
 			<window name="windowCraftingQueue"/>
 			<window name="windowOutput" />
 			<window name="windowNonPagingHeader" />
-			<window name="windowCombine" />
+			<!-- <window name="windowCombine" /> -->
 		</window_group>				
 
 		<window_group name="workstation_chemistryStation" controller="XUiC_WorkstationWindowGroup">
@@ -107,7 +83,7 @@
 		
 		<window_group name="compass" actionSet="false">
 			<window name="windowCompass" />
-			<window name="HUDInfoPanel"/>								<!-- 1) added: day, time, world temperature and elevation indicators (top left) -->
+			<!--<window name="windowTargetBar" anchor="CenterTop" />-->
 		</window_group>
 		
 		<window_group name="toolTip" actionSet="false">
@@ -123,24 +99,32 @@
 			<window name="windowQuestOffer" />
 		</window_group>
 		
+		<window_group name="questTurnIn" controller="XUiC_QuestTurnInWindowGroup">
+			<window name="windowQuestTurnInDescription" />
+			<window name="windowQuestTurnInRewards" />
+		</window_group>
+		
 		<window_group name="timer">
 			<window name="windowTimer"/>
 		</window_group>
 		
 		<window_group name="toolbelt" actionSet="false">
-			<window name="HUDTempWaterFood"/>							<!-- 2) added: feels like -temperature, water and food indicators (bottom left) -->
-			<window name="HUDXpBar" />									<!-- 3) added: player level indicator, experience bar and toolbelt numbers (bottom center)  -->
-			<window name="HUDBuffDurations"/>							<!-- 4) added: buff durations (middle center)  -->
 			<window name="windowToolbelt" anchor="CenterBottom" />
 			<window name="HUDLeftStatBars" anchor="LeftBottom" />
 			<window name="HUDRightStatBars" anchor="RightBottom" />
 			<window name="windowQuestTracker" anchor="RightTop" />
+			<window name="windowGroupBars" anchor="LeftTop" />
 		</window_group>
 		
 		<window_group name="vehicle" controller="XUiC_VehicleWindowGroup">
 			<window name="windowVehicle"/>
 			<window name="windowNonPagingHeader" />
-			<window name="windowVehicleStats" />
+			<!-- <window name="windowVehicleStats" /> -->
+			<!-- <window name="windowVehicleStorage" /> -->
+		</window_group>
+		
+		<window_group name="vehicleStorage" controller="XUiC_VehicleStorageWindowGroup">
+			<window name="windowNonPagingHeader" />
 			<window name="windowVehicleStorage" />
 		</window_group>
 		
@@ -167,7 +151,7 @@
 			<window name="windowNonPagingHeader" />
 		</window_group>
 
-		<window_group name="radial" actionSet="keyboard">
+		<window_group name="radial" actionSet="keyboard" controller="Radial">
 			<window name="windowRadial"/>
 		</window_group>
 		
@@ -175,11 +159,14 @@
 			<window name="windowSkillList"/>
 			<window name="windowSkillInfo"/>
 			<!-- <window name="windowSkillStats"/> -->
+			<window name="windowSkillAttributeInfo" />
+			<window name="windowSkillSkillInfo" />
+			<window name="windowSkillPerkInfo" />
 		</window_group>
-		<!--#$-IGS END-$#-->
 		
 		<window_group name="quests" controller="XUiC_QuestWindowGroup">
 			<window name="windowQuestList" />
+			<window name="windowQuestSharedList" />
 			<window name="windowQuestDescription" />
 			<window name="windowQuestObjectives" />
 			<window name="windowQuestRewards" />
@@ -188,16 +175,6 @@
 		<window_group name="journal" controller="XUiC_JournalWindowGroup">
 			<window name="windowJournalList" />
 			<window name="windowJournalEntryDescription" />
-		</window_group>
-		
-		<window_group name="profiles">
-			<window name="windowArchetypePreview"/>
-		</window_group>
-		
-		<window_group name="archetypes" controller="XUiC_ArchetypesWindowGroup" stack_panel_y_offset="332">
-			<window name="windowArchetypePreview2"/>
-			<window name="windowSliders"/>
-			<window name="windowColorPicker"/>
 		</window_group>
 		
 		<!--#$-IGS BEGIN: Adding window to hold gampad callouts -$#-->
@@ -212,10 +189,20 @@
 			<window name="serviceInfoPanel"/>
 		</window_group>
 		
+		<window_group name="dialog" controller="XUiC_DialogWindowGroup">
+			<window name="windowRespondentName" />
+			<window name="windowStatement" />
+			<window name="windowResponses" />
+		</window_group>
+		
 		<window_group name="sign">
 			<window name="windowSignEdit" />
 		</window_group>
 		
+		<window_group name="keypadEdit">		
+			<window name="windowKeypadEdit" />
+		</window_group>
+
 		<window_group name="powersource" controller="XUiC_PowerSourceWindowGroup">
 			<window name="windowPowerSourceStats" />
 			<window name="windowPowerSourceSlots" />
@@ -259,12 +246,29 @@
 			<window name="ingameMenu" />
 		</window_group>
 		
+		<window_group name="exportPrefab">
+			<window name="exportPrefab" />
+		</window_group>
+		
 		<window_group name="woPropsSleeperVolume">
 			<window name="woPropsSleeperVolume" />
 		</window_group>
 		
+		<window_group name="woPropsSleeperBlock">
+			<window name="woPropsSleeperBlock" />
+		</window_group>
+		
+		<window_group name="saveDirtyPrefab">
+			<window name="saveDirtyPrefab" />
+		</window_group>
+		
+		<window_group name="prefabProperties">
+			<window name="prefabProperties" />
+		</window_group>
+		
 		<window_group name="editorPanelSelector">
 			<window name="editorPanelSelector" />
+			<window name="editorInfo" />
 		</window_group>
 		
 		<window_group name="ingameDebugMenu">
@@ -275,9 +279,47 @@
 			<window name="levelTools" />
 		</window_group>
 		
+		<window_group name="levelTools2">
+			<window name="levelTools2" />
+		</window_group>
+		
 		<window_group name="prefabList">
 			<window name="prefabList" />
 		</window_group>
 		
+		<window_group name="prefabeditorhelp">
+			<window name="prefabeditorhelp" />
+		</window_group>
+		
+		<window_group name="serverjoinrulesdialog">
+			<window name="serverjoinrulesdialog" />
+		</window_group>
+
+		<window_group name="lightProperties">
+			<window name="lightProperties" />
+		</window_group>
+
+		<window_group name="reportPlayer">
+			<window name="reportPlayer" />
+		</window_group>
+
+		<window_group name="chatoutput" actionSet="false">
+			<window name="chatoutput" />
+		</window_group>
+		
+		<window_group name="chat">		
+			<window name="chat" />
+		</window_group>
+		
+		<window_group name="messageBox" controller="XUiC_MessageBoxWindowGroup">
+			<window name="messageBox" />
+		</window_group>
+
+<!-- Uncomment this window group and the according window in windows.xml and adapt the latter to your needs, it will show up whenever the user has the ingame menu (ESC) open -->
+<!--
+		<window_group name="serverinfowindow">
+			<window name="serverinfowindow" />
+		</window_group>
+-->
 	</ruleset>
 </xui>

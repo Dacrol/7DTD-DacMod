@@ -1,6 +1,4 @@
 <paints>
-<!-- -->
-
 <!-- ID: can only be 0-255, name = localisation key, ID 0 is the "delete" entry. Do not re-use 0. -->
 <!-- TextureId: this matches <property name="Texture" /> -->
 <!-- Group: to organise textures on the paint tool menu, this is also the localisation key of the group -->
@@ -44,7 +42,7 @@ Textures we might want for (terrain) imposters
 <paint id="0" name="txName_Delete">
 	<property name="TextureId" value="0" />
 	<property name="Group" value="txGroupExcluded" />
-	<property name="Hidden" value="true" />
+	<property name="Hidden" value="false" /> <!-- This flag does nothing in creative mode / editor. All paint IDs will show. -->
 </paint>
 
 <paint id="1" name="txName_Brick">
@@ -65,10 +63,10 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="2" />
 </paint>
 
-<paint id="4" name="txName_Asphalt">
-	<property name="TextureId" value="10"/>
-	<property name="Group" value="txGroupWood"/>
-	<property name="PaintCost" value="1" />
+<paint id="4" name="txName_heat_vent_industrial">
+	<property name="TextureId" value="268"/>
+	<property name="Group" value="txGroupDecoration"/>
+	<property name="PaintCost" value="2" />
 </paint>
 
 <paint id="5" name="txName_Gravel">
@@ -114,7 +112,7 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="12" name="txName_Window_plug">
+<paint id="12" name="txName_Wood_black">
 	<property name="TextureId" value="23"/>
 	<property name="Group" value="txGroupWood"/>
 	<property name="PaintCost" value="1" />
@@ -132,10 +130,10 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="15" name="txName_Cobblestone">
-	<property name="TextureId" value="26"/>
-	<property name="Group" value="txGroupMasonry"/>
-	<property name="PaintCost" value="2" />
+<paint id="15" name="txName_Rust_black">
+	<property name="TextureId" value="443"/>
+	<property name="Group" value="txGroupWood"/>
+	<property name="PaintCost" value="1" />
 </paint>
 
 <paint id="16" name="txName_Log_cabin">
@@ -188,7 +186,7 @@ Textures we might want for (terrain) imposters
 
 <paint id="24" name="txName_Pillcase_side">
 	<property name="TextureId" value="55"/>
-	<property name="Group" value="txGroupPainted"/>
+	<property name="Group" value="txGroupDecoration"/>
 	<property name="PaintCost" value="1" />
 </paint>
 
@@ -204,16 +202,16 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="2" />
 </paint>
 
-<paint id="27" name="txName_Plaster_green_middle">
+<paint id="27" name="txName_ClosetDoorTop">
 	<property name="TextureId" value="58"/>
-	<property name="Group" value="txGroupWallCovering"/>
-	<property name="PaintCost" value="2" />
+	<property name="Group" value="txGroupDecoration"/>
+	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="28" name="txName_Plaster_green_baseboard">
+<paint id="28" name="txName_ClosetDoorBottom">
 	<property name="TextureId" value="59"/>
-	<property name="Group" value="txGroupWallCovering"/>
-	<property name="PaintCost" value="2" />
+	<property name="Group" value="txGroupDecoration"/>
+	<property name="PaintCost" value="1" />
 </paint>
 
 <paint id="29" name="txName_Tile_floor1">
@@ -222,7 +220,7 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="2" />
 </paint>
 
-<paint id="30" name="txName_Plaster_green_top">
+<paint id="30" name="txName_Black_TV_Screen">
 	<property name="TextureId" value="62"/>
 	<property name="Group" value="txGroupWallCovering"/>
 	<property name="PaintCost" value="2" />
@@ -230,7 +228,7 @@ Textures we might want for (terrain) imposters
 
 <paint id="31" name="txName_Shutters1">
 	<property name="TextureId" value="64"/>
-	<property name="Group" value="txGroupWood"/>
+	<property name="Group" value="txGroupDecoration"/>
 	<property name="PaintCost" value="1" />
 </paint>
 
@@ -240,9 +238,9 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="33" name="txName_Bookcase">
-	<property name="TextureId" value="67"/>
-	<property name="Group" value="txGroupDecoration"/>
+<paint id="33" name="txName_stones_large">
+	<property name="TextureId" value="600"/>
+	<property name="Group" value="txGroupWood"/>
 	<property name="PaintCost" value="1" />
 </paint>
 
@@ -294,7 +292,11 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<!-- free -->
+<paint id="42" name="txName_Carpet6">
+	<property name="TextureId" value="436"/>
+	<property name="Group" value="txGroupWallCovering"/>
+	<property name="PaintCost" value="1" />
+</paint>
 
 <paint id="43" name="txName_Cabinet_old_wood">
 	<property name="TextureId" value="84"/>
@@ -398,16 +400,17 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="60" name="txName_Drywall_tan">
-	<property name="TextureId" value="215"/>
-	<property name="Group" value="txGroupMasonry"/>
-	<property name="PaintCost" value="2" />
+<paint id="60" name="txName_Cabinet_taupe">
+	<property name="TextureId" value="335"/>
+	<property name="Group" value="txGroupDecoration"/>
+	<property name="PaintCost" value="1" />
 </paint>
 
 <paint id="61" name="txName_Drywall_tan_baseboard">
 	<property name="TextureId" value="216"/>
 	<property name="Group" value="txGroupMasonry"/>
 	<property name="PaintCost" value="2" />
+	<property name="Hidden" value="true" />
 </paint>
 
 <paint id="62" name="txName_Drywall_ceiling">
@@ -424,6 +427,12 @@ Textures we might want for (terrain) imposters
 
 <paint id="64" name="txName_Brick01">
 	<property name="TextureId" value="227"/>
+	<property name="Group" value="txGroupFaux"/>
+	<property name="PaintCost" value="2" />
+</paint>
+
+<paint id="65" name="txName_BrickBrown">
+	<property name="TextureId" value="591"/>
 	<property name="Group" value="txGroupFaux"/>
 	<property name="PaintCost" value="2" />
 </paint>
@@ -482,17 +491,7 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="75" name="txName_Fridge_stainless">
-	<property name="TextureId" value="265"/>
-	<property name="Group" value="txGroupDecoration"/>
-	<property name="PaintCost" value="1" />
-</paint>
-
-<paint id="76" name="txName_Fridge_stainless_bottom">
-	<property name="TextureId" value="266"/>
-	<property name="Group" value="txGroupDecoration"/>
-	<property name="PaintCost" value="1" />
-</paint>
+<!-- free -->
 
 <paint id="77" name="txName_Fridge_stainless_side">
 	<property name="TextureId" value="267"/>
@@ -500,10 +499,10 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="3" />
 </paint>
 
-<paint id="78" name="txName_Curb_grass">
-	<property name="TextureId" value="269"/>
-	<property name="Group" value="txGroupFaux"/>
-	<property name="PaintCost" value="2" />
+<paint id="78" name="txName_Cabinet_taupe_drawer">
+	<property name="TextureId" value="336"/>
+	<property name="Group" value="txGroupDecoration"/>
+	<property name="PaintCost" value="1" />
 </paint>
 
 <paint id="79" name="txName_Cardboard_sides">
@@ -602,10 +601,10 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="2" />
 </paint>
 
-<paint id="95" name="txName_Curb_wasteland">
-	<property name="TextureId" value="326"/>
-	<property name="Group" value="txGroupMasonry"/>
-	<property name="PaintCost" value="2" />
+<paint id="95" name="txName_Cabinet_taupe_top">
+	<property name="TextureId" value="337"/>
+	<property name="Group" value="txGroupDecoration"/>
+	<property name="PaintCost" value="1" />
 </paint>
 
 <paint id="96" name="txName_Tanbrick">
@@ -638,28 +637,12 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="2" />
 </paint>
 
-<paint id="101" name="txName_Painting01">
-	<property name="TextureId" value="334"/>
+<!-- free -->
+
+<paint id="104" name="txName_trash_compactor">
+	<property name="TextureId" value="60"/>
 	<property name="Group" value="txGroupDecoration"/>
 	<property name="PaintCost" value="1" />
-</paint>
-
-<paint id="102" name="txName_Painting01_trim">
-	<property name="TextureId" value="335"/>
-	<property name="Group" value="txGroupPainted"/>
-	<property name="PaintCost" value="1" />
-</paint>
-
-<paint id="103" name="txName_Painting02">
-	<property name="TextureId" value="336"/>
-	<property name="Group" value="txGroupDecoration"/>
-	<property name="PaintCost" value="1" />
-</paint>
-
-<paint id="104" name="txName_Tile_floor3">
-	<property name="TextureId" value="340"/>
-	<property name="Group" value="txGroupWallCovering"/>
-	<property name="PaintCost" value="2" />
 </paint>
 
 <paint id="105" name="txName_Wall_oven">
@@ -722,7 +705,7 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="2" />
 </paint>
 
-<paint id="115" name="txName_Chaulkboard">
+<paint id="115" name="txName_Chalkboard">
 	<property name="TextureId" value="372"/>
 	<property name="Group" value="txGroupDecoration"/>
 	<property name="PaintCost" value="1" />
@@ -740,10 +723,10 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="118" name="txName_Curb_plainsgrass">
-	<property name="TextureId" value="376"/>
-	<property name="Group" value="txGroupFaux"/>
-	<property name="PaintCost" value="2" />
+<paint id="118" name="txName_oak">
+	<property name="TextureId" value="269"/>
+	<property name="Group" value="txGroupWood"/>
+	<property name="PaintCost" value="1" />
 </paint>
 
 <paint id="119" name="txName_Reinforced_wood">
@@ -758,10 +741,10 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="121" name="txName_Fur_rug">
+<paint id="121" name="txName_Crown_oak">
 	<property name="TextureId" value="382"/>
-	<property name="Group" value="txGroupWallCovering"/>
-	<property name="PaintCost" value="2" />
+	<property name="Group" value="txGroupWood"/>
+	<property name="PaintCost" value="1" />
 </paint>
 
 <paint id="122" name="txName_Window_plug04">
@@ -829,15 +812,13 @@ Textures we might want for (terrain) imposters
 	<property name="Group" value="txGroupDecoration"/>
 	<property name="PaintCost" value="1" />
 </paint>
+<!-- 133 free -->
 
-<paint id="133" name="txName_Supply_crate"> <!-- shipping crate -->
-	<property name="TextureId" value="423"/>
-	<property name="Group" value="txGroupDecoration"/>
-	<property name="PaintCost" value="1" />
+<paint id="134" name="txName_Tile_floor6">
+	<property name="TextureId" value="589"/>
+	<property name="Group" value="txGroupWallCovering"/>
+	<property name="PaintCost" value="2" />
 </paint>
-
-<!-- free -->
-
 <paint id="135" name="txName_Cold_beer">
 	<property name="TextureId" value="427"/>
 	<property name="Group" value="txGroupDecoration"/>
@@ -860,9 +841,14 @@ Textures we might want for (terrain) imposters
 	<property name="TextureId" value="430"/>
 	<property name="Group" value="txGroupPainted"/>
 	<property name="PaintCost" value="1" />
+	<property name="Hidden" value="true" />
 </paint>
 
-<!-- free -->
+<paint id="139" name="txName_Concrete_mustard">
+	<property name="TextureId" value="592"/>
+	<property name="Group" value="txGroupPainted"/>
+	<property name="PaintCost" value="1" />
+</paint>
 
 <paint id="140" name="txName_Blue_metal_roof">
 	<property name="TextureId" value="435"/>
@@ -870,13 +856,17 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="141" name="txName_Drywall_blue">
-	<property name="TextureId" value="436"/>
-	<property name="Group" value="txGroupPainted"/>
+<paint id="141" name="txName_Garage_door2">
+	<property name="TextureId" value="593"/>
+	<property name="Group" value="txGroupWood"/>
 	<property name="PaintCost" value="1" />
 </paint>
 
-<!-- free -->
+<paint id="142" name="txName_Tread_plate02">
+	<property name="TextureId" value="590"/>
+	<property name="Group" value="txGroupMetal"/>
+	<property name="PaintCost" value="3" />
+</paint>
 
 <paint id="143" name="txName_Tread_plate">
 	<property name="TextureId" value="445"/>
@@ -895,23 +885,13 @@ Textures we might want for (terrain) imposters
 	<property name="Group" value="txGroupMetal"/>
 	<property name="PaintCost" value="3" />
 </paint>
+<!-- free -->
 
-<paint id="146" name="txName_Pipe_metal">
-	<property name="TextureId" value="520"/>
-	<property name="Group" value="txGroupMetal"/>
-	<property name="PaintCost" value="3" />
-</paint>
-
-<paint id="147" name="txName_Pipe_metal2">
-	<property name="TextureId" value="523"/>
-	<property name="Group" value="txGroupMetal"/>
-	<property name="PaintCost" value="3" />
-</paint>
-
-<paint id="148" name="txName_Rusty_metal_base">
+<paint id="148" name="txName_Tarpaper">
 	<property name="TextureId" value="571"/>
-	<property name="Group" value="txGroupMetal"/>
+	<property name="Group" value="txGroupWood"/>
 	<property name="PaintCost" value="3" />
+	<property name="Hidden" value="true" />
 </paint>
 
 <paint id="149" name="txName_Storage_generic">
@@ -944,9 +924,9 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="154" name="txName_Concrete_brown">
+<paint id="154" name="txName_Wallpaper03">
 	<property name="TextureId" value="538"/>
-	<property name="Group" value="txGroupPainted"/>
+	<property name="Group" value="txGroupWallCovering"/>
 	<property name="PaintCost" value="1" />
 </paint>
 
@@ -962,10 +942,18 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="157" name="txName_Concrete_dark_red">
+<paint id="157" name="txName_Carpet5">
 	<property name="TextureId" value="541"/>
-	<property name="Group" value="txGroupPainted"/>
+	<property name="Group" value="txGroupWallCovering"/>
 	<property name="PaintCost" value="1" />
+</paint>
+
+<!-- 157 free -->
+
+<paint id="168" name="txName_Carpet4">
+	<property name="TextureId" value="555"/>
+	<property name="Group" value="txGroupWallCovering"/>
+	<property name="PaintCost" value="2" />
 </paint>
 
 <paint id="158" name="txName_Concrete_pink">
@@ -1051,7 +1039,102 @@ Textures we might want for (terrain) imposters
 	<property name="Group" value="txGroupWallCovering"/>
 	<property name="PaintCost" value="2" />
 </paint>
+
+<paint id="172" name="txName_Shingles_asphalt_diamond">
+	<property name="TextureId" value="581"/>
+	<property name="Group" value="txGroupWood"/>
+	<property name="PaintCost" value="1" />
+</paint>
+
+<paint id="173" name="txName_wallpaper01">
+	<property name="TextureId" value="582"/>
+	<property name="Group" value="txGroupWallCovering"/>
+	<property name="PaintCost" value="1" />
+</paint>
+
+<paint id="174" name="txName_crown">
+	<property name="TextureId" value="583"/>
+	<property name="Group" value="txGroupWood"/>
+	<property name="PaintCost" value="1" />
+</paint>
+
+<paint id="175" name="txName_wainscotting">
+	<property name="TextureId" value="584"/>
+	<property name="Group" value="txGroupWood"/>
+	<property name="PaintCost" value="1" />
+</paint>
+
+<paint id="176" name="txName_wallpaper02">
+	<property name="TextureId" value="585"/>
+	<property name="Group" value="txGroupWallCovering"/>
+	<property name="PaintCost" value="1" />
+</paint>
+
+<paint id="177" name="txName_wainscotting_Red">
+	<property name="TextureId" value="586"/>
+	<property name="Group" value="txGroupWood"/>
+	<property name="PaintCost" value="1" />
+</paint>
+
+<paint id="178" name="txName_wainscotting_Oak">
+	<property name="TextureId" value="587"/>
+	<property name="Group" value="txGroupWood"/>
+	<property name="PaintCost" value="1" />
+</paint>
+
+<paint id="179" name="txName_wood_ceiling">
+	<property name="TextureId" value="588"/>
+	<property name="Group" value="txGroupWood"/>
+	<property name="PaintCost" value="1" />
+</paint>
+
+<paint id="180" name="txName_Wall_oven_retro">
+	<property name="TextureId" value="601"/>
+	<property name="Group" value="txGroupDecoration"/>
+	<property name="PaintCost" value="1" />
+</paint>
+
 <!-- Localised up to here -->
 
+<!--
+<paint id="13" name="txName_Gravestone1">    Do we want this paintable?
+	<property name="TextureId" value="24"/>
+
+
+<paint id="30" name="txName_Black_TV_Screen">  metallic grey
+	<property name="TextureId" value="62"/>
+
+<paint id="14" name="txName_Pillcase">     makes no sense without BEING this block
+	<property name="TextureId" value="25"/>
+
+<paint id="75" name="txName_Fridge_stainless"> makes no sense without BEING this block
+	<property name="TextureId" value="265"/>
+
+<paint id="76" name="txName_Fridge_stainless_bottom"> makes no sense without BEING this block
+	<property name="TextureId" value="266"/>
+
+<paint id="105" name="txName_Wall_oven">  makes no sense without BEING this block
+	<property name="TextureId" value="341"/>
+
+<paint id="101" name="txName_Painting01">   Lake House / Bearded Guy
+	<property name="TextureId" value="334"/>
+
+<paint id="103" name="txName_Painting02">   Tree
+	<property name="TextureId" value="336"/>
+
+<paint id="122" name="txName_Window_plug04"> Should this even be a unique texture?
+	<property name="TextureId" value="384"/>
+
+
+<paint id="54" name="txName_Beercooler_sides"> solid black
+	<property name="TextureId" value="191"/>
+<paint id="102" name="txName_Painting01_trim"> solid black (do we need 2?)
+	<property name="TextureId" value="335"/>
+
+
+<paint id="122" name="txName_Window_plug04">
+	<property name="TextureId" value="384"/>
+This is a one-shot texture that is (badly) used on a single block.
+-->
 
 </paints>
