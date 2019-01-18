@@ -26,7 +26,7 @@ List of hacks to be removed:
 			<requirement name="EntityTagCompare" tags="player"/>
 			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0.75,0"/>
 			<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" />
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="staminamaxmodifier" operation="subtract" value="2"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="staminamaxmodifier" operation="subtract" value="2"/>
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="3.3"/>
 
 			-->
@@ -76,9 +76,9 @@ List of hacks to be removed:
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveAllNegativeBuffs" target="self"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="Health" operation="set" value="1000"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="Water" operation="set" value="1000"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="Stamina" operation="set" value="1000"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="set" value="1000"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Water" operation="set" value="1000"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="set" value="1000"/>
 
 			<!--
 			<triggered_effect trigger="onSelfBuffUpdate" action="LogMessage" message="Crouching"/>
@@ -122,14 +122,22 @@ List of hacks to be removed:
 	<buff name="messmeup" icon="ui_game_symbol_perk" icon_color="255,0,0">
 		<duration value="5"/>
 		<effect_group>
+			<passive_effect name="WaterChangeOT" operation="base_subtract" value="10"/>
 			<passive_effect name="StaminaMaxModifierOT" operation="base_subtract" value="10" />
 
 			<!--
 			<passive_effect name="StaminaMaxModifierOT" operation="base_subtract" value="10" />
 			<passive_effect name="HealthMaxModifierOT" operation="base_subtract" value="10" />
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="foodAmount" operation="set" value="-2"/>
-			<passive_effect name="WaterChangeOT" operation="base_subtract" value="10"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$foodAmount" operation="set" value="-2"/>
 			-->
+		</effect_group>
+	</buff>
+
+	<buff name="megadamage" icon="ui_game_symbol_destruction2" icon_color="132,0,155">
+		<effect_group>
+			<passive_effect name="EntityDamage" operation="perc_set" value="100"/>
+			<passive_effect name="BlockDamage" operation="perc_set" value="100"/>
+			<passive_effect name="StaminaLoss" operation="base_set" value="0" tags="primary,secondary"/>
 		</effect_group>
 	</buff>
 
@@ -158,20 +166,25 @@ List of hacks to be removed:
 	<buff name="buffStatusCheck" hidden="true" remove_on_death="false">
 		<stack_type value="ignore"/>
 		<update_rate value="2"/>
-		<effect_group>
 
+		<effect_group>
+			<requirement name="CVarCompare" cvar="$A17patch" operation="LT" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$A17patch" operation="set" value="1"/>
+		</effect_group>
+		<effect_group>
 				<!--
-				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="illnessChance"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="DrowningTimerMax"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$illnessChance"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$DrowningTimerMax"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="healthPerkIncrease"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="medicPerkIncrease"/>
 
 
-				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="DrunkMelee"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="DrunkStam"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="DrunkRes"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="DrunkHeal"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="PainTolerance"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$DrunkMelee"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$DrunkStam"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$DrunkRes"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$DrunkHeal"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$PainTolerance"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="KillStreakTargetCounter"/>
 				-->
 
@@ -202,15 +215,15 @@ List of hacks to be removed:
 
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffStatusHungry1">
 				<requirement name="StatComparePercModMaxToMax" stat="Stamina" operation="LTE" value="0.5"/>
-				<requirement name="StatComparePercModMaxToMax" stat="Stamina" operation="GT" value="0.3"/>
+				<requirement name="NotHasBuff" buff="buffStatusHungry2"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffStatusHungry2">
 				<requirement name="StatComparePercModMaxToMax" stat="Stamina" operation="LTE" value="0.3"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffStatusThirsty1">
-				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="LTE" value="0.5"/>
-				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GT" value="0.3"/>
+				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="LTE" value="0.75"/>
+				<requirement name="NotHasBuff" buff="buffStatusThirsty2"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffStatusThirsty2">
 				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="LTE" value="0.3"/>
@@ -294,6 +307,12 @@ List of hacks to be removed:
 				<requirement name="CVarCompare" cvar="_coretemp" operation="GT" value="-30"/>
 			</triggered_effect>
 
+			<!-- Weather Survival WETNESS -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffElementWet">
+				<requirement name="NotHasBuff" buff="god"/>
+				<requirement name="CVarCompare" cvar="_wetness" operation="GT" value=".15"/>
+			</triggered_effect>
+
 			<!-- Biome radiation effects (simplified! We only use "3" for now) -->
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffRadiation3">
 				<requirement name="NotHasBuff" buff="god"/>
@@ -360,45 +379,45 @@ List of hacks to be removed:
 		<!-- There is no trigger for a perk being lowered by the governing attribute dropping below a perk level's requirement. -->
 		<stack_type value="replace"/>
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="DrunkMelee" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="DrunkStam" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="DrunkRes" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="DrunkHeal" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="PainTolerance" operation="set" value="0"/>
+			<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$DrunkMelee" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$DrunkStam" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$DrunkRes" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$DrunkHeal" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$PainTolerance" operation="set" value="0"/> -->
 			<triggered_effect trigger="onSelfDied" action="ModifyCVar" target="self" cvar="KillStreakTargetCounter" operation="set" value="0"/>
 
-			<triggered_effect trigger="onSelfRespawn" action="ModifyCVar" target="self" cvar="DrunkMelee" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfRespawn" action="ModifyCVar" target="self" cvar="DrunkStam" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfRespawn" action="ModifyCVar" target="self" cvar="DrunkRes" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfRespawn" action="ModifyCVar" target="self" cvar="DrunkHeal" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfRespawn" action="ModifyCVar" target="self" cvar="PainTolerance" operation="set" value="0"/>
+			<!-- <triggered_effect trigger="onSelfRespawn" action="ModifyCVar" target="self" cvar="$DrunkMelee" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfRespawn" action="ModifyCVar" target="self" cvar="$DrunkStam" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfRespawn" action="ModifyCVar" target="self" cvar="$DrunkRes" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfRespawn" action="ModifyCVar" target="self" cvar="$DrunkHeal" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfRespawn" action="ModifyCVar" target="self" cvar="$PainTolerance" operation="set" value="0"/> -->
 
 			<!-- perkIntrinsicImmunity update; will likely have to overhaul diseases but... not now -->
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="illnessChance" operation="set" value="20">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$illnessChance" operation="set" value="20">
 				<requirement name="ProgressionLevel" progression_name="perkIntrinsicImmunity" operation="Equals" value="0"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="illnessChance" operation="set" value="18">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$illnessChance" operation="set" value="18">
 				<requirement name="ProgressionLevel" progression_name="perkIntrinsicImmunity" operation="Equals" value="1"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="illnessChance" operation="set" value="16">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$illnessChance" operation="set" value="16">
 				<requirement name="ProgressionLevel" progression_name="perkIntrinsicImmunity" operation="Equals" value="2"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="illnessChance" operation="set" value="14">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$illnessChance" operation="set" value="14">
 				<requirement name="ProgressionLevel" progression_name="perkIntrinsicImmunity" operation="Equals" value="3"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="illnessChance" operation="set" value="12">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$illnessChance" operation="set" value="12">
 				<requirement name="ProgressionLevel" progression_name="perkIntrinsicImmunity" operation="Equals" value="4"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="illnessChance" operation="set" value="10">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$illnessChance" operation="set" value="10">
 				<requirement name="ProgressionLevel" progression_name="perkIntrinsicImmunity" operation="Equals" value="5"/> </triggered_effect>
 
 			<!-- perkOlympicSwimmer update -->
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="DrowningTimerMax" operation="set" value="30">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$DrowningTimerMax" operation="set" value="30">
 				<requirement name="ProgressionLevel" progression_name="perkOlympicSwimmer" operation="Equals" value="0"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="DrowningTimerMax" operation="set" value="36">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$DrowningTimerMax" operation="set" value="36">
 				<requirement name="ProgressionLevel" progression_name="perkOlympicSwimmer" operation="Equals" value="1"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="DrowningTimerMax" operation="set" value="42">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$DrowningTimerMax" operation="set" value="42">
 				<requirement name="ProgressionLevel" progression_name="perkOlympicSwimmer" operation="Equals" value="2"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="DrowningTimerMax" operation="set" value="48">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$DrowningTimerMax" operation="set" value="48">
 				<requirement name="ProgressionLevel" progression_name="perkOlympicSwimmer" operation="Equals" value="3"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="DrowningTimerMax" operation="set" value="54">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$DrowningTimerMax" operation="set" value="54">
 				<requirement name="ProgressionLevel" progression_name="perkOlympicSwimmer" operation="Equals" value="4"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="DrowningTimerMax" operation="set" value="60">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$DrowningTimerMax" operation="set" value="60">
 				<requirement name="ProgressionLevel" progression_name="perkOlympicSwimmer" operation="Equals" value="5"/></triggered_effect>
 
 			<!-- perkPhysician update -->
@@ -422,17 +441,17 @@ List of hacks to be removed:
 
 			<!-- perkParkour update -->
 			<!-- 1m = .01414 -->
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="parkourBonus" operation="set" value="0">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$parkourBonus" operation="set" value="0">
 				<requirement name="ProgressionLevel" progression_name="perkParkour" operation="Equals" value="0"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="parkourBonus" operation="set" value=".0162">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$parkourBonus" operation="set" value=".0162">
 				<requirement name="ProgressionLevel" progression_name="perkParkour" operation="Equals" value="1"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="parkourBonus" operation="set" value=".0304">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$parkourBonus" operation="set" value=".0304">
 				<requirement name="ProgressionLevel" progression_name="perkParkour" operation="Equals" value="2"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="parkourBonus" operation="set" value=".0445">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$parkourBonus" operation="set" value=".0445">
 				<requirement name="ProgressionLevel" progression_name="perkParkour" operation="Equals" value="3"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="parkourBonus" operation="set" value=".0587">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$parkourBonus" operation="set" value=".0587">
 				<requirement name="ProgressionLevel" progression_name="perkParkour" operation="Equals" value="4"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="parkourBonus" operation="set" value=".0728">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$parkourBonus" operation="set" value=".0728">
 				<requirement name="ProgressionLevel" progression_name="perkParkour" operation="Equals" value="5"/> </triggered_effect>
 
 			<!-- perkDeadEye update
@@ -440,13 +459,13 @@ List of hacks to be removed:
 				T3	10	20	30
 				T4	20	30	40
 				T5	30	40	50 -->
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="KillStreakEffectBase" target="self" operation="set" value="0">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$KillStreakEffectBase" target="self" operation="set" value="0">
 				<requirement name="ProgressionLevel" progression_name="perkDeadEye" operation="LTE" value="3"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="KillStreakEffectBase" target="self" operation="set" value=".1">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$KillStreakEffectBase" target="self" operation="set" value=".1">
 				<requirement name="ProgressionLevel" progression_name="perkDeadEye" operation="Equals" value="4"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="KillStreakEffectBase" target="self" operation="set" value=".2">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$KillStreakEffectBase" target="self" operation="set" value=".2">
 				<requirement name="ProgressionLevel" progression_name="perkDeadEye" operation="Equals" value="5"/>
 			</triggered_effect>
 		</effect_group>
@@ -469,10 +488,10 @@ List of hacks to be removed:
 		<stack_type value="effect"/>
 		<duration value="0"/>
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="buffHarvestBonus" operation="set" value=".5"/>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" target="self" cvar="buffHarvestBonus" operation="add" value=".5"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$buffHarvestBonus" operation="set" value=".5"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" target="self" cvar="$buffHarvestBonus" operation="add" value=".5"/>
 			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="open_apache_artifact_chest"/>
-			<passive_effect name="HarvestCount" operation="base_add" value="@buffHarvestBonus"/>
+			<passive_effect name="HarvestCount" operation="base_add" value="@$buffHarvestBonus"/>
 			<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" target="self" buff="buffHarvest"/>
 			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" target="self" buff="buffHarvest"/>
 		</effect_group>
@@ -506,14 +525,21 @@ List of hacks to be removed:
 				<passive_effect name="HypothermalResist" operation="base_add" value="13"/>
 				<passive_effect name="HyperthermalResist" operation="base_add" value="13"/>
 		</effect_group>
+
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffNewbieCoat">
 				<requirement name="PlayerLevel" target="self" operation="GT" value="5"/>
 			</triggered_effect>
 
 			<!-- Taking care of food/water not being maxed with all the game start / initial chunk generation -->
-			<passive_effect name="WaterChangeOT" operation="base_add" value="1,1" duration="0,8"/>
-			<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="1,1" duration="0,8"/>
+			<passive_effect name="WaterChangeOT" operation="base_add" value="2,2" duration="0,8"/>
+			<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="2,2" duration="0,8"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="99"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="99"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$foodAmount" operation="add" value="48"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$waterAmount" operation="add" value="48"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffProcessConsumables"/>
 		</effect_group>
 		<!-- <duration value="0"/>
 		<update_rate value="180"/>
@@ -554,28 +580,28 @@ List of hacks to be removed:
 		<duration value="1.8"/>
 
 		<effect_group name="cleanup">
-			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="StayDownCombo" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$StayDownCombo" operation="set" value="0"/>
 <!--
-			<triggered_effect trigger="onSelfBuffStack" action="CVarLogValue" cvar="StayDownCombo"/>
-			<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="StayDownCombo"/>
+			<triggered_effect trigger="onSelfBuffStack" action="CVarLogValue" cvar="$StayDownCombo"/>
+			<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="$StayDownCombo"/>
 -->
 		</effect_group>
 
 		<effect_group name="perkT3">
 			<requirement name="ProgressionLevel" progression_name="perkStayDown" operation="Equals" value="3"/>
-			<requirement name="CVarCompare" cvar="StayDownCombo" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar="$StayDownCombo" operation="GTE" value="4"/>
 				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="self" buff="buffPerkStayDownBonus"/>
 				<triggered_effect trigger="onSelfBuffStack" action="RemoveBuff" target="self" buff="buffPerkStayDown"/>
 		</effect_group>
 		<effect_group name="perkT4">
 			<requirement name="ProgressionLevel" progression_name="perkStayDown" operation="Equals" value="4"/>
-			<requirement name="CVarCompare" cvar="StayDownCombo" operation="Equals" value="3"/>
+			<requirement name="CVarCompare" cvar="$StayDownCombo" operation="Equals" value="3"/>
 				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="self" buff="buffPerkStayDownBonus"/>
 				<triggered_effect trigger="onSelfBuffStack" action="RemoveBuff" target="self" buff="buffPerkStayDown"/>
 		</effect_group>
 		<effect_group name="perkT5">
 			<requirement name="ProgressionLevel" progression_name="perkStayDown" operation="Equals" value="5"/>
-			<requirement name="CVarCompare" cvar="StayDownCombo" operation="Equals" value="2"/>
+			<requirement name="CVarCompare" cvar="$StayDownCombo" operation="Equals" value="2"/>
 				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="self" buff="buffPerkStayDownBonus"/>
 				<triggered_effect trigger="onSelfBuffStack" action="RemoveBuff" target="self" buff="buffPerkStayDown"/>
 		</effect_group>
@@ -586,12 +612,12 @@ List of hacks to be removed:
 		<duration value="5"/>
 		<effect_group>
 			<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="melee"/>
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="StayDownCombo" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$StayDownCombo" operation="set" value="0"/>
 		</effect_group>
 
 		<effect_group name="perkT3">
 			<requirement name="ProgressionLevel" progression_name="perkStayDown" operation="Equals" value="3"/>
-			<requirement name="CVarCompare" cvar="StayDownCombo" operation="GTE" value="5"/>
+			<requirement name="CVarCompare" cvar="$StayDownCombo" operation="GTE" value="5"/>
 
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffPerkStayDownBonus"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="self" buff="buffPerkStayDownBonus"/>
@@ -603,13 +629,13 @@ List of hacks to be removed:
 		</effect_group>
 		<effect_group name="perkT4">
 			<requirement name="ProgressionLevel" progression_name="perkStayDown" operation="Equals" value="4"/>
-			<requirement name="CVarCompare" cvar="StayDownCombo" operation="Equals" value="4"/>
+			<requirement name="CVarCompare" cvar="$StayDownCombo" operation="Equals" value="4"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffPerkStayDownBonus"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="self" buff="buffPerkStayDownBonus"/>
 		</effect_group>
 		<effect_group name="perkT5">
 			<requirement name="ProgressionLevel" progression_name="perkStayDown" operation="Equals" value="5"/>
-			<requirement name="CVarCompare" cvar="StayDownCombo" operation="Equals" value="3"/>
+			<requirement name="CVarCompare" cvar="$StayDownCombo" operation="Equals" value="3"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffPerkStayDownBonus"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="self" buff="buffPerkStayDownBonus"/>
 		</effect_group>
@@ -645,24 +671,24 @@ List of hacks to be removed:
 		<duration value="1.8"/>
 
 		<effect_group name="cleanup">
-			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="GunslingerCombo" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$GunslingerCombo" operation="set" value="0"/>
 		</effect_group>
 
 		<effect_group name="perkT3">
 			<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="Equals" value="3"/>
-			<requirement name="CVarCompare" cvar="GunslingerCombo" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar="$GunslingerCombo" operation="GTE" value="4"/>
 				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="self" buff="buffPerkGunslingerBonus"/>
 				<triggered_effect trigger="onSelfBuffStack" action="RemoveBuff" target="self" buff="buffPerkGunslinger"/>
 		</effect_group>
 		<effect_group name="perkT4">
 			<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="Equals" value="4"/>
-			<requirement name="CVarCompare" cvar="GunslingerCombo" operation="Equals" value="3"/>
+			<requirement name="CVarCompare" cvar="$GunslingerCombo" operation="Equals" value="3"/>
 				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="self" buff="buffPerkGunslingerBonus"/>
 				<triggered_effect trigger="onSelfBuffStack" action="RemoveBuff" target="self" buff="buffPerkGunslinger"/>
 		</effect_group>
 		<effect_group name="perkT5">
 			<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="Equals" value="5"/>
-			<requirement name="CVarCompare" cvar="GunslingerCombo" operation="Equals" value="2"/>
+			<requirement name="CVarCompare" cvar="$GunslingerCombo" operation="Equals" value="2"/>
 				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="self" buff="buffPerkGunslingerBonus"/>
 				<triggered_effect trigger="onSelfBuffStack" action="RemoveBuff" target="self" buff="buffPerkGunslinger"/>
 		</effect_group>
@@ -673,13 +699,13 @@ List of hacks to be removed:
 		<duration value="5"/>
 		<effect_group>
 			<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="pistol,revolver"/>
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="GunslingerCombo" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$GunslingerCombo" operation="set" value="0"/>
 			<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="self" buff="buffPerkGunslingerBonus"/>
 		</effect_group>
 
 		<effect_group name="perkT3">
 			<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="Equals" value="3"/>
-			<requirement name="CVarCompare" cvar="GunslingerCombo" operation="GTE" value="5"/>
+			<requirement name="CVarCompare" cvar="$GunslingerCombo" operation="GTE" value="5"/>
 
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="LogMessage" message="buffPerkGunslinger: onSelfPrimaryActionEnd"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="LogMessage" message="buffPerkGunslinger: onSelfSecondaryActionEnd"/>
@@ -688,13 +714,13 @@ List of hacks to be removed:
 		</effect_group>
 		<effect_group name="perkT4">
 			<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="Equals" value="4"/>
-			<requirement name="CVarCompare" cvar="GunslingerCombo" operation="Equals" value="4"/>
+			<requirement name="CVarCompare" cvar="$GunslingerCombo" operation="Equals" value="4"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffPerkGunslingerBonus"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="self" buff="buffPerkGunslingerBonus"/>
 		</effect_group>
 		<effect_group name="perkT5">
 			<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="Equals" value="5"/>
-			<requirement name="CVarCompare" cvar="GunslingerCombo" operation="Equals" value="3"/>
+			<requirement name="CVarCompare" cvar="$GunslingerCombo" operation="Equals" value="3"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffPerkGunslingerBonus"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="self" buff="buffPerkGunslingerBonus"/>
 		</effect_group>
@@ -740,19 +766,19 @@ List of hacks to be removed:
 		<duration value="15"/>
 
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="KillStreakEffectCounter" target="self" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="KillStreakEffect1" target="self" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="KillStreakEffect1" target="self" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$KillStreakEffectCounter" target="self" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$KillStreakEffect1" target="self" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$KillStreakEffect1" target="self" operation="set" value="0"/>
 <!---->
 			<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" target="self" buff="buffPerkKillStreak">
 				<requirement name="CVarCompare" target="other" cvar="KillStreakTargetCounter" operation="GT" value="1"/>
 			</triggered_effect>
 
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="KillStreakEffectCounter" operation="add" value=".1">
-				<requirement name="CVarCompare" target="self" cvar="KillStreakEffectCounter" operation="LT" value=".3"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$KillStreakEffectCounter" operation="add" value=".1">
+				<requirement name="CVarCompare" target="self" cvar="$KillStreakEffectCounter" operation="LT" value=".3"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="KillStreakEffectCounter" operation="add" value=".1">
-				<requirement name="CVarCompare" target="self" cvar="KillStreakEffectCounter" operation="LT" value=".3"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$KillStreakEffectCounter" operation="add" value=".1">
+				<requirement name="CVarCompare" target="self" cvar="$KillStreakEffectCounter" operation="LT" value=".3"/>
 			</triggered_effect>
 
 		<!-- 1st shot	2nd shot	3rd shot
@@ -760,18 +786,18 @@ List of hacks to be removed:
 			T4	20	30	40
 			T5	30	40	50-->
 
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="KillStreakEffect1" target="self" operation="set" value="@KillStreakEffectCounter"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="KillStreakEffect1" target="self" operation="add" value="@KillStreakEffectBase"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$KillStreakEffect1" target="self" operation="set" value="@$KillStreakEffectCounter"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$KillStreakEffect1" target="self" operation="add" value="@$KillStreakEffectBase"/>
 
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="KillStreakEffect1" target="self" operation="set" value="@KillStreakEffectCounter"/>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="KillStreakEffect1" target="self" operation="add" value="@KillStreakEffectBase"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$KillStreakEffect1" target="self" operation="set" value="@$KillStreakEffectCounter"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$KillStreakEffect1" target="self" operation="add" value="@$KillStreakEffectBase"/>
 
-			<passive_effect name="EntityDamage" operation="perc_add" value="@KillStreakEffect1" tags="ranged"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$KillStreakEffect1" tags="ranged"/>
 		<!--
 			<triggered_effect trigger="onSelfBuffStart" action="LogMessage" message="     One shot buff started"/>
 			<triggered_effect trigger="onSelfBuffStack" action="LogMessage" message="     One shot buff STACKED"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="KillStreakEffectCounter"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="KillStreakEffect1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="$KillStreakEffectCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="$KillStreakEffect1"/>
 		-->
 		</effect_group>
 	</buff>
@@ -855,23 +881,23 @@ List of hacks to be removed:
 -->
 
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="bleedCounter" operation="set" value="1"/>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="bleedCounter" operation="add" value="1">
-				<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="3"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$bleedCounter" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$bleedCounter" operation="add" value="1">
+				<requirement name="CVarCompare" cvar="$bleedCounter" operation="LT" value="3"/>
 			</triggered_effect>
 
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="bleedAmount" operation="set" value="@bleedCounter"/>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="bleedAmount" operation="set" value="@bleedCounter"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$bleedAmount" operation="set" value="@$bleedCounter"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$bleedAmount" operation="set" value="@$bleedCounter"/>
 
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="bleedAmount" operation="divide" value="2">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$bleedAmount" operation="divide" value="2">
 				<requirement name="CVarCompare" cvar="CharismaticNature" operation="GTE" value="3"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="bleedAmount" operation="divide" value="2">
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$bleedAmount" operation="divide" value="2">
 				<requirement name="CVarCompare" cvar="CharismaticNature" operation="GTE" value="3"/>
 			</triggered_effect>
 
-			<passive_effect name="HealthMaxModifierOT" operation="base_subtract" value="@bleedAmount"/>
-			<passive_effect name="HealthChangeOT" operation="base_subtract" value="@bleedAmount"/>
+			<passive_effect name="HealthMaxModifierOT" operation="base_subtract" value="@$bleedAmount"/>
+			<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$bleedAmount"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_bleeding" play_in_head="true"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="buff_bleeding" play_in_head="true"/>
@@ -883,10 +909,10 @@ List of hacks to be removed:
 			<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" effect_name="Infected" intensity="0" fade="0"/>
 			<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffInjuryBleeding"/>
 <!--
-			<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="bleedCounter"/>
-			<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="bleedAmount"/>
-			<triggered_effect trigger="onSelfBuffStack" action="CVarLogValue" cvar="bleedCounter"/>
-			<triggered_effect trigger="onSelfBuffStack" action="CVarLogValue" cvar="bleedAmount"/>
+			<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="$bleedCounter"/>
+			<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="$bleedAmount"/>
+			<triggered_effect trigger="onSelfBuffStack" action="CVarLogValue" cvar="$bleedCounter"/>
+			<triggered_effect trigger="onSelfBuffStack" action="CVarLogValue" cvar="$bleedAmount"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0.75,0"/>
 			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" />
@@ -902,7 +928,7 @@ List of hacks to be removed:
 		<duration value=".1"/>
 
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="impactSpeed" operation="set" value="@_fallSpeed"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$impactSpeed" operation="set" value="@_fallSpeed"/>
 		</effect_group>
 
 		<effect_group>
@@ -912,26 +938,26 @@ List of hacks to be removed:
 				<requirement name="HasBuff" buff="buffLegSplinted"/>
 				<requirement name="HasBuff" buff="buffLegCast"/>
 			</requirements>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="impactSpeed" operation="add" value=".02828"/> <!-- add 2m -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$impactSpeed" operation="add" value=".02828"/> <!-- add 2m -->
 		</effect_group>
 
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="impactSpeed" operation="subtract" value="@parkourBonus"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$impactSpeed" operation="subtract" value="@$parkourBonus"/>
 
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="impactSpeed" operation="subtract" value=".02121">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$impactSpeed" operation="subtract" value=".02121">
 				<requirement name="HasBuff" buff="buffImpactBracing"/>
 			</triggered_effect>
 
 			<!--
 			<triggered_effect trigger="onSelfBuffStart" action="LogMessage" message="- - - - - - - - -"/>
 			<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="_fallSpeed"/>
-			<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="impactSpeed"/>
+			<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="$impactSpeed"/>
 			-->
 		</effect_group>
 
 		<effect_group>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="GTE" value=".2197"/>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".2315"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="GTE" value=".2197"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="LTE" value=".2315"/>
 			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="5"/>
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
@@ -939,8 +965,8 @@ List of hacks to be removed:
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="breakleg"/>
 		</effect_group>
 		<effect_group>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="GT" value=".2315"/>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".2472"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="GT" value=".2315"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="LTE" value=".2472"/>
 			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="5"/>
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
@@ -948,8 +974,8 @@ List of hacks to be removed:
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="breakleg"/>
 		</effect_group>
 		<effect_group>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="GT" value=".2472"/>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".259"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="GT" value=".2472"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="LTE" value=".259"/>
 			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="75"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="5"/>
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
@@ -957,7 +983,7 @@ List of hacks to be removed:
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="breakleg"/>
 		</effect_group>
 		<effect_group>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="GT" value=".259"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="GT" value=".259"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="5"/>
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffLegBroken"/>
@@ -969,8 +995,8 @@ List of hacks to be removed:
 			<requirement name="NotHasBuff" buff="buffLegSplinted"/>
 			<requirement name="NotHasBuff" buff="buffLegCast"/>
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="GTE" value=".204"/>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".2197"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="GTE" value=".204"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="LTE" value=".2197"/>
 			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="4"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffLegSprained"/>
@@ -986,8 +1012,8 @@ List of hacks to be removed:
 			<requirement name="NotHasBuff" buff="buffLegSplinted"/>
 			<requirement name="NotHasBuff" buff="buffLegCast"/>
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="GT" value=".2197"/>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".2315"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="GT" value=".2197"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="LTE" value=".2315"/>
 			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="4"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffLegSprained"/>
@@ -1003,8 +1029,8 @@ List of hacks to be removed:
 			<requirement name="NotHasBuff" buff="buffLegSplinted"/>
 			<requirement name="NotHasBuff" buff="buffLegCast"/>
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="GT" value=".2315"/>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".2472"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="GT" value=".2315"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="LTE" value=".2472"/>
 			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="75"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="4"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffLegSprained"/>
@@ -1020,7 +1046,7 @@ List of hacks to be removed:
 			<requirement name="NotHasBuff" buff="buffLegSplinted"/>
 			<requirement name="NotHasBuff" buff="buffLegCast"/>
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
-			<requirement name="CVarCompare" cvar="impactSpeed" operation="GT" value=".2472"/>
+			<requirement name="CVarCompare" cvar="$impactSpeed" operation="GT" value=".2472"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="4"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffLegSprained"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="player1painlg1">
@@ -1032,9 +1058,9 @@ List of hacks to be removed:
 		</effect_group>
 
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="impactSpeed" operation="subtract" value=".189"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="impactSpeed" operation="multiply" value="300"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="Health" operation="subtract" value="@impactSpeed"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$impactSpeed" operation="subtract" value=".189"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$impactSpeed" operation="multiply" value="300"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$impactSpeed"/>
 		</effect_group>
 
 		<!-- fall height jumping falling fall damage falldamage
@@ -1351,7 +1377,7 @@ List of hacks to be removed:
 			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
 
 			<triggered_effect name="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffInjuryStunned1">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
@@ -1424,6 +1450,40 @@ List of hacks to be removed:
 		</effect_group>
 	</buff>
 
+	<buff name="buffElementWet" name_key="buffElementWetName" description_key="buffElementWetDesc" tooltip_key="buffElementWetTooltip" icon="ui_game_symbol_wet">
+		<damage_type value="cold"/>
+		<stack_type value="ignore"/>
+		<update_rate value="2.4"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$WetTempModifier" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$WetTempModifierActive" operation="set" value="2"/>
+
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$WetTempModifier" operation="set" value="@_wetness"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$WetTempModifier" operation="multiply" value="16"/>
+
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$WetTempModifierActive" operation="set" value="@$WetTempModifier">
+				<requirement name="CVarCompare" cvar="$WetTempModifier" operation="GT" value="@$WetTempModifierActive"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$WetTempModifierActive" operation="subtract" value=".2"/>
+
+			<passive_effect name="HypothermalResist" operation="base_subtract" value="@$WetTempModifierActive"/>
+			<passive_effect name="HyperthermalResist" operation="base_add" value="@$WetTempModifierActive"/>
+
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffElementWet">
+				<requirement name="CVarCompare" cvar="$WetTempModifierActive" operation="LT" value="1"/>
+			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<requirements compare_type="or">
+				<requirement name="HoldingItemHasTags" tags="heldTorch" />
+				<requirement name="HasBuff" buff="buffCampfireAOE"/>
+			</requirements>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$WetTempModifierActive" operation="subtract" value=".4"/>
+		</effect_group>
+	</buff>
+
 	<buff name="buffShocked" description_key="buffShockedDesc" tooltip_key="buffShockedTooltip" icon="ui_game_symbol_electric_power" name_key="buffShockedName" icon_color="255,0,0">
 		<damage_type value="electrical"/>
 		<stack_type value="replace"/>
@@ -1477,11 +1537,11 @@ List of hacks to be removed:
 		<stack_type value="replace"/>
 		<duration value="2"/>
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BurningEnvironmentCounter" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="BurningEnvironmentCounter" operation="add" value="1"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$BurningEnvironmentCounter" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$BurningEnvironmentCounter" operation="add" value="1"/>
 <!--
-			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="BurningEnvironmentCounter"/>
-			<triggered_effect trigger="onSelfBuffStack" action="CVarLogValue" target="self" cvar="BurningEnvironmentCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$BurningEnvironmentCounter"/>
+			<triggered_effect trigger="onSelfBuffStack" action="CVarLogValue" target="self" cvar="$BurningEnvironmentCounter"/>
 -->
 
 			<passive_effect name="WaterChangeOT" operation="base_subtract" value="1"/>
@@ -1490,7 +1550,7 @@ List of hacks to be removed:
 		</effect_group>
 
 		<effect_group>
-				<requirement name="CVarCompare" cvar="BurningEnvironmentCounter" operation="GTE" value="5"/>
+				<requirement name="CVarCompare" cvar="$BurningEnvironmentCounter" operation="GTE" value="5"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffIsOnFire"/>
 			<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffIsOnFire"/>
 
@@ -1682,17 +1742,20 @@ List of hacks to be removed:
 		<effect_group>
 			<requirement name="PlayerLevel" target="self" operation="GT" value="5"/>
 
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathTraumaCounter" operation="set" value="1800">
+			<!--
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaCounter" operation="set" value="1800">
 				<requirement name="NotHasBuff" buff="buffNearDeathTrauma"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathTraumaCounter" operation="add" value="1800"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaCounter" operation="add" value="1800"/>
+			-->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaCounter" operation="set" value="3600"/>
 
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathTraumaReduction" operation="set" value="@NearDeathTraumaCounter"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathTraumaReduction" operation="divide" value="40"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaReduction" operation="set" value="@$NearDeathTraumaCounter"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaReduction" operation="divide" value="40"/>
 
-			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffNearDeathProtection"/>
-			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffNearDeathRegen"/>
-			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffNearDeathTrauma"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffNearDeathProtection"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffNearDeathRegen"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffNearDeathTrauma"/>
 		</effect_group>
 	</buff>
 
@@ -1705,14 +1768,14 @@ List of hacks to be removed:
 			<!-- Added: Custom read-only variable "_difficulty" -->
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffNearDeathTraumaCalculate"/>
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="NearDeathTraumaCounter" operation="subtract" value="@NearDeathTraumaReduction"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="$NearDeathTraumaCounter" operation="subtract" value="@$NearDeathTraumaReduction"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffNearDeathTraumaCalculate"/>
 
-			<passive_effect name="AttributeLevel" operation="base_subtract" value="@NearDeathTraumaEffect"/>
+			<passive_effect name="AttributeLevel" operation="base_subtract" value="@$NearDeathTraumaEffect"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
 
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" target="self" cvar="NearDeathTraumaCounter" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" target="self" cvar="$NearDeathTraumaCounter" operation="set" value="0"/>
 		</effect_group>
 	</buff>
 
@@ -1721,22 +1784,34 @@ List of hacks to be removed:
 		<stack_type value="ignore"/>
 		<duration value=".5"/>
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathTraumaEffect" operation="set" value="1">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaEffect" operation="set" value="2"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaEffect" operation="set" value="1">
+				<requirement name="PlayerLevel" operation="LTE" value="60"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathTraumaEffect" operation="set" value="2">
-				<requirement name="CVarCompare" cvar="NearDeathTraumaCounter" operation="GT" value="1800"/>
-				<requirement name="CVarCompare" cvar="NearDeathTraumaCounter" operation="LTE" value="3600"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaEffect" operation="set" value="1">
+				<requirement name="CVarCompare" cvar="$NearDeathTraumaCounter" operation="LT" value="1800"/>
+			</triggered_effect>
+
+			<!--
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaEffect" operation="set" value="1">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaEffect" operation="set" value="2">
+				<requirement name="CVarCompare" cvar="$NearDeathTraumaCounter" operation="GT" value="1800"/>
+				<requirement name="CVarCompare" cvar="$NearDeathTraumaCounter" operation="LTE" value="3600"/>
 				<requirement name="PlayerLevel" operation="GTE" value="20"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathTraumaEffect" operation="set" value="3">
-				<requirement name="CVarCompare" cvar="NearDeathTraumaCounter" operation="GT" value="3600"/>
-				<requirement name="CVarCompare" cvar="NearDeathTraumaCounter" operation="LTE" value="5400"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaEffect" operation="set" value="3">
+				<requirement name="CVarCompare" cvar="$NearDeathTraumaCounter" operation="GT" value="3600"/>
+				<requirement name="CVarCompare" cvar="$NearDeathTraumaCounter" operation="LTE" value="5400"/>
 				<requirement name="PlayerLevel" operation="GTE" value="40"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathTraumaEffect" operation="set" value="4">
-				<requirement name="CVarCompare" cvar="NearDeathTraumaCounter" operation="GT" value="5400"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathTraumaEffect" operation="set" value="4">
+				<requirement name="CVarCompare" cvar="$NearDeathTraumaCounter" operation="GT" value="5400"/>
 				<requirement name="PlayerLevel" operation="GTE" value="60"/>
 			</triggered_effect>
+			-->
 		</effect_group>
 	</buff>
 
@@ -1745,26 +1820,26 @@ List of hacks to be removed:
 		<stack_type value="ignore"/>
 		<duration value="100"/>
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathRegen" operation="set" value=".95">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathRegen" operation="set" value=".95">
 				<requirement name="PlayerLevel" target="self" operation="LT" value="4"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathRegen" operation="set" value=".9">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathRegen" operation="set" value=".9">
 				<requirement name="PlayerLevel" target="self" operation="Equals" value="4"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathRegen" operation="set" value=".8">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathRegen" operation="set" value=".8">
 				<requirement name="PlayerLevel" target="self" operation="Equals" value="5"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathRegen" operation="set" value=".7">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathRegen" operation="set" value=".7">
 				<requirement name="PlayerLevel" target="self" operation="Equals" value="6"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathRegen" operation="set" value=".6">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathRegen" operation="set" value=".6">
 				<requirement name="PlayerLevel" target="self" operation="Equals" value="7"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathRegen" operation="set" value=".5">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathRegen" operation="set" value=".5">
 				<requirement name="PlayerLevel" target="self" operation="Equals" value="8"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathRegen" operation="set" value=".4">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathRegen" operation="set" value=".4">
 				<requirement name="PlayerLevel" target="self" operation="Equals" value="9"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathRegen" operation="set" value=".3">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$NearDeathRegen" operation="set" value=".3">
 				<requirement name="PlayerLevel" target="self" operation="GT" value="9"/></triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" target="self" buff="buffNearDeathRegen">
 				<requirement name="PlayerLevel" target="self" operation="GTE" value="10"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" target="self" cvar="NearDeathRegen" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" target="self" cvar="$NearDeathRegen" operation="set" value="0"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveAllNegativeBuffs" target="self">
 				<requirement name="PlayerLevel" target="self" operation="LT" value="6"/></triggered_effect>
@@ -1772,24 +1847,24 @@ List of hacks to be removed:
 				<requirement name="PlayerLevel" target="self" operation="LT" value="11"/></triggered_effect>
 
 			<passive_effect name="HealthMaxModifierOT" operation="base_add" value="1">
-				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LTE" value="@NearDeathRegen"/>
+				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LTE" value="@$NearDeathRegen"/>
 			</passive_effect>
 			<passive_effect name="HealthChangeOT" operation="base_add" value="1">
-				<requirement name="StatComparePercCurrentToMax" stat="health" operation="LTE" value="@NearDeathRegen"/>
+				<requirement name="StatComparePercCurrentToMax" stat="health" operation="LTE" value="@$NearDeathRegen"/>
 			</passive_effect>
 			<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="1">
-				<requirement name="StatComparePercModMaxToMax" stat="Stamina" operation="LTE" value="@NearDeathRegen"/>
+				<requirement name="StatComparePercModMaxToMax" stat="Stamina" operation="LTE" value="@$NearDeathRegen"/>
 			</passive_effect>
 			<passive_effect name="WaterChangeOT" operation="base_add" value="1">
-				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="LTE" value="@NearDeathRegen"/>
+				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="LTE" value="@$NearDeathRegen"/>
 			</passive_effect>
 		</effect_group>
 
 		<effect_group>
-			<requirement name="StatComparePercModMaxToMax" stat="Stamina" operation="GTE" value="@NearDeathRegen"/>
-			<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GTE" value="@NearDeathRegen"/>
-			<requirement name="StatComparePercModMaxToMax" stat="Health" operation="GTE" value="@NearDeathRegen"/>
-			<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value="@NearDeathRegen"/>
+			<requirement name="StatComparePercModMaxToMax" stat="Stamina" operation="GTE" value="@$NearDeathRegen"/>
+			<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GTE" value="@$NearDeathRegen"/>
+			<requirement name="StatComparePercModMaxToMax" stat="Health" operation="GTE" value="@$NearDeathRegen"/>
+			<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value="@$NearDeathRegen"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffNearDeathRegen"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" target="self" buff="buffNearDeathRegen"/>
 		</effect_group>
@@ -1913,7 +1988,7 @@ List of hacks to be removed:
 			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllDysentery1">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
@@ -1932,7 +2007,7 @@ List of hacks to be removed:
 			<passive_effect name="WaterChangeOT" operation="base_subtract" value=".1" />
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllDysentery2">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -1955,7 +2030,7 @@ List of hacks to be removed:
 			<passive_effect name="HealthMaxModifierOT" operation="base_subtract" value="0.2" />
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllDysentery2">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -1969,7 +2044,7 @@ List of hacks to be removed:
 		<duration value="90"/>
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllFoodPoisoning1">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -1991,7 +2066,7 @@ List of hacks to be removed:
 			<passive_effect name="StaminaMaxModifierOT" operation="base_subtract" value="0.1" />
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllFoodPoisoning2">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -2013,7 +2088,7 @@ List of hacks to be removed:
 			<passive_effect name="StaminaMaxModifierOT" operation="base_subtract" value=".2" />
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllFoodPoisoning2">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -2028,7 +2103,7 @@ List of hacks to be removed:
 		<duration value="90"/>
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllPneumonia1">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,200" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,200" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -2052,7 +2127,7 @@ List of hacks to be removed:
 			<passive_effect name="StaminaMaxModifierOT" operation="base_subtract" value=".1" />
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllPneumonia1">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -2067,7 +2142,7 @@ List of hacks to be removed:
 		<duration value="90"/>
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllInfection1">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,200" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,200" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -2091,7 +2166,7 @@ List of hacks to be removed:
 			<passive_effect name="StaminaLoss" operation="perc_add" value="0.5"/>
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllInfection2">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,50" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,50" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -2115,7 +2190,7 @@ List of hacks to be removed:
 			<passive_effect name="StaminaLoss" operation="perc_add" value="0.7"/>
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllInfection3">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,30" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,30" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -2141,7 +2216,7 @@ List of hacks to be removed:
 			<passive_effect name="HealthMaxModifierOT" operation="base_subtract" value="2"/>
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllInfection3">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,20" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,20" operation="LTE" value="@$illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -2152,10 +2227,9 @@ List of hacks to be removed:
 	<buff name="buffStatusHungry1" name_key="buffStatusHungry1Name" description_key="buffStatusHungry1Desc" tooltip_key="buffStatusHungry1Tooltip" icon="ui_game_symbol_hunger" icon_color="255,128,0">
 		<damage_type value="Starvation"/>
 		<stack_type value="ignore"/>
-		<duration value="180"/>
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffStatusHungry1">
-				<requirement name="StatComparePercModMaxToMax" stat="Stamina" operation="GT" value="0.6"/>
+				<requirement name="StatComparePercModMaxToMax" stat="Stamina" operation="GT" value="0.52"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="PlayerMaleHungry" play_in_head="true">
 				<requirement name="IsMale"/>
@@ -2170,13 +2244,13 @@ List of hacks to be removed:
 		<damage_type value="Starvation"/>
 		<damage_source value="Internal"/>
 		<stack_type value="ignore"/>
-		<update_rate value="5"/>
+		<update_rate value="2.2"/>
 		<effect_group>
 			<requirement name="NotHasBuff" buff="buffHealStaminaMax"/>
 			<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".1"/>
 			<passive_effect name="HealthMaxModifierOT" operation="base_subtract" value="0.05"/>
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="Health" operation="subtract" value=".3">
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value=".3">
 					<requirement name="StatComparePercModMaxToMax" stat="stamina" operation="LT" value=".26"/>
 			</triggered_effect>
 		</effect_group>
@@ -2196,20 +2270,21 @@ List of hacks to be removed:
 			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="PlayerFemaleHungry" play_in_head="true">
 				<requirement name="IsMale" invert="true"/>
 			</triggered_effect>
+		</effect_group>
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffStatusHungry2">
-				<requirement name="StatComparePercModMaxToMax" stat="Stamina" operation="GT" value="0.3"/>
-			</triggered_effect>
+		<effect_group>
+			<requirement name="StatComparePercModMaxToMax" stat="Stamina" operation="GTE" value="0.32"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffStatusHungry2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffStatusHungry1"/>
 		</effect_group>
 	</buff>
 
 	<buff name="buffStatusThirsty1" name_key="buffStatusThirsty1Name" description_key="buffStatusThirsty1Desc" tooltip_key="buffStatusThirsty1Tooltip" icon="ui_game_symbol_water" icon_color="255,128,0">
 		<damage_type value="Dehydration"/>
 		<stack_type value="ignore"/>
-		<duration value="180"/>
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffStatusThirsty1">
-				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GT" value="0.6"/>
+				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GT" value="0.77"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
@@ -2218,12 +2293,12 @@ List of hacks to be removed:
 		<damage_type value="Dehydration"/>
 		<damage_source value="Internal"/>
 		<stack_type value="ignore"/>
-		<update_rate value="5"/>
+		<update_rate value="2.2"/>
 		<effect_group>
 			<requirement name="NotHasBuff" buff="buffHealWaterMax"/>
 			<passive_effect name="HealthMaxModifierOT" operation="base_subtract" value=".1"/>
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="Health" operation="subtract" value=".5">
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value=".5">
 				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="LTE" value=".26"/>
 			</triggered_effect>
 		</effect_group>
@@ -2233,12 +2308,13 @@ List of hacks to be removed:
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffStatusThirsty1"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" target="self" buff="buffStatusThirsty1"/>
+		</effect_group>
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffStatusThirsty2">
-				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GT" value="0.3"/>
-			</triggered_effect>
+		<effect_group>
+			<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GTE" value="0.32"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffStatusThirsty2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffStatusThirsty1"/>
 		</effect_group>
 	</buff>
 
@@ -2278,7 +2354,7 @@ List of hacks to be removed:
 <!-- ****************** Healing Item Buffs: Medical, Food, Drink ****************** -->
 	<buff name="buffProcessConsumables" hidden="true">
 		<stack_type value="ignore"/>
-		<duration value=".01"/>
+		<duration value=".05"/>
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffHealHealth">
 				<requirement name="CVarCompare" target="self" cvar="medicalHealthAmount" operation="GT" value="0"/></triggered_effect>
@@ -2287,9 +2363,19 @@ List of hacks to be removed:
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffHealHealthMax">
 				<requirement name="CVarCompare" target="self" cvar="maxHealthAmount" operation="GT" value="0"/></triggered_effect>
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffHealStaminaMax">
-				<requirement name="CVarCompare" target="self" cvar="foodAmount" operation="GT" value="0"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffHealWaterMax">
-				<requirement name="CVarCompare" target="self" cvar="waterAmount" operation="GT" value="0"/></triggered_effect>
+				<requirement name="CVarCompare" target="self" cvar="$foodAmountAdd" operation="GT" value="0"/></triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="CVarCompare" target="self" cvar="$waterAmountAdd" operation="GT" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$waterStaminaRegenAmount" operation="add" value="@$waterAmountAdd"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$waterAmountAdd2" operation="add" value="@$waterAmountAdd"/>
+
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffHealWaterMax"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffWaterStaminaRegen"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" target="self" cvar="$waterAmountAdd" operation="set" value="0"/>
+
+			<!-- <triggered_effect trigger="onSelfBuffRemove" action="LogMessage" message="water buff triggered"/> -->
 		</effect_group>
 	</buff>
 
@@ -2298,13 +2384,13 @@ List of hacks to be removed:
 		<update_rate value="1"/>
 		<effect_group>
 			<requirement name="CVarCompare" target="self" cvar="foodHealthAmount" operation="GTE" value="0"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="Health" operation="add" value=".5"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="add" value=".5"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="foodHealthAmount" operation="subtract" value=".5"/>
 		</effect_group>
 
 		<effect_group>
 			<requirement name="CVarCompare" target="self" cvar="medicalHealthAmount" operation="GT" value="0"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="Health" operation="add" value="2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="add" value="2"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="medicalHealthAmount" operation="subtract" value="2"/>
 		</effect_group>
 
@@ -2337,64 +2423,58 @@ List of hacks to be removed:
 	</buff>
 
 	<!-- digesting food -->
+	<!-- $foodAmountAdd is not displayed to the player and is the amount of Max Stamina that consuming food items stacks up.
+		$foodAmount  is ADDED to the food stat for display purposes. The internal food stat number range is still = Max Stamina. -->
 	<buff name="buffHealStaminaMax" name_key="buffHealStaminaMaxName" tags="food" icon="ui_game_symbol_hunger" icon_color="0,200,0" hidden="true">
 		<stack_type value="ignore"/>
-		<effect_group>
-			<requirement name="CVarCompare" target="self" cvar="foodSuspend" operation="Equals" value="0"/>
+		<update_rate value=".1"/>
+		<effect_group name="heal Stamina Max from $foodAmount reserve">
+			<requirement name="IsStatAtMax" stat="maxstamina" invert="true"/>
+			<requirement name="CVarCompare" cvar="$foodAmount" operation="GTE" value=".1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" target="self" stat="stamina" value_type="modifiedmax" operation="add" value=".1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="$foodAmount" operation="subtract" value=".1"/>
 
-			<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="1"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="foodAmount" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBloodDrawKitRecover">
+					<requirement name="CVarCompare" cvar="$BloodDrawKitCounter" operation="GT" value="0"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,800" operation="LTE" value="2"/>
+				</triggered_effect>
+		</effect_group>
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBloodDrawKitRecover">
-				<requirement name="CVarCompare" cvar="BloodDrawKitCounter" operation="GT" value="0"/>
-				<requirement name="RandomRoll" seed_type="Random" min_max="0,80" operation="LTE" value="2"/>
-			</triggered_effect>
-
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="foodSuspend" operation="set" value="1">
-				<requirement name="StatComparePercModMaxToMax" stat="stamina" operation="GTE" value=".998"/>
-			</triggered_effect>
+		<effect_group name="converting $foodAmountAdd into $foodAmount">
+			<requirement name="CVarCompare" cvar="$foodAmountAdd" operation="GTE" value=".1"/>
+			<requirement name="CVarCompare" cvar="$foodAmount" operation="LT" value="50"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$foodAmount" operation="add" value=".1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$foodAmountAdd" operation="subtract" value=".1"/>
 		</effect_group>
 
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffHealStaminaMax">
-				<requirement name="CVarCompare" cvar="foodAmount" operation="LTE" value="-1"/>
+				<requirement name="CVarCompare" cvar="$foodAmount" operation="LT" value=".1"/>
+				<requirement name="CVarCompare" cvar="$foodAmountAdd" operation="LT" value=".1"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="foodAmount" operation="set" value="0">
-				<requirement name="CVarCompare" cvar="foodAmount" operation="LTE" value="0"/>
-			</triggered_effect>
-
-			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffHealStaminaMaxStatus">
-				<requirement name="NotHasBuff" buff="buffHealStaminaMaxStatus"/>
-				<requirement name="StatComparePercModMaxToMax" stat="stamina" operation="LTE" value=".985"/>
-			</triggered_effect>
-
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="foodSuspend" operation="set" value="0">
-				<requirement name="StatComparePercModMaxToMax" stat="stamina" operation="LTE" value=".99"/>
-			</triggered_effect>
-
-			<!-- how much you can overeat -->
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="foodAmount" operation="set" value="25">
-				<requirement name="CVarCompare" cvar="foodAmount" operation="GT" value="25"/>
-				<requirement name="StatComparePercModMaxToMax" stat="stamina" operation="GTE" value=".99"/>
-			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$foodAmount" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$foodAmountAdd" operation="set" value="0"/>
 		</effect_group>
 
-		<!--
-		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="LogMessage" message="- - - - Digesting food - - - -"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="foodSuspend"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="foodAmount"/>
+		<effect_group name="how much you can overeat">
+			<requirement name="CVarCompare" cvar="$foodAmount" operation="GTE" value="50"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$foodAmount" operation="set" value="50"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$foodAmountAdd" operation="set" value="0"/>
 		</effect_group>
-		-->
+
+		<effect_group> <!-- temp workaround -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="foodAmount" operation="set" value="@$foodAmount"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="foodAmount" operation="set" value="@$foodAmount"/>
+		</effect_group>
 	</buff>
 
-	<!-- digesting food, displayed status -->
-	<buff name="buffHealStaminaMaxStatus" name_key="buffHealStaminaMaxStatusName" description_key="buffHealStaminaMaxStatusDesc" tags="food" icon="ui_game_symbol_hunger">
+	<!-- digesting food, displayed status; deprecated -->
+	<buff name="buffHealStaminaMaxStatus" name_key="buffHealStaminaMaxStatusName" description_key="buffHealStaminaMaxStatusDesc" tags="food" icon="ui_game_symbol_hunger" hidden="true">
 		<stack_type value="ignore"/>
 		<effect_group>
 			<requirements compare_type="or">
 				<requirement name="StatComparePercModMaxToMax" stat="stamina" operation="GTE" value=".99"/>
-				<requirement name="CVarCompare" cvar="foodAmount" operation="LTE" value="0"/>
+				<requirement name="CVarCompare" cvar="$foodAmountAdd" operation="LTE" value="0"/>
 				<requirement name="NotHasBuff" buff="buffHealStaminaMax"/>
 			</requirements>
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffHealStaminaMaxStatus"/>
@@ -2408,13 +2488,13 @@ List of hacks to be removed:
 		<update_rate value="2"/>
 		<effect_group>
 			<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="-12.5"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="water" operation="subtract" value="50"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="water" operation="subtract" value="50"/>
 			<passive_effect name="WalkSpeed" operation="perc_add" duration="0,4" value="-.9,-.7"/>
 			<passive_effect name="RunSpeed" operation="perc_add" duration="0,4" value="-.9,-.7"/>
 			<passive_effect name="CrouchSpeed" operation="perc_add" duration="0,4" value="-.9,-.7"/>
 
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="foodAmount" operation="set" value="1">
-				<requirement name="CVarCompare" target="self" cvar="foodAmount" operation="GT" value="1"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="$foodAmount" operation="set" value="1">
+				<requirement name="CVarCompare" target="self" cvar="$foodAmount" operation="GT" value="1"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.4" fade=".8" effect_name="Drunk"/>
@@ -2431,24 +2511,78 @@ List of hacks to be removed:
 	</buff>
 
 	<!-- digesting water -->
+	<!-- if water LT .75, regen speed is .75; if water LT .5, regen speed is .5; if water LT .25, regen speed is .25 -->
+			<!--
 	<buff name="buffHealWaterMax" name_key="buffHealWaterMaxName" description_key="buffHealWaterMaxDesc" tags="drink" icon="ui_game_symbol_water">
 		<stack_type value="ignore"/>
 		<update_rate value="2"/>
 		<effect_group>
 			<passive_effect name="StaminaChangeOT" operation="perc_add" value=".15"/>
 			<passive_effect name="WaterChangeOT" operation="base_add" value=".565"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="waterAmount" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="waterAmount" operation="set" value="160">
-				<requirement name="CVarCompare" target="self" cvar="waterAmount" operation="GT" value="160"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="$waterAmount" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="$waterAmount" operation="set" value="100">
+				<requirement name="CVarCompare" target="self" cvar="$waterAmount" operation="GT" value="100"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffHealWaterMax">
-				<requirement name="CVarCompare" target="self" cvar="waterAmount" operation="LTE" value="0"/>
+				<requirement name="CVarCompare" target="self" cvar="$waterAmount" operation="LTE" value="0"/>
+			</triggered_effect>
+		</effect_group>
+	</buff>
+			-->
+
+	<buff name="buffHealWaterMax" name_key="buffHealWaterMaxName" description_key="buffHealWaterMaxDesc" tags="drink" icon="ui_game_symbol_water" hidden="true">
+		<stack_type value="ignore"/>
+		<update_rate value=".1"/>
+		<effect_group name="heal water stat from $waterAmount reserve">
+			<requirement name="IsStatAtMax" stat="water" invert="true"/>
+			<requirement name="CVarCompare" cvar="$waterAmount" operation="GTE" value=".1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" target="self" stat="water" operation="add" value=".1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="$waterAmount" operation="subtract" value=".1"/>
+		</effect_group>
+
+		<effect_group name="converting $waterAmountAdd2 into $waterAmount">
+			<requirement name="CVarCompare" cvar="$waterAmountAdd2" operation="GTE" value=".1"/>
+			<requirement name="CVarCompare" cvar="$waterAmount" operation="LT" value="50"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$waterAmount" operation="add" value=".1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$waterAmountAdd2" operation="subtract" value=".1"/>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffHealWaterMax">
+				<requirement name="CVarCompare" cvar="$waterAmount" operation="LT" value=".1"/>
+				<requirement name="CVarCompare" cvar="$waterAmountAdd2" operation="LT" value=".1"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$waterAmount" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$waterAmountAdd2" operation="set" value="0"/>
+		</effect_group>
+
+		<effect_group name="how much you can overdrink">
+			<requirement name="CVarCompare" cvar="$waterAmount" operation="GTE" value="50"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$waterAmount" operation="set" value="50"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$waterAmountAdd2" operation="set" value="0"/>
+		</effect_group>
+
+		<effect_group> <!-- temp workaround -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="waterAmount" operation="set" value="@$waterAmount"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="waterAmount" operation="set" value="@$waterAmount"/>
+		</effect_group>
+	</buff>
+
+	<buff name="buffWaterStaminaRegen" name_key="buffWaterStaminaRegenName" description_key="buffWaterStaminaRegenDesc" tags="drink" icon="ui_game_symbol_water">
+		<stack_type value="ignore"/>
+		<update_rate value="2"/>
+		<effect_group>
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value=".15"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="$waterStaminaRegenAmount" operation="subtract" value="1"/>
+
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="$waterStaminaRegenAmount" operation="set" value="150">
+				<requirement name="CVarCompare" target="self" cvar="$waterStaminaRegenAmount" operation="GT" value="150"/>
 			</triggered_effect>
 
-			<!--
-			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="waterAmount"/>
-			-->
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffWaterStaminaRegen">
+				<requirement name="CVarCompare" target="self" cvar="$waterStaminaRegenAmount" operation="LTE" value="0"/>
+			</triggered_effect>
 		</effect_group>
 	</buff>
 
@@ -2499,7 +2633,7 @@ List of hacks to be removed:
 			<passive_effect name="HealthLoss" operation="perc_subtract" value="0.1"/>
 			<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.222"/>
 
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="Health" operation="add" value="40"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="40"/>
 		</effect_group>
 	</buff>
 
@@ -2527,14 +2661,15 @@ List of hacks to be removed:
 		<effect_group name="Side effects may include...">
 			<passive_effect name="StaminaMaxModifierOT" operation="base_subtract" value="0.1"/>
 			<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.08"/>
+			<!--
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="$AntibioticsTick" operation="add" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$AntibioticsTick"/>
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="AntibioticsTick" operation="add" value="1"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="AntibioticsTick"/>
-
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" target="self" cvar="AntibioticsTick" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" target="self" cvar="$AntibioticsTick" operation="set" value="0"/>
+			-->
 		</effect_group>
 
-		<effect_group name="man, you really want those side effects...">
+		<effect_group name="man, you really want those side effects">
 			<requirement name="HasBuff" buff="buffDrugHerbalAntibiotics"/>
 				<passive_effect name="StaminaMaxModifierOT" operation="base_subtract" value="0.05"/>
 				<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.05"/>
@@ -2719,8 +2854,8 @@ List of hacks to be removed:
 		<duration value="60"/>
 		<update_rate value="30"/>
 		<effect_group>
-			<passive_effect name="EntityDamage" operation="perc_add" value="@DrunkMelee" tags="melee"/>
-			<passive_effect name="StaminaChangeOT" operation="base_add" value="@DrunkStam"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$DrunkMelee" tags="melee"/>
+			<passive_effect name="StaminaChangeOT" operation="base_add" value="@$DrunkStam"/>
 
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDrunk2" target="self">
 				<requirement name="CVarCompare" cvar="beers" target="self" operation="GT" value="3"/>
@@ -2742,10 +2877,10 @@ List of hacks to be removed:
 		<stack_type value="duration"/>
 		<duration value="120"/>
 		<effect_group>
-			<passive_effect name="EntityDamage" operation="perc_add" value="@DrunkMelee" tags="melee"/>
-			<passive_effect name="StaminaChangeOT" operation="base_add" value="@DrunkStam"/>
-			<passive_effect name="HealthLoss" operation="perc_subtract" value="@DrunkRes"/>
-			<passive_effect name="HealthChangeOT" operation="base_add" value="@DrunkHeal"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="@$DrunkMelee" tags="melee"/>
+			<passive_effect name="StaminaChangeOT" operation="base_add" value="@$DrunkStam"/>
+			<passive_effect name="HealthLoss" operation="perc_subtract" value="@$DrunkRes"/>
+			<passive_effect name="HealthChangeOT" operation="base_add" value="@$DrunkHeal"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" effect_name="Drunk"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Drunk"/>
@@ -2767,13 +2902,13 @@ List of hacks to be removed:
 		<damage_type value="stun"/>
 		<update_rate value="2.1"/>
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="encumbranceEffect" target="self" operation="set" value="@_encumberedslots"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="encumbranceEffect" target="self" operation="multiply" value="0.026"/> <!--0.026% X 27 = 0.70-->
-			<passive_effect name="Mobility" operation="perc_subtract"  value="@encumbranceEffect"/>
-			<!--<passive_effect name="JumpStrength" operation="perc_subtract"  value="@encumbranceEffect"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$encumbranceEffect" target="self" operation="set" value="@_encumberedslots"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$encumbranceEffect" target="self" operation="multiply" value="0.026"/> <!--0.026% X 27 = 0.70-->
+			<passive_effect name="Mobility" operation="perc_subtract"  value="@$encumbranceEffect"/>
+			<!--<passive_effect name="JumpStrength" operation="perc_subtract"  value="@$encumbranceEffect"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="_encumbrance"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="_encumberedslots"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="encumbranceEffect"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$encumbranceEffect"/>
 			-->
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffEncumberedInv">
 				<requirement name="CVarCompare" cvar="_encumberedslots" operation="LT" value="1"/>
@@ -2789,10 +2924,10 @@ List of hacks to be removed:
 <!--
 icon="ui_game_symbol_pack_mule"
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="encumbranceEffect" target="self" operation="set" value="@_encumbrance"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="encumbranceEffect" target="self" operation="multiply" value="0.7"/>
-			<passive_effect name="Mobility" operation="perc_subtract"  value="@encumbranceEffect"/>
-			<passive_effect name="JumpStrength" operation="perc_subtract"  value="@encumbranceEffect"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$encumbranceEffect" target="self" operation="set" value="@_encumbrance"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$encumbranceEffect" target="self" operation="multiply" value="0.7"/>
+			<passive_effect name="Mobility" operation="perc_subtract"  value="@$encumbranceEffect"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract"  value="@$encumbranceEffect"/>
 -->
 		</effect_group>
 	</buff>
@@ -2805,14 +2940,14 @@ icon="ui_game_symbol_pack_mule"
 				<requirement name="CVarCompare" cvar="_underwater" operation="NotEquals" value="1"/>
 			</triggered_effect>
 
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="DrowningTimer" operation="set" value="@DrowningTimerMax"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DrowningTimer" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$DrowningTimer" operation="set" value="@$DrowningTimerMax"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$DrowningTimer" operation="subtract" value="1"/>
 
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffDrowning2">
-				<requirement name="CVarCompare" cvar="DrowningTimer" operation="LTE" value="0"/>
+				<requirement name="CVarCompare" cvar="$DrowningTimer" operation="LTE" value="0"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffDrowning1">
-				<requirement name="CVarCompare" cvar="DrowningTimer" operation="LTE" value="0"/>
+				<requirement name="CVarCompare" cvar="$DrowningTimer" operation="LTE" value="0"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
@@ -2824,14 +2959,14 @@ icon="ui_game_symbol_pack_mule"
 				<requirement name="CVarCompare" cvar="_underwater" operation="NotEquals" value="1"/>
 			</triggered_effect>
 
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="DrowningTimer" operation="set" value="@DrowningTimerMax"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DrowningTimer" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$DrowningTimer" operation="set" value="@$DrowningTimerMax"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$DrowningTimer" operation="subtract" value="1"/>
 
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffDrowning3">
-				<requirement name="CVarCompare" cvar="DrowningTimer" operation="LTE" value="0"/>
+				<requirement name="CVarCompare" cvar="$DrowningTimer" operation="LTE" value="0"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffDrowning2">
-				<requirement name="CVarCompare" cvar="DrowningTimer" operation="LTE" value="0"/>
+				<requirement name="CVarCompare" cvar="$DrowningTimer" operation="LTE" value="0"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
@@ -2879,39 +3014,39 @@ icon="ui_game_symbol_pack_mule"
 		<update_rate value="900"/>
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffAnemia1"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BloodDrawKitCounter" operation="set" value="1"/>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="BloodDrawKitCounter" operation="add" value="1"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$BloodDrawKitCounter" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$BloodDrawKitCounter" operation="add" value="1"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBloodDrawKitBlocker"/>
 			<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffBloodDrawKitBlocker"/>
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="BloodDrawKitCounter" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$BloodDrawKitCounter" operation="subtract" value="1"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBloodDrawKitMaster">
-				<requirement name="CVarCompare" cvar="BloodDrawKitCounter" operation="LTE" value="0"/>
+				<requirement name="CVarCompare" cvar="$BloodDrawKitCounter" operation="LTE" value="0"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBloodDrawKitUpdate"/>
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBloodDrawKitUpdate"/>
 			<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffBloodDrawKitUpdate"/>
 
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="BloodDrawKitCounter" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$BloodDrawKitCounter" operation="set" value="0"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffAnemia1"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffAnemia2"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffAnemia3"/>
 
-			<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="BloodDrawKitCounter"/>
-			<triggered_effect trigger="onSelfBuffStack" action="CVarLogValue" cvar="BloodDrawKitCounter"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="BloodDrawKitCounter"/>
+			<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="$BloodDrawKitCounter"/>
+			<triggered_effect trigger="onSelfBuffStack" action="CVarLogValue" cvar="$BloodDrawKitCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="$BloodDrawKitCounter"/>
 		</effect_group>
 	</buff>
 
-	<buff name="buffBloodDrawKitRecover" hidden="true"> <!-- recover from BloodDrawKitCounter by digesting food -->
+	<buff name="buffBloodDrawKitRecover" hidden="true"> <!-- recover from $BloodDrawKitCounter by digesting food -->
 		<damage_type value="Disease"/>
 		<duration value=".1"/>
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BloodDrawKitCounter" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$BloodDrawKitCounter" operation="subtract" value="1"/>
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBloodDrawKitUpdate"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffBloodDrawKitMaster">
-				<requirement name="CVarCompare" cvar="BloodDrawKitCounter" operation="LTE" value="0"/>
+				<requirement name="CVarCompare" cvar="$BloodDrawKitCounter" operation="LTE" value="0"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
@@ -2921,29 +3056,29 @@ icon="ui_game_symbol_pack_mule"
 		<duration value=".1"/>
 		<effect_group>
 			<requirement name="NotHasBuff" buff="buffAnemia1"/>
-			<requirement name="CVarCompare" cvar="BloodDrawKitCounter" operation="GTE" value="1"/>
-			<requirement name="CVarCompare" cvar="BloodDrawKitCounter" operation="LTE" value="2"/>
+			<requirement name="CVarCompare" cvar="$BloodDrawKitCounter" operation="GTE" value="1"/>
+			<requirement name="CVarCompare" cvar="$BloodDrawKitCounter" operation="LTE" value="2"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffAnemia1"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffAnemia2"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffAnemia3"/>
 		</effect_group>
 		<effect_group>
 			<requirement name="NotHasBuff" buff="buffAnemia2"/>
-			<requirement name="CVarCompare" cvar="BloodDrawKitCounter" operation="Equals" value="3"/>
+			<requirement name="CVarCompare" cvar="$BloodDrawKitCounter" operation="Equals" value="3"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffAnemia1"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffAnemia2"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffAnemia3"/>
 		</effect_group>
 		<effect_group>
 			<requirement name="NotHasBuff" buff="buffAnemia3"/>
-			<requirement name="CVarCompare" cvar="BloodDrawKitCounter" operation="Equals" value="4"/>
+			<requirement name="CVarCompare" cvar="$BloodDrawKitCounter" operation="Equals" value="4"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffAnemia1"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffAnemia2"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffAnemia3"/>
 		</effect_group>
 		<effect_group>
 			<requirement name="NotHasBuff" buff="buffAnemia4"/>
-			<requirement name="CVarCompare" cvar="BloodDrawKitCounter" operation="GTE" value="5"/>
+			<requirement name="CVarCompare" cvar="$BloodDrawKitCounter" operation="GTE" value="5"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffAnemia1"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffAnemia2"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffAnemia3"/>
@@ -3006,7 +3141,7 @@ icon="ui_game_symbol_pack_mule"
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Infected" intensity=".8" fade="0.5"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Infected" intensity="0" fade="1"/>
 			<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" effect_name="Infected" intensity="0" fade="0"/>
-			<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="BloodDrawKitCounter" operation="set" value="4"/>
+			<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="$BloodDrawKitCounter" operation="set" value="4"/>
 		</effect_group>
 	</buff>
 
@@ -3115,7 +3250,7 @@ icon="ui_game_symbol_pack_mule"
 		<stack_type value="duration"/>
 		<duration value="180"/>
 		<effect_group>
-			<passive_effect name="Bartering" operation="base_add" value=".6" />
+			<passive_effect name="Bartering" operation="base_add" value=".2" />
 		</effect_group>
 	</buff>
 
@@ -3262,10 +3397,10 @@ icon="ui_game_symbol_pack_mule"
 		<stack_type value="replace"/>
 		<duration value="20"/>
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="ArmorShreddingCounter" operation="set" value=".2"/>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="ArmorShreddingCounter" operation="add" value=".2"/>
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="ArmorShreddingCounter" operation="set" value="0"/>
-			<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value="@ArmorShreddingCounter"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$ArmorShreddingCounter" operation="set" value=".2"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$ArmorShreddingCounter" operation="add" value=".2"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$ArmorShreddingCounter" operation="set" value="0"/>
+			<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value="@$ArmorShreddingCounter"/>
 		</effect_group>
 	</buff>
 
@@ -3965,9 +4100,10 @@ icon="ui_game_symbol_pack_mule"
 		<duration value="1"/>
 		<update_rate value=".5"/>
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="VarTest" operation="setvalue" value="randomfloat(12,13)"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="VarTest"/>
-
+			<!--
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="$VarTest" operation="setvalue" value="randomfloat(12,13)"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$VarTest"/>
+			-->
 			<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="melee,tazas"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="open_apache_artifact_chest"/>
@@ -4210,7 +4346,7 @@ emergency_color [?] :
 
 <effect_group>
 	This 2nd effect group of this buff is always active.
-	<triggered_effect trigger="onSelfPrimaryAction" action="ModifyStat" target="self" stat="health" operation="base_add" value="2" compare_type="or">
+	<triggered_effect trigger="onSelfPrimaryAction" action="ModifyStats" target="self" stat="health" operation="base_add" value="2" compare_type="or">
 		<requirement name="StatCompare" target="other" stat="health" operation="gt" value="20"/>
 		buuuut this specific effect has it's own condition.
 	</triggered_effect>
@@ -4264,6 +4400,9 @@ _encumbrance		:
 _fallSpeed		:
 _crouching		:
 
+Cvars that start with "$" are NOT networked.
+You can use them locally and for math operations but they can not be accessed between different entities.
+
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 USING CUSTOM VARIABLES AND GAME VARIABLES
@@ -4308,6 +4447,10 @@ REQUIREMENTS / CONDITIONS:
 		CompareLightLevel
 		HoldingItemHasTags		tags (string), has_all_tags(bool);  does not check for the tags of a mod that is installed in the item
 		IsItemActive			(?) For activated items. Use only on the item/mod in question or the scope gets messy.
+		IsLookingAtBlock		tags, has_all_tags
+		IsLookingAtEntity		tags, has_all_tags
+		IsStatAtMax			stat (Health,MaxStamina,Stamina,Water);  detects if a stat is within 0.1f UNITS of max, not %.
+
 
 		For stat comparisons Health/Stamina are a bit twisted.
 		You have Max which is the absolute ceiling value that your health can possibly reach.
@@ -4539,8 +4682,10 @@ ACTIVE / TRIGGERED EFFECTS: ACTIONS
 	PlaySound:			target, sound, play_in_head;   sound references not a file name but a sound name from sounds.xml
 	StopSound:			target, sound, play_in_head
 	FadeOutSound:			target, sound
-	ModifyStat:			target, stat[health,stamina,water,coretemp; ?food,speedmodifier,HealthMaxModifier,StaminaMaxModifier],
-						operation[set,setvalue,add,subtract,multiply,divide,randomfloat,randomint], value
+	ModifyStat:			deprecated  (does not support value_type)
+	ModifyStats:			target, stat[health,stamina,water,coretemp],
+						value_type [max,modifiedmax],
+						operation[set,setvalue,add,subtract,multiply,divide,randomfloat ?,randomint ?], value,
 
 							Note that the operators are DIFFERENT from the ones on passive effects.
 						Perform a basic math operation of   "stat" "operation" "value"
@@ -4634,7 +4779,7 @@ PASSIVE EFFECTS : OPERATIONS
 	You DO remember that changing numbers is all they do? So they must have an operation.
 
 	Note that these are not "operators" but rather more complex operations performed over the course of the OOO.
-	These operations are completely different from the simpler  ModifyCVar / ModifyStat  operations.
+	These operations are completely different from the simpler  ModifyCVar / ModifyStats  operations.
 
 	<passive_effect name="RunSpeed" operation="base_set|base_add|base_subtractperc_set|perc_add|perc_subtract" value="5"/>
 

@@ -630,7 +630,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunButtkick3000" installable_tags="weapon" type="attachment" rarity="1">
-		<property name="CreativeMode" value="Dev"/>
+		<property name="CreativeMode" value="None"/>
 		<property name="Stacknumber" value="1"/>
 		<property name="CustomIcon" value="gothBootsBlack"/>
 		<property name="CustomIconTint" value="255,0,255"/>
@@ -648,7 +648,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 	<item_modifier name="modGunButtkick4000" installable_tags="weapon" type="attachment" rarity="1">
-		<property name="CreativeMode" value="Dev"/>
+		<property name="CreativeMode" value="None"/>
 		<property name="Stacknumber" value="1"/>
 		<property name="CustomIcon" value="gothBootsBlack"/>
 		<property name="CustomIconTint" value="0,0,255"/>
@@ -809,7 +809,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="Stacknumber" value="1"/>
 		<!-- reduce DR of armor by x, blade weapons -->
 		<effect_group tiered="false">
-			<passive_effect name="BlockDamage" operation="perc_add" value=".3"/>
+			<passive_effect name="BlockDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="DegradationMax" operation="perc_add" value=".3"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
@@ -835,12 +835,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<item_modifier name="modMeleeStructuralBrace" installable_tags="melee" modifier_tags="damage" type="attachment" rarity="0.5">
+	<item_modifier name="modMeleeStructuralBrace" installable_tags="melee,perkArchery" modifier_tags="durability" type="attachment" rarity="0.5">
 		<property name="Stacknumber" value="1"/>
 
 		<!-- Increases durability, increases block efficiency, all melee -->
 		<effect_group tiered="false">
-			<passive_effect name="BlockDamage" operation="perc_add" value=".15"/>
 			<passive_effect name="DegradationMax" operation="perc_add" value=".3"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
@@ -1009,7 +1008,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorInsulatedLiner" installable_tags="armor" modifier_tags="thermal" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="armor"/>
+		<property name="DisplayType" value="modTempResist"/>
 		<property name="Stacknumber" value="1"/>
 
 		<effect_group tiered="false">
@@ -1017,8 +1016,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorCoolingMesh" installable_tags="armor" modifier_tags="cooling" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="armor"/>
+	<item_modifier name="modArmorCoolingMesh" installable_tags="armor" modifier_tags="temperature" type="attachment" rarity="0.5">
+		<property name="DisplayType" value="modTempResist"/>
 		<property name="Stacknumber" value="1"/>
 
 		<effect_group tiered="false">
@@ -1026,33 +1025,32 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorImprovedFittings" installable_tags="armor" modifier_tags="movement" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="armor"/>
+	<item_modifier name="modArmorImprovedFittings" installable_tags="armor" blocked_tags="padded" modifier_tags="movement" type="attachment" rarity="0.5">
+		<property name="DisplayType" value="modArmorMobility"/>
 		<property name="Stacknumber" value="1"/>
-
 
 		<effect_group tiered="false">
 			<passive_effect name="Mobility" operation="perc_add" value="0.02"/>
 			<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.014" tags="walking"/>
 			<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.028" tags="running"/>
+			<display_value name="dStaminaChangeOT" value="0.028"/>
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorCustomizedFittings" installable_tags="armor" modifier_tags="movement" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="armor"/>
+	<item_modifier name="modArmorCustomizedFittings" installable_tags="armor" blocked_tags="padded" modifier_tags="movement" type="attachment" rarity="0.5">
+		<property name="DisplayType" value="modArmorMobility"/>
 		<property name="Stacknumber" value="1"/>
-
 
 		<effect_group tiered="false">
 			<passive_effect name="Mobility" operation="perc_add" value="0.03"/>
 			<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.021" tags="walking"/>
 			<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.0562" tags="running"/>
+			<display_value name="dStaminaChangeOT" value="0.0562"/>
 		</effect_group>
 	</item_modifier>
 
-
 	<item_modifier name="modArmorReinforcedPadding" installable_tags="lightarmor" modifier_tags="resistance" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="armor"/>
+		<property name="DisplayType" value="modArmorLight"/>
 		<property name="Stacknumber" value="1"/>
 
 		<effect_group tiered="false">
@@ -1060,8 +1058,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorPlasticPlating" installable_tags="lightarmor" modifier_tags="resistance" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="armor"/>
+	<item_modifier name="modArmorPlasticPlating" installable_tags="lightarmor" blocked_tags="padded" modifier_tags="resistance" type="attachment" rarity="0.5">
+		<property name="DisplayType" value="modArmorLight"/>
 		<property name="Stacknumber" value="1"/>
 
 		<effect_group tiered="false">
@@ -1069,8 +1067,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorMilitaryPlating" installable_tags="lightarmor" modifier_tags="resistance" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="armor"/>
+	<item_modifier name="modArmorMilitaryPlating" installable_tags="lightarmor" blocked_tags="padded" modifier_tags="resistance" type="attachment" rarity="0.5">
+		<property name="DisplayType" value="modArmorLight"/>
 		<property name="Stacknumber" value="1"/>
 
 		<effect_group tiered="false">
@@ -1079,7 +1077,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorScrapPlating" installable_tags="heavyarmor" modifier_tags="resistance" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="armor"/>
+		<property name="DisplayType" value="modArmorHeavy"/>
 		<property name="Stacknumber" value="1"/>
 
 		<effect_group tiered="false">
@@ -1088,7 +1086,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorIronPlating" installable_tags="heavyarmor" modifier_tags="resistance" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="armor"/>
+		<property name="DisplayType" value="modArmorHeavy"/>
 		<property name="Stacknumber" value="1"/>
 
 		<effect_group tiered="false">
@@ -1097,7 +1095,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorSteelPlating" installable_tags="heavyarmor" modifier_tags="resistance" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="armor"/>
+		<property name="DisplayType" value="modArmorHeavy"/>
 		<property name="Stacknumber" value="1"/>
 
 		<effect_group tiered="false">
@@ -1110,9 +1108,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="Material" value="Mleather"/>
 		<property name="Stacknumber" value="1"/>
 
-
 		<effect_group tiered="false">
 			<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
+			<display_value name="dCarryCapacity" value="1"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1121,9 +1119,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="Material" value="Mleather"/>
 		<property name="Stacknumber" value="1"/>
 
-
 		<effect_group tiered="false">
 			<passive_effect name="CarryCapacity" operation="base_add" value="2"/>
+			<display_value name="dCarryCapacity" value="2"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1132,40 +1130,43 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="Stacknumber" value="1"/>
 		<property name="Material" value="Mleather"/>
 
-
 		<effect_group tiered="false">
 			<passive_effect name="CarryCapacity" operation="base_add" value="3"/>
+			<display_value name="dCarryCapacity" value="3"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modArmorSpikedKnuckles" installable_tags="armorHands" modifier_tags="damage" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="modCarryCapacity"/>
+		<property name="DisplayType" value="modImprovedFisting"/>
 		<property name="Material" value="Msteel"/>
 		<property name="Stacknumber" value="1"/>
 
 		<effect_group tiered="false">
 			<requirement name="HoldingItemHasTags" tags="fists" />
 				<passive_effect name="EntityDamage" operation="perc_add" value="3" />
+				<display_value name="dEntityDamage" value="3"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modArmorMuffledConnectors" installable_tags="armor" modifier_tags="movement" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="modCarryCapacity"/>
+		<property name="DisplayType" value="modNoiseReduction"/>
 		<property name="Material" value="Msteel"/>
 		<property name="Stacknumber" value="1"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="NoiseMultiplier" operation="perc_subtract" value="0.05" />
+			<passive_effect name="NoiseMultiplier" operation="perc_subtract" value="0.04" />
+			<display_value name="dNoiseMultiplier" value=".04"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modArmorAdvancedMuffledConnectors" installable_tags="armor" modifier_tags="movement" type="attachment" rarity="0.5">
-		<property name="DisplayType" value="modCarryCapacity"/>
+		<property name="DisplayType" value="modNoiseReduction"/>
 		<property name="Material" value="Msteel"/>
 		<property name="Stacknumber" value="1"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="NoiseMultiplier" operation="perc_subtract" value="0.1" />
+			<passive_effect name="NoiseMultiplier" operation="perc_subtract" value="0.08" />
+			<display_value name="dNoiseMultiplier" value=".08"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1179,7 +1180,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorWaterPurifier" installable_tags="armorHead" modifier_tags="misc" type="attachment" rarity="0.5">
+	<item_modifier name="modArmorWaterPurifier" installable_tags="armorHead" modifier_tags="waterPurifier" type="attachment" rarity="0.5">
 		<property name="Stacknumber" value="1"/>
 		<property name="Material" value="Msteel"/>
 
@@ -1219,7 +1220,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="Stacknumber" value="1"/>
 		<property name="Material" value="Msteel"/>
 		<property name="LightValue" value="0.7"/>
-		<effect_group>
+		<effect_group tiered="false">
 			<triggered_effect trigger="onSelfEquipStop" action="RemovePrefabFromEntity" parent_transform="CameraNode" prefab="Entities/Lighting/miningHelmetLightSource"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToEntity" prefab="Entities/Lighting/miningHelmetLightSource" parent_transform="CameraNode" local_rotation="-90,0,0" local_position="0,0,0"/>
 
@@ -1269,7 +1270,6 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 
 		<item_property_overrides name="tankTop">
-			<property name="CustomIconTint" value="98,130,163"/>
 			<property name="UMA.Overlay0Tint" value="skin"/>
 			<property name="UMA.Overlay1Tint" value="172,33,50"/>
 		</item_property_overrides>
@@ -1277,6 +1277,17 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<item_property_overrides name="tshirt">
 			<property name="UMA.Overlay0Tint" value="skin"/>
 			<property name="UMA.Overlay1Tint" value="172,33,50"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="tshirtZUWhite">
+			<property name="UMA.Overlay0Tint" value="skin"/>
+			<property name="UMA.Overlay1Tint" value="172,33,50"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="jacketLetter">
+			<property name="UMA.Overlay0Tint" value="154,31,42,255"/> <!-- stays red -->
+			<property name="UMA.Overlay1Tint" value="172,33,50"/>
+			<property name="UMA.Overlay2Tint" value="172,33,50"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="denimShortsPants">
@@ -1309,6 +1320,17 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<item_property_overrides name="tshirt">
 			<property name="UMA.Overlay0Tint" value="skin"/>
 			<property name="UMA.Overlay1Tint" value="51,92,65"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="tshirtZUWhite">
+			<property name="UMA.Overlay0Tint" value="skin"/>
+			<property name="UMA.Overlay1Tint" value="51,92,65"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="jacketLetter">
+			<property name="UMA.Overlay0Tint" value="154,31,42,255"/> <!-- stays red -->
+			<property name="UMA.Overlay1Tint" value="51,92,65"/>
+			<property name="UMA.Overlay2Tint" value="51,92,65"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="denimShortsPants">
@@ -1346,6 +1368,17 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<item_property_overrides name="tshirt">
 			<property name="UMA.Overlay0Tint" value="skin"/>
 			<property name="UMA.Overlay1Tint" value="87,87,87"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="tshirtZUWhite">
+			<property name="UMA.Overlay0Tint" value="skin"/>
+			<property name="UMA.Overlay1Tint" value="87,87,87"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="jacketLetter">
+			<property name="UMA.Overlay0Tint" value="154,31,42,255"/> <!-- stays red -->
+			<property name="UMA.Overlay1Tint" value="87,87,87"/>
+			<property name="UMA.Overlay2Tint" value="87,87,87"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="denimShortsPants">
@@ -1402,6 +1435,17 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<property name="UMA.Overlay1Tint" value="110,173,255"/>
 		</item_property_overrides>
 
+		<item_property_overrides name="tshirtZUWhite">
+			<property name="UMA.Overlay0Tint" value="skin"/>
+			<property name="UMA.Overlay1Tint" value="110,173,255"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="jacketLetter">
+			<property name="UMA.Overlay0Tint" value="154,31,42,255"/> <!-- stays red -->
+			<property name="UMA.Overlay1Tint" value="110,173,255"/>
+			<property name="UMA.Overlay2Tint" value="110,173,255"/>
+		</item_property_overrides>
+
 		<item_property_overrides name="denimShortsPants">
 			<property name="UMA.Overlay0Tint" value="skin"/>
 			<property name="UMA.Overlay1Tint" value="110,173,255"/>
@@ -1431,6 +1475,17 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<property name="UMA.Overlay1Tint" value="132,105,84"/>
 		</item_property_overrides>
 
+		<item_property_overrides name="tshirtZUWhite">
+			<property name="UMA.Overlay0Tint" value="skin"/>
+			<property name="UMA.Overlay1Tint" value="132,105,84"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="jacketLetter">
+			<property name="UMA.Overlay0Tint" value="154,31,42,255"/> <!-- stays red -->
+			<property name="UMA.Overlay1Tint" value="90,105,84"/>
+			<property name="UMA.Overlay2Tint" value="90,105,84"/>
+		</item_property_overrides>
+
 		<item_property_overrides name="denimShortsPants">
 			<property name="UMA.Overlay0Tint" value="skin"/>
 			<property name="UMA.Overlay1Tint" value="132,105,84"/>
@@ -1444,25 +1499,37 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="CustomIconTint" value="255,85,180"/>
 		<property name="Stacknumber" value="1"/>
 		<item_property_overrides name="*">
-			<property name="TintColor" value="255,0,255"/>
-			<property name="CustomIconTint" value="255,0,255"/>
-			<property name="UMA.Overlay0Tint" value="255,0,255"/>
+			<property name="TintColor" value="200,150,159"/>
+			<property name="CustomIconTint" value="200,150,159"/>
+			<property name="UMA.Overlay0Tint" value="200,150,159"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="tankTop">
 			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay0Tint" value="255,0,255"/>
+			<property name="UMA.Overlay1Tint" value="200,150,159"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="tshirt">
 			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay0Tint" value="255,0,255"/>
+			<property name="UMA.Overlay1Tint" value="200,150,159"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="tshirtZUWhite">
+			<property name="UMA.Overlay0Tint" value="skin"/>
+			<property name="UMA.Overlay1Tint" value="200,150,159"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="jacketLetter">
+			<property name="UMA.Overlay0Tint" value="154,31,42,255"/> <!-- stays red -->
+			<property name="UMA.Overlay1Tint" value="200,150,159"/>
+			<property name="UMA.Overlay2Tint" value="200,150,159"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="denimShortsPants">
 			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay0Tint" value="255,0,255"/>
+			<property name="UMA.Overlay1Tint" value="200,150,159"/>
 		</item_property_overrides>
+
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 

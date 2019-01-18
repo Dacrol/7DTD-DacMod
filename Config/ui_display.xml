@@ -47,8 +47,7 @@
 			<display_entry name="EntityDamage" title_key="statEntityDamageMelee"/>
 			<display_entry name="EntityDamage" title_key="statPowerAttack" tags="secondary"/>
 			<display_entry name="BlockDamage" title_key="statBlockDamage"/>
-			<display_entry name="BlockDamage" title_key="statPowerAttackBlockDamage" tags="secondary"/>
-			<display_entry name="StaminaLoss" title_key="statStaminaLoss"/>
+			<display_entry name="StaminaLoss" title_key="statStaminaLoss" negative_preferred="true"/>
 			<display_entry name="AttacksPerMinute" title_key="statAttacksPerMinute"/>
 			<display_entry name="DegradationMax" title_key="statDegradationMax"/>
 		</item_display_info>
@@ -56,7 +55,7 @@
 		<item_display_info display_type="meleeRepairTool" display_group="groupMelee">
 			<display_entry name="EntityDamage" title_key="statEntityDamageMelee"/>
 			<display_entry name="BlockDamage" title_key="statBlockDamage"/>
-			<display_entry name="StaminaLoss" title_key="statStaminaLoss"/>
+			<display_entry name="StaminaLoss" title_key="statStaminaLoss" negative_preferred="true"/>
 			<display_entry name="AttacksPerMinute" title_key="statAttacksPerMinute"/>
 			<display_entry name="DegradationMax" title_key="statDegradationMax"/>
 		</item_display_info>
@@ -72,7 +71,7 @@
 		<item_display_info display_type="simpleTool" display_group="groupMelee">
 			<display_entry name="EntityDamage" title_key="statEntityDamageMelee"/>
 			<display_entry name="EntityDamage" title_key="statPowerAttack" tags="secondary"/>
-			<display_entry name="StaminaLoss" title_key="statStaminaLoss"/>
+			<display_entry name="StaminaLoss" title_key="statStaminaLoss" negative_preferred="true"/>
 			<display_entry name="AttacksPerMinute" title_key="statAttacksPerMinute"/>
 		</item_display_info>
 
@@ -114,14 +113,40 @@
 		</item_display_info>
 
 		<item_display_info display_type="modCarryCapacity" display_group="groupAttire">
-			<display_entry name="CarryCapacity" title_key="statCarryCapacity"/>
+			<display_entry name="dCarryCapacity" title_key="statCarryCapacity"/>
+		</item_display_info>
+
+		<item_display_info display_type="modImprovedFisting" display_group="groupAttire">
+			<display_entry name="dEntityDamage" title_key="statEntityDamageFists" display_type="Percent"/>
+		</item_display_info>
+
+		<item_display_info display_type="modNoiseReduction" display_group="groupAttire">
+			<display_entry name="dNoiseMultiplier" title_key="statNoiseReduction" display_type="Percent"/>
+		</item_display_info>
+
+		<item_display_info display_type="modTempResist" display_group="groupAttire">
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+
+		<item_display_info display_type="modArmorLight" display_group="groupAttire">
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResistLight"/>
+		</item_display_info>
+
+		<item_display_info display_type="modArmorHeavy" display_group="groupAttire">
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResistHeavy"/>
+		</item_display_info>
+
+		<item_display_info display_type="modArmorMobility" display_group="groupAttire" >
+			<display_entry name="dStaminaChangeOT" title_key="statStaminaChangeOT" display_type="Decimal"/>
+			<display_entry name="Mobility" title_key="statMobility" display_type="Percent" show_inverted="true" negative_preferred="false"/>
 		</item_display_info>
 
 		<item_display_info display_type="armor" display_group="groupAttire" >
 			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
 			<display_entry name="BuffResistance" title_key="statBuffResistance" display_type="Percent" tags="buffIllInfection0,buffInjuryBleeding,buffInjuryStunned1"/>
 			<display_entry name="dStaminaChangeOT" title_key="statStaminaChangeOT" display_type="Decimal"/>
-			<display_entry name="Mobility" title_key="statMobility" display_type="Percent" show_inverted="true"  negative_preferred="false"/>
+			<display_entry name="Mobility" title_key="statMobility" display_type="Percent" show_inverted="true" negative_preferred="false"/>
 			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
 			<display_entry name="DegradationMax" title_key="statDegradationMax"/>
@@ -171,57 +196,49 @@
 		</item_display_info>
 
 		<item_display_info display_type="water" display_group="groupConsumables">
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
-			<!-- <display_entry name="waterPerkDisplay" title_key="statWaterPerkDisplay" display_type="Percent"/> -->
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 			<display_entry name="staminaAmount" title_key="statStaminaAmount" display_type="Percent"/>
 			<display_entry name="DysenteryRisk" title_key="statDysenteryRisk" display_type="Percent" negative_preferred="true"/>
 		</item_display_info>
 
 		<item_display_info display_type="waterCoffee" display_group="groupConsumables">
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
-			<!-- <display_entry name="waterPerkDisplay" title_key="statWaterPerkDisplay" display_type="Percent"/> -->
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 			<display_entry name="staminaAmount" title_key="statStaminaAmount" display_type="Percent"/>
 			<display_entry name="dHypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="DysenteryRisk" title_key="statDysenteryRisk" display_type="Percent" negative_preferred="true"/>
 		</item_display_info>
 
 		<item_display_info display_type="waterMegaCrush" display_group="groupConsumables">
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
-			<!-- <display_entry name="waterPerkDisplay" title_key="statWaterPerkDisplay" display_type="Percent"/> -->
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 			<display_entry name="staminaAmount" title_key="statStaminaAmount" display_type="Percent"/>
 			<display_entry name="ShowRunSpeed" title_key="statRunSpeed" display_type="Percent"/>
 		</item_display_info>
 
 		<item_display_info display_type="food" display_group="groupConsumables">
-			<display_entry name="foodAmount" title_key="statFoodAmount"/>
-			<!-- <display_entry name="foodPerkDisplay" title_key="statFoodPerkDisplay" display_type="Percent"/> -->
+			<display_entry name="$foodAmountAdd" title_key="statFoodAmount"/>
 			<display_entry name="foodHealthAmount" title_key="statHealthAmount"/>
 			<display_entry name="FoodPoisoningRisk" title_key="statFoodPoisoningRisk" display_type="Percent" negative_preferred="true"/>
 		</item_display_info>
 
 		<item_display_info display_type="foodWater" display_group="groupConsumables">
-			<display_entry name="foodAmount" title_key="statFoodAmount"/>
-			<!-- <display_entry name="foodPerkDisplay" title_key="statFoodPerkDisplay" display_type="Percent"/> -->
+			<display_entry name="$foodAmountAdd" title_key="statFoodAmount"/>
 			<display_entry name="foodHealthAmount" title_key="statHealthAmount"/>
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
-			<!-- <display_entry name="waterPerkDisplay" title_key="statWaterPerkDisplay" display_type="Percent"/> -->
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 			<display_entry name="FoodPoisoningRisk" title_key="statFoodPoisoningRisk" display_type="Percent" negative_preferred="true"/>
 		</item_display_info>
 
 		<item_display_info display_type="drinkYuccaSmoothie" display_group="groupConsumables">
-			<display_entry name="foodAmount" title_key="statFoodAmount"/>
-			<!-- <display_entry name="foodPerkDisplay" title_key="statFoodPerkDisplay" display_type="Percent"/> -->
+			<display_entry name="$foodAmountAdd" title_key="statFoodAmount"/>
 			<display_entry name="foodHealthAmount" title_key="statHealthAmount"/>
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 			<display_entry name="staminaAmount" title_key="statStaminaAmount" display_type="Percent"/>
-			<!-- <display_entry name="waterPerkDisplay" title_key="statWaterPerkDisplay" display_type="Percent"/> -->
 			<display_entry name="dHypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="FoodPoisoningRisk" title_key="statFoodPoisoningRisk" display_type="Percent" negative_preferred="true"/>
 		</item_display_info>
 
 		<item_display_info display_type="foodWaterOnly" display_group="groupConsumables">
-			<display_entry name="foodAmount" title_key="statFoodAmount"/>
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
+			<display_entry name="$foodAmountAdd" title_key="statFoodAmount"/>
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 			<display_entry name="FoodPoisoningRisk" title_key="statFoodPoisoningRisk" display_type="Percent" negative_preferred="true"/>
 		</item_display_info>
 
@@ -236,32 +253,32 @@
 			<display_entry name="dAgility" title_key="statShowAgility"/>
 			<display_entry name="dHealthChangeOT" title_key="statHealthChangeOT" display_type="Decimal"/>
 			<display_entry name="dStaminaChangeOT" title_key="statStaminaChangeOT" display_type="Decimal"/>
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 		</item_display_info>
 
 		<item_display_info display_type="medicalPainkillers" display_group="groupConsumables">
 			<display_entry name="dInstantHealth" title_key="statShowInstantHealth"/>
 			<display_entry name="dHealthLoss" title_key="statHealthLoss" display_type="Percent"/>
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 		</item_display_info>
 
 		<item_display_info display_type="medicalWater" display_group="groupConsumables">
 			<display_entry name="maxHealthAmount" title_key="statMaxHealthAmount"/>
 			<display_entry name="medicalHealthAmount" title_key="statHealthAmount"/>
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 			<display_entry name="staminaAmount" title_key="statStaminaAmount"/>
 		</item_display_info>
 
 		<item_display_info display_type="drugSteroids" display_group="groupConsumables">
 			<display_entry name="dStrength" title_key="statShowStrength"/>
 			<display_entry name="dCarryCapacity" title_key="statCarryCapacity"/>
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 		</item_display_info>
 
 		<item_display_info display_type="drugRecog" display_group="groupConsumables">
 			<display_entry name="dPerception" title_key="statShowPerception"/>
 			<display_entry name="dEntityDamage" title_key="statEntityDamageRanged" display_type="Percent"/>
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 		</item_display_info>
 
 		<item_display_info display_type="drugFortBites" display_group="groupConsumables">
@@ -271,7 +288,7 @@
 
 			<display_entry name="dHypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="dHyperthermalResist" title_key="statHyperthermalResist"/>
-			<display_entry name="waterAmount" title_key="statWaterAmount"/>
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
 		</item_display_info>
 
 		<!-- UNODIR every block will show this display -->

@@ -68,10 +68,13 @@ Property:  IsDeveloper  (mostly blocks.xml + items.xml) ... is now obsolete.
 
 Enter Property:
 
-"CreativeMode", values: "Player,Dev,None"
+"CreativeMode", values: "Player,Dev,None,Admin"
 Technically "All" is a value but that's the default so why bother?
 
 What this does is that the creative menu can display different sets of blocks in "player" and "dev/level builder" view mode.
+
+"Admin" items are only enabled in the Unity editor.
+
 
 (A17)
 If you turn on the "dev button" on the creative menu you always see both "dev" and "player".
