@@ -1543,8 +1543,8 @@
 		<effect_group name="Holding a turret">
 			<requirement name="HoldingItemHasTags" tags="perkTurrets"/>
 				<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".3,.6,.9,1.2,1.2" tags="deployed" invert_tag_check="true"/>
-				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="4,5" value="0.1,0.2" tags="deployed" invert_tag_check="true"/>
-				<passive_effect name="MagazineSize" operation="base_add" level="1,5" value="10,50"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="4,5" value="0.15,0.3" tags="deployed" invert_tag_check="true"/>
+				<passive_effect name="MagazineSize" operation="base_add" level="1,5" value="20,200"/>
 		</effect_group>
 
 		<effect_group name="General and deployed turrets">

@@ -4363,19 +4363,19 @@ Mesh files no longer used:
 	</property>
 	<effect_group name="gunJunkTurret">
 		<passive_effect name="MaxRange" operation="base_set" value="32"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="20"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2"/> <!-- random effective rng -->
-		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.1"/> <!-- random effective rng -->
+		<passive_effect name="BlockRange" operation="base_set" value="1.2"/>
 
-		<passive_effect name="EntityDamage" operation="base_set" value="11.8"/>
-		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
+		<passive_effect name="EntityDamage" operation="base_set" value="14.8"/>
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.05,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkTurrets"/> <!-- random DegMax -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08"/> <!-- random WeaponHandling -->
 
 		<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.1,.1"/> <!-- random APM -->
-		<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/> <!-- random MagazineSize -->
+		<passive_effect name="MagazineSize" operation="perc_add" value="-.04,.122"/> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08"/> <!-- random WeaponHandling -->
 
 		<passive_effect name="BlockDamage" operation="base_set" value="1"/>
@@ -4389,8 +4389,8 @@ Mesh files no longer used:
 		<passive_effect name="MagazineSize" operation="base_add" value="2,10" tier="2,6"/>
 -->
 
-		<passive_effect name="MagazineSize" operation="base_set" value="62"/>
-		<passive_effect name="MagazineSize" operation="base_add" value="6,30" tier="2,6"/>
+		<passive_effect name="MagazineSize" operation="base_set" value="80"/>
+		<passive_effect name="MagazineSize" operation="base_add" value="15,40" tier="2,6"/>
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1"/>
 
 		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="5"/>

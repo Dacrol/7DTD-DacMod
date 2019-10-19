@@ -3728,16 +3728,16 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="IsEnemyEntity" value="false"/>
 
 	<property name="WakeUpTime" value="0.5"/>
-	<property name="FallAsleepTime" value="25"/>
+	<property name="FallAsleepTime" value="10"/>
 
-	<property name="YawRange" value="359"/> <!-- horizontal swivel range. Keep under 180. -->
-	<property name="PitchRange" value="87"/>
+	<property name="YawRange" value="179"/> <!-- horizontal swivel range. Keep under 180. -->
+	<property name="PitchRange" value="179"/>
 	<property name="TurnSpeed" value="22.5"/>
 	<property name="MaxDistance" value="32"/>
 
 	<property name="EntityDamage" value="25"/>
 	<property name="BlockDamage" value="1"/>
-	<property name="RaySpread" value="5"/>
+	<property name="RaySpread" value="3"/>
 	<property name="RayCount" value="1"/>
 	<property name="BustRoundCount" value="1"/>
 	<property name="BurstFireRate" value="1"/>
