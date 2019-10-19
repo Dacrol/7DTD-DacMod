@@ -2985,7 +2985,7 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 
 <lootgroup name="groupBirdNest" count="1,2">
 	<item name="foodEgg" prob="0.25"/>
-	<item name="resourceFeather" count="1,5" prob="0.75"/>
+	<item name="resourceFeather" count="3,8" prob="0.8"/>
 </lootgroup>
 
 <lootgroup name="groupBirdNestMain" count="all">
