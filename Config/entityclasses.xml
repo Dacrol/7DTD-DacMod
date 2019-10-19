@@ -3728,12 +3728,12 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="IsEnemyEntity" value="false"/>
 
 	<property name="WakeUpTime" value="0.5"/>
-	<property name="FallAsleepTime" value="10"/>
+	<property name="FallAsleepTime" value="25"/>
 
-	<property name="YawRange" value="90"/> <!-- horizontal swivel range. Keep under 180. -->
-	<property name="PitchRange" value="70"/>
+	<property name="YawRange" value="359"/> <!-- horizontal swivel range. Keep under 180. -->
+	<property name="PitchRange" value="87"/>
 	<property name="TurnSpeed" value="22.5"/>
-	<property name="MaxDistance" value="15"/>
+	<property name="MaxDistance" value="32"/>
 
 	<property name="EntityDamage" value="25"/>
 	<property name="BlockDamage" value="1"/>
@@ -3743,7 +3743,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="BurstFireRate" value="1"/>
 	<property name="CooldownTime" value="1"/>
 	<property name="OvershootTime" value="0"/>
-	<property name="MaxOwnerDistance" value="16"/>
+	<property name="MaxOwnerDistance" value="100"/>
 
 	<property name="TargetingSound" value="turret_retarget_lp"/>
 	<property name="OverheatSound" value="turret_overheat_lp"/>

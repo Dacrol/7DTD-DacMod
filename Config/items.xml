@@ -4362,8 +4362,8 @@ Mesh files no longer used:
 		<property name="Turret" value="turretJunk"/>
 	</property>
 	<effect_group name="gunJunkTurret">
-		<passive_effect name="MaxRange" operation="base_set" value="15"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="10"/>
+		<passive_effect name="MaxRange" operation="base_set" value="32"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="20"/>
 		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2"/> <!-- random effective rng -->
 		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
 
