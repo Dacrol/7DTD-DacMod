@@ -1872,9 +1872,9 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeThrownSpearStone">
-		<passive_effect name="MaxRange" operation="base_set" value="3.2"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.8"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="10.3"/> <!-- meleeThrownSpearStone -->
+		<passive_effect name="EntityDamage" operation="base_set" value="12.3"/> <!-- meleeThrownSpearStone -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="BlockDamage" operation="base_set" value="5"/>
@@ -1918,9 +1918,9 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeThrownSpearIron">
-		<passive_effect name="MaxRange" operation="base_set" value="3.2"/>
+		<passive_effect name="MaxRange" operation="base_set" value="4"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="12.4"/> <!-- meleeThrownSpearIron -->
+		<passive_effect name="EntityDamage" operation="base_set" value="16.4"/> <!-- meleeThrownSpearIron -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
@@ -1960,9 +1960,9 @@ Mesh files no longer used:
 	<property name="UnlockedBy" value="meleeThrownSpearSteelSchematic"/>
 
 	<effect_group name="meleeThrownSpearSteel">
-		<passive_effect name="MaxRange" operation="base_set" value="3.2"/>
+		<passive_effect name="MaxRange" operation="base_set" value="4.2"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="18.6"/> <!-- meleeThrownSpearSteel -->
+		<passive_effect name="EntityDamage" operation="base_set" value="20.6"/> <!-- meleeThrownSpearSteel -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
