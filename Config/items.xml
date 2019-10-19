@@ -2051,7 +2051,7 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolSledgehammerStone">
-		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.5"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
 		<passive_effect name="EntityDamage" operation="base_set" value="25.7"/> <!-- meleeToolSledgehammerStone -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
@@ -2133,7 +2133,7 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolSledgehammerIron">
-		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.6"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
 		<passive_effect name="EntityDamage" operation="base_set" value="30.8"/> <!-- meleeToolSledgehammerIron -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
@@ -2218,7 +2218,7 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolSledgehammerSteel">
-		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.7"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
 		<passive_effect name="EntityDamage" operation="base_set" value="46.2"/> <!-- meleeToolSledgehammerSteel -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
