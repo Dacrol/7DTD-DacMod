@@ -366,6 +366,10 @@
 			Arrow gravity still in progress -->
 				<passive_effect name="ProjectileVelocity" operation="perc_add" level="1,5" value="0.1,.5"/>
 		</effect_group>
+		<effect_group name="Throw">
+			<!-- <requirement name="HoldingItemHasTags" tags="perkJavelinMaster"/> -->
+			<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="secondary"/>
+		</effect_group>
 		<effect_group>
 			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,4" tags="perkJavelinMaster"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="meleeThrownSpearIron"/>
