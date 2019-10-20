@@ -3128,8 +3128,8 @@
 
 	<!-- Gameplay -->
 	<property name="MoveSpeed" value="0.2"/>
-	<property name="MoveSpeedAggro" value="1.3, 1.3"/>
-	<property name="MoveSpeedPanic" value="1.6"/>
+	<property name="MoveSpeedAggro" value="1, 1"/>
+	<property name="MoveSpeedPanic" value="1.2"/>
 
 	<property name="HandItem" value="meleeHandAnimalWolf"/>
 
@@ -3144,7 +3144,7 @@
 	<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="250"/>
+		<passive_effect name="HealthMax" operation="base_set" value="125"/>
 		<passive_effect name="HealthMax" operation="perc_add" value="0"/> <!-- Animal HP scale -->
 	</effect_group>
 </entity_class>
