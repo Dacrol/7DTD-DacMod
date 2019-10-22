@@ -331,7 +331,7 @@ Mesh files no longer used:
 		<passive_effect name="MaxRange" operation="base_set" value="3.6"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
 
-		<passive_effect name="EntityDamage" operation="base_set" value="19.3"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="23.3"/>
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
@@ -380,7 +380,7 @@ Mesh files no longer used:
 	<effect_group name="meleeToolFireaxeSteel">
 		<passive_effect name="MaxRange" operation="base_set" value="3.8"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="28.9"/> <!-- meleeToolFireaxeSteel -->
+		<passive_effect name="EntityDamage" operation="base_set" value="32.9"/> <!-- meleeToolFireaxeSteel -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
