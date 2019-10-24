@@ -4777,8 +4777,14 @@ icon="ui_game_symbol_pack_mule"
 	</buff>
 
 	<buff name="buffRadiatedRegenBlock" name_key="buffRadiatedRegenBlockName" icon="ui_game_symbol_radiation" icon_color="255,255,0" hidden="true">
-		<stack_type value="replace"/>
-		<duration value="90"/>
+		<stack_type value="replace"/><duration value="90"/>
+	</buff>
+
+	<buff name="buffHarvestXPBalance" name_key="buffHarvestXPBalanceName" icon="ui_game_symbol_radiation" icon_color="255,255,0" hidden="true">
+		<stack_type value="ignore"/><duration value="0"/>
+		<effect_group>
+			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
+		</effect_group>
 	</buff>
 
 	<buff name="buffDummyEntitySuicide" name_key="buffDummyEntitySuicideName" icon="ui_game_symbol_radiation" hidden="true">
@@ -5118,6 +5124,8 @@ Tags can be used to limit passive effects to certain (hit) locations, states, or
 		<requirement name="HoldingItemHasTags" tags="perkGunslinger"/>
 		<passive_effect name="RoundsPerMinute" operation="perc_add" value="2,2" level="1,5"/>
 
+	invert_tag_check="true"
+		This will pass all items/passives that do NOT have the listed tag.
 
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 

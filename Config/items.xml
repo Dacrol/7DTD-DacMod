@@ -35,7 +35,6 @@ Mesh files no longer used:
 	<property name="HandMeshfile" value="#Other/Items?Food/cornbreadHandPrefab.prefab"/>
 	<property name="Meshfile" value="#Other/Items?Food/moldy_bread.fbx"/>
 	<property name="HandMeshfile" value="#Other/Items?Food/moldyBreadHandPrefab.prefab"/>
-	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Bows/Crossbow/crossbowBoltStonePrefab.prefab"/>
 	<property name="DropMeshfile" value="#Other/Items?Misc/crossbow_bolt_dropped_stonePrefab.prefab"/>
 	<property name="HandMeshfile" value="#Other/Items?Misc/crossbow_bolt_hand_stonePrefab.prefab"/>
 
@@ -83,28 +82,26 @@ Mesh files no longer used:
 		<property name="UsePowerAttackAnimation" value="false"/>
 	</property>
 	<effect_group name="meleeToolStoneAxe">
+		<passive_effect name="EntityDamage" operation="base_set" value="9"/> <!-- meleeToolStoneAxe -->
+		<passive_effect name="BlockDamage" operation="base_set" value="32.2"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="70"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="9.9" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="75,200" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
 
-		<passive_effect name="EntityDamage" operation="base_set" value="9"/> <!-- meleeToolStoneAxe -->
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="32.2"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<display_value name="dBlockRepairAmount" value="150"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="70"/>
 		<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.33" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
-
-		<passive_effect name="StaminaLoss" operation="base_set" value="9.9" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="75,200" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 	<property name="Group" value="Tools/Traps,Basics"/>
 	<property name="RepairExpMultiplier" value="5.5"/>
@@ -119,34 +116,32 @@ Mesh files no longer used:
 		<!-- <property name="Stamina_usage" value="4.5"/> DEPRECATED stat -->
 	</property>
 	<effect_group name="meleeToolStoneAxeTazas">
+		<passive_effect name="EntityDamage" operation="base_set" value="12"/> <!-- meleeToolStoneAxeTazas -->
+		<passive_effect name="BlockDamage" operation="base_set" value="34"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="70"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="11.3" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="80,250" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
 
-		<passive_effect name="EntityDamage" operation="base_set" value="12"/> <!-- meleeToolStoneAxeTazas -->
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="34"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random DegMax -->
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05"/> <!-- random APM -->
 		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> <!-- random StamLoss -->
 
 		<display_value name="dBlockRepairAmount" value="150"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="70"/>
 		<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.33" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
-
-		<passive_effect name="StaminaLoss" operation="base_set" value="11.3" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="80,250" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 </item>
 
@@ -185,16 +180,23 @@ Mesh files no longer used:
 		<property name="UsePowerAttackAnimation" value="false"/>
 	</property>
 	<effect_group name="meleeToolClawHammer">
+		<passive_effect name="EntityDamage" operation="base_set" value="12"/> <!-- meleeToolClawHammer -->
+		<passive_effect name="BlockDamage" operation="base_set" value="22"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="70"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="12.0" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="280,955" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.2"/>
 		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="12"/> <!-- meleeToolClawHammer -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="22"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random DegMax -->
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05"/> <!-- random APM -->
 		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> <!-- random StamLoss -->
@@ -202,13 +204,6 @@ Mesh files no longer used:
 		<display_value name="dBlockRepairAmount" value="400"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="70"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="12.0" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="280,955" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 	<property name="Group" value="Tools/Traps"/>
 	<property name="RepairExpMultiplier" value="5.5"/>
@@ -311,7 +306,7 @@ Mesh files no longer used:
 		<property name="GrazeEnd" value=".5"/>
 		<property name="SwingDegrees" value="50"/>
 		<property name="UseGrazingHits" value="true"/>
-		<property name="SwingAngle" value="0"/>
+		<property name="SwingAngle" value="180"/>
 	</property>
 	<property class="Action1">
 		<property name="Class" value="DynamicMelee"/>
@@ -328,39 +323,37 @@ Mesh files no longer used:
 		<property name="SwingAngle" value="135"/>
 	</property>
 	<effect_group name="meleeToolFireaxeIron">
-		<passive_effect name="MaxRange" operation="base_set" value="3.6"/>
-		<passive_effect name="BlockRange" operation="base_set" value="4"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="15.1"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="45.0"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="60"/> <!-- Gazz change 47 to 60 -->
+		<passive_effect name="StaminaLoss" operation="base_set" value="15.6" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="188,641" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
 
-		<passive_effect name="EntityDamage" operation="base_set" value="23.3"/>
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="57.4"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random DegMax -->
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05"/> <!-- random APM -->
 		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> <!-- random StamLoss -->
-
-		<passive_effect name="DegradationMax" operation="base_set" value="188,641" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="47"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
 
 		<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/>
-		<passive_effect name="StaminaLoss" operation="base_add" value="40" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="31.3" tags="secondary"/>
 		<!-- Moaning and grunting sounds moved to buffs.xml, <effect_group name="Power Attack Grunt"> -->
 	</effect_group>
 
@@ -378,17 +371,24 @@ Mesh files no longer used:
 	<property name="Material" value="MmeleeToolAllSteel"/> <property name="Weight" value="6"/>
 
 	<effect_group name="meleeToolFireaxeSteel">
-		<passive_effect name="MaxRange" operation="base_set" value="3.8"/>
-		<passive_effect name="BlockRange" operation="base_set" value="4"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="32.9"/> <!-- meleeToolFireaxeSteel -->
+		<passive_effect name="EntityDamage" operation="base_set" value="28.9"/> <!-- meleeToolFireaxeSteel -->
+		<passive_effect name="BlockDamage" operation="base_set" value="86.2"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="47"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,1100" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
-		<passive_effect name="BlockDamage" operation="base_set" value="86.2"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random DegMax -->
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05"/> <!-- random APM -->
 		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> <!-- random StamLoss -->
@@ -397,13 +397,6 @@ Mesh files no longer used:
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="47"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="300,1100" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -454,37 +447,35 @@ Mesh files no longer used:
 	</property>
 	<property name="Group" value="Tools/Traps"/>
 	<effect_group name="meleeToolPickaxeIron">
+		<passive_effect name="EntityDamage" operation="base_set" value="11.2"/> <!-- meleeToolPickaxeIron -->
+		<passive_effect name="BlockDamage" operation="base_set" value="35.5"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="65"/><!-- Gazz change 55 to 65 -->
+		<passive_effect name="StaminaLoss" operation="base_set" value="12.9" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="260,886" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="13.2"/> <!-- meleeToolPickaxeIron -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="42"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random DegMax -->
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05"/> <!-- random APM -->
 		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> <!-- random StamLoss -->
 
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
-
 		<passive_effect name="DamageModifier" operation="perc_add" value=".8" tags="terrGravel"/>
-
-		<passive_effect name="StaminaLoss" operation="base_set" value="15.3" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="220,750" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
-		<passive_effect name="StaminaLoss" operation="base_add" value="30.5" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="25.8" tags="secondary"/>
 	</effect_group>
 	<property name="PickupJournalEntry" value="miningTip"/>
 	<property name="RepairExpMultiplier" value="5.5"/>
@@ -516,40 +507,38 @@ Mesh files no longer used:
 	</property>
 	<property name="Group" value="Tools/Traps"/>
 	<effect_group name="meleeToolPickaxeSteel">
+		<passive_effect name="EntityDamage" operation="base_set" value="23.2"/> <!-- meleeToolPickaxeSteel -->
+		<passive_effect name="BlockDamage" operation="base_set" value="62.8"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/><!-- Gazz change 47 to 55 -->
+		<passive_effect name="StaminaLoss" operation="base_set" value="17" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="350,1287" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="23.2"/> <!-- meleeToolPickaxeSteel -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
-		<passive_effect name="BlockDamage" operation="base_set" value="73.5"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random DegMax -->
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05"/> <!-- random APM -->
 		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> <!-- random StamLoss -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
-
 		<passive_effect name="DamageModifier" operation="perc_add" value=".8" tags="terrGravel"/>
-
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="47"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="300,1100" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/>
-		<passive_effect name="StaminaLoss" operation="base_add" value="40" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="34.1" tags="secondary"/>
 	</effect_group>
 </item>
 
@@ -582,24 +571,24 @@ Mesh files no longer used:
 		<property name="UsePowerAttackAnimation" value="true"/>
 	</property>
 	<effect_group name="meleeToolShovelStone">
-		<passive_effect name="MaxRange" operation="base_set" value="2.8"/>
-		<passive_effect name="BlockRange" operation="base_set" value="4"/>
 		<passive_effect name="EntityDamage" operation="base_set" value="12"/> <!-- meleeToolShovelStone -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="BlockDamage" operation="base_set" value="38.4"/>
-		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="13.8" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="75,200" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.8"/>
+		<passive_effect name="BlockRange" operation="base_set" value="4"/>
+
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -623,16 +612,23 @@ Mesh files no longer used:
 	<property name="SellableToTrader" value="true"/>
 	<property name="UnlockedBy" value="perkMiner69r,meleeToolIronSetSchematic"/>
 	<effect_group name="meleeToolShovelIron">
+		<passive_effect name="EntityDamage" operation="base_set" value="14.5"/> <!-- meleeToolShovelIron -->
+		<passive_effect name="BlockDamage" operation="base_set" value="46"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="15.8" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="220,750" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.8"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="14.5"/> <!-- meleeToolShovelIron -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="46"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random DegMax -->
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05"/> <!-- random APM -->
 		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> <!-- random StamLoss -->
@@ -640,13 +636,6 @@ Mesh files no longer used:
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="15.8" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="220,750" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -669,17 +658,24 @@ Mesh files no longer used:
 	<property name="UnlockedBy" value="meleeToolSteelSetSchematic"/>
 
 	<effect_group name="meleeToolShovelSteel">
+		<passive_effect name="EntityDamage" operation="base_set" value="21.8"/> <!-- meleeToolShovelSteel -->
+		<passive_effect name="BlockDamage" operation="base_set" value="69"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="15.8" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,1100" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.8"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="21.8"/> <!-- meleeToolShovelSteel -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
-		<passive_effect name="BlockDamage" operation="base_set" value="69"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random DegMax -->
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05"/> <!-- random APM -->
 		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> <!-- random StamLoss -->
@@ -687,13 +683,6 @@ Mesh files no longer used:
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="15.8" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="300,1100" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
@@ -738,18 +727,24 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeToolChainsaw"> <!-- meleeToolChainsaw -->
+		<passive_effect name="EntityDamage" operation="base_set" value="6"/><!-- meleeToolChainsaw -->
+		<passive_effect name="BlockDamage" operation="base_set" value="24.3"/>
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="300"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="1400,4200" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.35"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="SphereCastRadius" operation="base_set" value=".1"/>
 		<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
 		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2"/> <!-- random effective rng -->
-
-		<passive_effect name="EntityDamage" operation="base_set" value="6"/><!-- meleeToolChainsaw -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3" tags="Harvesting"/>
-		<passive_effect name="BlockDamage" operation="base_set" value="24.3"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
@@ -762,29 +757,19 @@ Mesh files no longer used:
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="metal"/>
 
-		<passive_effect name="RoundsPerMinute" operation="base_set" value="300"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1000"/>
-
 		<passive_effect name="MagazineSize" operation="base_set" value="300"/>
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1"/> <!-- 3.5s -->
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 
 		<passive_effect name="SpreadDegreesVertical" operation="base_set" value=".5"/>
 		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value=".5"/>
-
 		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.25"/>
 		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".25"/>
-
 		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.45"/>
 		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".45"/>
 
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value="5"/>
-
-		<passive_effect name="DegradationMax" operation="base_set" value="1400,4200" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 	</effect_group>
 </item>
 
@@ -824,18 +809,24 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeToolAuger">
+		<passive_effect name="EntityDamage" operation="base_set" value="4.2"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="20.7"/>
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="300"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="1400,4200" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.35"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="SphereCastRadius" operation="base_set" value=".1"/>
 		<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
 		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2"/> <!-- random effective rng -->
-
-		<passive_effect name="EntityDamage" operation="base_set" value="4.2"/>
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3" tags="Harvesting"/>
-		<passive_effect name="BlockDamage" operation="base_set" value="20.7"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
@@ -845,30 +836,19 @@ Mesh files no longer used:
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08"/> <!-- random WeaponHandling -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
-
-		<passive_effect name="RoundsPerMinute" operation="base_set" value="300"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1000"/>
-
 		<passive_effect name="MagazineSize" operation="base_set" value="300"/>
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1"/> <!-- 3.5s -->
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 
 		<passive_effect name="SpreadDegreesVertical" operation="base_set" value=".5"/>
 		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value=".5"/>
-
 		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.35"/>
 		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".35"/>
-
 		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.35"/>
 		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".35"/>
 
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value="5"/>
-
-		<passive_effect name="DegradationMax" operation="base_set" value="1400,4200" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 	</effect_group>
 </item>
 
@@ -911,13 +891,21 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeToolWrench">
+		<passive_effect name="EntityDamage" operation="base_set" value="18"/> <!-- meleeToolWrench -->
+		<passive_effect name="BlockDamage" operation="base_set" value="38.5"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="16.8" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,682" tier="1,6" tags="perkSalvageOperations"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSalvageOperations"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="18"/> <!-- meleeToolWrench -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="38.5"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
@@ -925,14 +913,7 @@ Mesh files no longer used:
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="salvageHarvest"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="16.8" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,682" tier="1,6" tags="perkSalvageOperations"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSalvageOperations"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -1007,30 +988,32 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeToolKnifeBone">
+		<passive_effect name="EntityDamage" operation="base_set" value="5.1"/> <!-- meleeToolKnifeBone -->
+		<passive_effect name="BlockDamage" operation="base_set" value="4"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="120"/><!-- Gazz change 60 to 120 note power attack should stay the same -->
+		<passive_effect name="StaminaLoss" operation="base_set" value="5.8" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="120,220" tier="1,6" tags="perkDeepCuts"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
 		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="10.2"/> <!-- meleeToolKnifeBone -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
-		<passive_effect name="BlockDamage" operation="base_set" value="8"/>
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="60"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="11.5" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="60,110" tier="1,6" tags="perkDeepCuts"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 		<display_value name="dBleeding" value=".20"/> <!-- the bleeding proc is run by the perk -->
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="base_add" value="-60" tags="secondary"/>
 		<passive_effect name="StaminaLoss" operation="base_add" value="17.3" tags="secondary"/> <!-- using perc_add here increases StaminaOT for no obvious reason -->
 
 		<triggered_effect trigger="onSelfSecondaryActionStart" action="AddJournalEntry" journal="powerAttackTip"/>
@@ -1098,13 +1081,21 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeToolKnifeIron">
+		<passive_effect name="EntityDamage" operation="base_set" value="6.1"/> <!-- meleeToolKnifeIron -->
+		<passive_effect name="BlockDamage" operation="base_set" value="5.3"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="120"/><!-- Gazz change 60 to 120 power attacks are fine as is -->
+		<passive_effect name="StaminaLoss" operation="base_set" value="5.8" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="462,1154" tier="1,6" tags="perkDeepCuts"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
 		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="12.1"/> <!-- meleeToolKnifeIron -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="10.5"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
@@ -1112,19 +1103,13 @@ Mesh files no longer used:
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
 		<!-- <passive_effect name="DamageModifier" operation="perc_add" value="0" tags="organic"/> affects organic block harvesting based on block.material.damage_category, not animal corpse harvesting -->
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="60"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="11.5" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="231,577" tier="1,6" tags="perkDeepCuts"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 		<display_value name="dBleeding" value=".20"/> <!-- the bleeding proc is run by the perk -->
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="base_add" value="-60" tags="secondary"/>
 		<passive_effect name="StaminaLoss" operation="base_add" value="17.3" tags="secondary"/>
 	</effect_group>
 	<property name="Group" value="Ammo/Weapons"/>
@@ -1190,32 +1175,34 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeToolKnifeCandy">
+		<passive_effect name="EntityDamage" operation="base_set" value="6.6"/> <!-- meleeToolKnifeCandy -->
+		<passive_effect name="BlockDamage" operation="base_set" value="5.5"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="120"/><!-- Gazz change 60 to 120 power attacks are fine as is -->
+		<passive_effect name="StaminaLoss" operation="base_set" value="5.8" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="462,1200" tier="1,6" tags="perkDeepCuts"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
 		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="13.3"/> <!-- meleeToolKnifeCandy -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="11"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="60"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="11.5" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="231,600" tier="1,6" tags="perkDeepCuts"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 		<display_value name="dBleeding" value=".20"/> <!-- the bleeding proc is run by the perk -->
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="base_add" value="-60" tags="secondary"/>
 		<passive_effect name="StaminaLoss" operation="base_add" value="17.3" tags="secondary"/>
 	</effect_group>
 	<property name="Group" value="Ammo/Weapons"/>
@@ -1273,7 +1260,7 @@ Mesh files no longer used:
 		<property name="IsHorizontalSwing" value="true"/>
 		<property name="GrazeStart" value=".3"/>
 		<property name="GrazeEnd" value=".4"/>
-		<property name="SwingDegrees" value="80"/>
+		<property name="SwingDegrees" value="-80"/>
 		<property name="SwingAngle" value="-60"/>
 		<property class="HitSounds">
 			<property name="Override0" value="organic" param1="metalslashorganic"/>
@@ -1283,27 +1270,28 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolKnifeMachete">
+		<passive_effect name="EntityDamage" operation="base_set" value="19.8"/> <!-- meleeToolKnifeMachete -->
+		<passive_effect name="BlockDamage" operation="base_set" value="21"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="12.6" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="288,673" tier="1,6" tags="perkDeepCuts"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.3"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="19.8"/> <!-- meleeToolKnifeMachete -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="21"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="12.6" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="288,673" tier="1,6" tags="perkDeepCuts"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 		<display_value name="dBleeding" value=".20"/> <!-- the bleeding proc is run by the perk -->
 	</effect_group>
 	<effect_group name="Power Attack">
@@ -1372,24 +1360,25 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeClubWood">
+		<passive_effect name="EntityDamage" operation="base_set" value="13.8"/> <!-- meleeClubWood -->
+		<passive_effect name="BlockDamage" operation="base_set" value="11.6"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="13.5" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="60,110" tier="1,6" tags="perkPummelPete"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="13.8"/> <!-- meleeClubWood -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
-		<passive_effect name="BlockDamage" operation="base_set" value="11.6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="13.5" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="60,110" tier="1,6" tags="perkPummelPete"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
@@ -1461,26 +1450,27 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeClubIron">
+		<passive_effect name="EntityDamage" operation="base_set" value="17.4"/> <!-- meleeClubIron -->
+		<passive_effect name="BlockDamage" operation="base_set" value="14.6"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="52"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="16.1" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,500" tier="1,6" tags="perkPummelPete"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="17.4"/> <!-- meleeClubIron -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="14.6"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="52"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="16.1" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,500" tier="1,6" tags="perkPummelPete"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
@@ -1537,26 +1527,27 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeClubCandy">
+		<passive_effect name="EntityDamage" operation="base_set" value="19.2"/> <!-- meleeClubCandy -->
+		<passive_effect name="BlockDamage" operation="base_set" value="16"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="52"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="16.1" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,500" tier="1,6" tags="perkPummelPete"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="19.2"/> <!-- meleeClubCandy -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="16"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="52"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="16.1" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,500" tier="1,6" tags="perkPummelPete"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
@@ -1595,7 +1586,7 @@ Mesh files no longer used:
 		<property name="GrazeStart" value=".25"/>
 		<property name="GrazeEnd" value=".32"/>
 		<property name="SwingDegrees" value="65"/>
-		<property name="SwingAngle" value="180"/>
+		<property name="SwingAngle" value="120"/>
 	<property class="HitSounds">
 		<property name="Override0" value="organic" param1="woodhitorganic"/>
 	</property>
@@ -1626,26 +1617,27 @@ Mesh files no longer used:
 			</property>
 
 	<effect_group name="meleeClubBaseballBat">
+		<passive_effect name="EntityDamage" operation="base_set" value="26.2"/> <!-- meleeClubBaseballBat -->
+		<passive_effect name="BlockDamage" operation="base_set" value="22.1"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="52"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="16.1" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,700" tier="1,6" tags="perkPummelPete"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="26.2"/> <!-- meleeClubBaseballBat -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="22.1"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="52"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="16.1" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="300,700" tier="1,6" tags="perkPummelPete"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
@@ -1715,27 +1707,28 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeStunBaton">
+		<passive_effect name="EntityDamage" operation="base_set" value="10.8"/> <!-- meleeStunBaton -->
+		<passive_effect name="BlockDamage" operation="base_set" value="6"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="70"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="11.3" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="269,673" tier="1,6" tags="perkElectrocutioner"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkElectrocutioner"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="10.8"/> <!-- meleeStunBaton -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="6"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="70"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="11.3" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="269,673" tier="1,6" tags="perkElectrocutioner"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkElectrocutioner"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
@@ -1855,6 +1848,9 @@ Mesh files no longer used:
 	</property>
 
 	<property class="Action1">
+		<!-- sexosaurus <passive_effect name="StaminaLoss" operation="perc_add" level="1,5" value="-0.05,-0.25" tags="secondary"/>
+			<passive_effect name="StaminaLoss" operation="base_add" value="26.9" tags="secondary"/> -->
+		<requirement name="StatCompareCurrent" stat="Stamina" operation="GTE" value="20.1"/>
 		<property name="Class" value="ThrownWeapon"/>
 		<property name="Hitmask_override" value="Bullet"/>
 		<property name="Delay" value="1.2"/>
@@ -1872,24 +1868,24 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeThrownSpearStone">
-		<passive_effect name="MaxRange" operation="base_set" value="3.8"/>
-		<passive_effect name="BlockRange" operation="base_set" value="4"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="12.3"/> <!-- meleeThrownSpearStone -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
+		<passive_effect name="EntityDamage" operation="base_set" value="10.3"/> <!-- meleeThrownSpearStone -->
 		<passive_effect name="BlockDamage" operation="base_set" value="5"/>
-		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="13.5" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="60,88" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.2"/>
+		<passive_effect name="BlockRange" operation="base_set" value="4"/>
+
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
 
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
@@ -1914,30 +1910,33 @@ Mesh files no longer used:
 	<property name="UnlockedBy" value="perkJavelinMaster,meleeThrownSpearIronSchematic"/>
 
 	<property class="Action1">
+		<requirement name="StatCompareCurrent" stat="Stamina" operation="GTE" value="22.8"/>
 		<property name="Gravity" value="-6"/>
 	</property>
 
 	<effect_group name="meleeThrownSpearIron">
-		<passive_effect name="MaxRange" operation="base_set" value="4"/>
-		<passive_effect name="BlockRange" operation="base_set" value="4"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="16.4"/> <!-- meleeThrownSpearIron -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
+		<passive_effect name="EntityDamage" operation="base_set" value="12.4"/> <!-- meleeThrownSpearIron -->
 		<passive_effect name="BlockDamage" operation="base_set" value="7"/>
-		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
-		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="15.3" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="212,423" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.2"/>
+		<passive_effect name="BlockRange" operation="base_set" value="4"/>
+
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
 
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
@@ -1959,27 +1958,33 @@ Mesh files no longer used:
 	<property name="EconomicValue" value="700"/>
 	<property name="UnlockedBy" value="meleeThrownSpearSteelSchematic"/>
 
+	<property class="Action1">
+		<requirement name="StatCompareCurrent" stat="Stamina" operation="GTE" value="22.8"/>
+	</property>
+
 	<effect_group name="meleeThrownSpearSteel">
-		<passive_effect name="MaxRange" operation="base_set" value="4.2"/>
-		<passive_effect name="BlockRange" operation="base_set" value="4"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="20.6"/> <!-- meleeThrownSpearSteel -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
+		<passive_effect name="EntityDamage" operation="base_set" value="18.6"/> <!-- meleeThrownSpearSteel -->
 		<passive_effect name="BlockDamage" operation="base_set" value="9"/>
-		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
-		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="15.3" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="317,592" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.2"/>
+		<passive_effect name="BlockRange" operation="base_set" value="4"/>
+
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
 
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
@@ -2051,21 +2056,22 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolSledgehammerStone">
-		<passive_effect name="MaxRange" operation="base_set" value="3.5"/>
-		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="25.7"/> <!-- meleeToolSledgehammerStone -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="40"/>
-		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="34"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="23.2" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="37,76" tier="1,6" tags="perkSkullCrusher"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="17.5"/> <!-- meleeToolSledgehammerStone -->
+		<passive_effect name="BlockDamage" operation="base_set" value="27.2"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/><!-- Gazz change 34 to 50 -->
+		<passive_effect name="StaminaLoss" operation="base_set" value="15.8" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="55,112" tier="1,6" tags="perkSkullCrusher"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
+		<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="primary"/>
+
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
@@ -2075,7 +2081,8 @@ Mesh files no longer used:
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<passive_effect name="GrazeDamageMultiplier" operation="base_set" value=".1" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
-		<passive_effect name="StaminaLoss" operation="base_add" value="46.4" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="31.6" tags="secondary"/>
+		<passive_effect name="DismemberChance" operation="base_add" value=".3" tags="secondary"/>
 	</effect_group>
 </item>
 
@@ -2133,24 +2140,24 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolSledgehammerIron">
-		<passive_effect name="MaxRange" operation="base_set" value="3.6"/>
-		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
 		<passive_effect name="EntityDamage" operation="base_set" value="30.8"/> <!-- meleeToolSledgehammerIron -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="BlockDamage" operation="base_set" value="58.3"/>
-		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
-		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="34"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="27.6" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="133,363" tier="1,6" tags="perkSkullCrusher"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
+		<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="primary"/>
+
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
-		<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="primary"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
@@ -2160,7 +2167,7 @@ Mesh files no longer used:
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<passive_effect name="StaminaLoss" operation="base_add" value="55.2" tags="secondary"/>
-		<passive_effect name="DismemberChance" operation="base_add" value=".5" tags="secondary"/>
+		<passive_effect name="DismemberChance" operation="base_add" value=".3" tags="secondary"/>
 	</effect_group>
 </item>
 
@@ -2218,24 +2225,24 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolSledgehammerSteel">
-		<passive_effect name="MaxRange" operation="base_set" value="3.7"/>
-		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
 		<passive_effect name="EntityDamage" operation="base_set" value="46.2"/> <!-- meleeToolSledgehammerSteel -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="BlockDamage" operation="base_set" value="85"/>
-		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
-		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="34"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="27.6" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="207,581" tier="1,6" tags="perkSkullCrusher"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
+		<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="primary"/>
+
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
-		<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="primary"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
@@ -2245,7 +2252,7 @@ Mesh files no longer used:
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<passive_effect name="StaminaLoss" operation="base_add" value="55.2" tags="secondary"/>
-		<passive_effect name="DismemberChance" operation="base_add" value=".5" tags="secondary"/>
+		<passive_effect name="DismemberChance" operation="base_add" value=".3" tags="secondary"/>
 	</effect_group>
 </item>
 
@@ -2290,26 +2297,25 @@ Mesh files no longer used:
 		<property name="SwingAngle" value="90"/>
 	</property>
 	<effect_group name="meleeKnucklesLeather">
-		<passive_effect name="EntityDamage" operation="base_set" value="8.3"/>
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+		<passive_effect name="EntityDamage" operation="base_set" value="6.2"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="2.2"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="100"/><!-- Gazz change 75 to 100 -->
+		<passive_effect name="StaminaLoss" operation="base_set" value="6.4" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="109,200" tier="1,6" tags="perkBrawler"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBrawler"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
+		<passive_effect name="BlockRange" operation="base_set" value="2.6"/>
 
-		<passive_effect name="BlockDamage" operation="base_set" value="3"/>
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="8.6" tags="primary"/>
-
-		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
-		<passive_effect name="BlockRange" operation="base_set" value="2.6"/>
-
-		<passive_effect name="DegradationMax" operation="base_set" value="82,149" tier="1,6" tags="perkBrawler"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBrawler"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 
 		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnucklesFPV" prefab="#Other/Items?Weapons/Melee/KnuckleWraps/knuckleWrapsLeft_Prefab.prefab" parentTransform="Propjoint" localPos="0,0,0" localRot="0,0,0"/>
 		<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnucklesFPV"/>
@@ -2319,7 +2325,7 @@ Mesh files no longer used:
 		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/>
-		<passive_effect name="StaminaLoss" operation="base_add" value="17.1" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="12.8" tags="secondary"/>
 	</effect_group>
 </item>
 
@@ -2362,28 +2368,27 @@ Mesh files no longer used:
 		<property name="SwingAngle" value="90"/>
 	</property>
 	<effect_group name="meleeKnucklesIron">
-		<passive_effect name="EntityDamage" operation="base_set" value="12.1"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="9.1"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="3"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="100"/><!-- Gazz change 75 to 100 -->
+		<passive_effect name="StaminaLoss" operation="base_set" value="6.9" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="385,961" tier="1,6" tags="perkBrawler"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBrawler"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
+		<passive_effect name="BlockRange" operation="base_set" value="2.6"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="4"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="9.2" tags="primary"/>
-
-		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
-		<passive_effect name="BlockRange" operation="base_set" value="2.6"/>
-
-		<passive_effect name="DegradationMax" operation="base_set" value="289,721" tier="1,6" tags="perkBrawler"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBrawler"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 
 		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnucklesFPV" prefab="#Other/Items?Weapons/Melee/Knuckles/knuckles_Prefab.prefab" parentTransform="Propjoint" localPos="0,0,0" localRot="0,0,0"/>
 		<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnucklesFPV"/>
@@ -2393,7 +2398,7 @@ Mesh files no longer used:
 		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/>
-		<passive_effect name="StaminaLoss" operation="base_add" value="18.4" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="13.8" tags="secondary"/>
 	</effect_group>
 </item>
 
@@ -2404,29 +2409,28 @@ Mesh files no longer used:
 	<property name="UnlockedBy" value="meleeKnucklesSteelSchematic"/>
 
 	<effect_group name="meleeKnucklesSteel">
-		<passive_effect name="EntityDamage" operation="base_set" value="18.1"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="13.6"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="5.2"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="100"/><!-- Gazz change 75 to 100 -->
+		<passive_effect name="StaminaLoss" operation="base_set" value="6.9" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="577,1346" tier="1,6" tags="perkBrawler"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBrawler"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
+		<passive_effect name="BlockRange" operation="base_set" value="2.6"/>
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="7"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="9.2" tags="primary"/>
-
-		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
-		<passive_effect name="BlockRange" operation="base_set" value="2.6"/>
-
-		<passive_effect name="DegradationMax" operation="base_set" value="433,1010" tier="1,6" tags="perkBrawler"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBrawler"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 
 		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnucklesFPV" prefab="#Other/Items?Weapons/Melee/Knuckles/knucklesSpiked_Prefab.prefab" parentTransform="Propjoint" localPos="0,0,0" localRot="0,0,0"/>
 		<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnucklesFPV"/>
@@ -2435,7 +2439,7 @@ Mesh files no longer used:
 		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
 		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/>
-		<passive_effect name="StaminaLoss" operation="base_add" value="18.4" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="13.8" tags="secondary"/>
 	</effect_group>
 </item>
 
@@ -2488,26 +2492,27 @@ Mesh files no longer used:
 		<property name="Adjacentblock" value="dirt"/>
 	</property> -->
 	<effect_group name="meleeToolHoeIron">
+		<passive_effect name="EntityDamage" operation="base_set" value="13.2"/> <!-- meleeToolHoeIron -->
+		<passive_effect name="BlockDamage" operation="base_set" value="26"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="49"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="16.1" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="196,668" tier="1,6" tags="perkLivingOffTheLand"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkLivingOffTheLand"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
 		<passive_effect name="BlockRange" operation="base_set" value="10"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="13.2"/> <!-- meleeToolHoeIron -->
+
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="26"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_set" value="-.9" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_set" value="-.9" tags="metal"/>
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="49"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="16.1" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="196,668" tier="1,6" tags="perkLivingOffTheLand"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkLivingOffTheLand"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
-		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
-		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 	<property name="Group" value="Tools/Traps"/>
 	<property name="PickupJournalEntry" value="farmingTip"/>
@@ -3145,7 +3150,7 @@ Mesh files no longer used:
 </item>
 
 <item name="gunDoubleBarrelShotgun"> <!-- T2 shotguns -->
-	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,shotgun,shortRange,barrelAttachments,sideAttachments,smallTopAttachments,stock,bottomAttachments,attStrength,perkBoomstick,doubleBarrel,canHaveCosmetic"/>
+	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,shotgun,shortRange,barrelAttachments,sideAttachments,stock,bottomAttachments,attStrength,perkBoomstick,doubleBarrel,canHaveCosmetic"/>
 	<property name="DisplayType" value="rangedGun"/>
 	<property name="HoldType" value="56"/>
 	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/DoubleBarrelShotgun/doubleBarrelShotgunPrefab.prefab"/>
@@ -4362,20 +4367,20 @@ Mesh files no longer used:
 		<property name="Turret" value="turretJunk"/>
 	</property>
 	<effect_group name="gunJunkTurret">
-		<passive_effect name="MaxRange" operation="base_set" value="32"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.1"/> <!-- random effective rng -->
-		<passive_effect name="BlockRange" operation="base_set" value="1.2"/>
+		<passive_effect name="MaxRange" operation="base_set" value="15"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="10"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2"/> <!-- random effective rng -->
+		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
 
-		<passive_effect name="EntityDamage" operation="base_set" value="14.8"/>
-		<passive_effect name="EntityDamage" operation="perc_add" value="-.05,.15"/> <!-- random rng -->
+		<passive_effect name="EntityDamage" operation="base_set" value="11.8"/>
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkTurrets"/> <!-- random DegMax -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08"/> <!-- random WeaponHandling -->
 
 		<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.1,.1"/> <!-- random APM -->
-		<passive_effect name="MagazineSize" operation="perc_add" value="-.04,.122"/> <!-- random MagazineSize -->
+		<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08"/> <!-- random WeaponHandling -->
 
 		<passive_effect name="BlockDamage" operation="base_set" value="1"/>
@@ -4389,8 +4394,8 @@ Mesh files no longer used:
 		<passive_effect name="MagazineSize" operation="base_add" value="2,10" tier="2,6"/>
 -->
 
-		<passive_effect name="MagazineSize" operation="base_set" value="80"/>
-		<passive_effect name="MagazineSize" operation="base_add" value="15,40" tier="2,6"/>
+		<passive_effect name="MagazineSize" operation="base_set" value="62"/>
+		<passive_effect name="MagazineSize" operation="base_add" value="6,30" tier="2,6"/>
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1"/>
 
 		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="5"/>
@@ -5668,6 +5673,16 @@ Mesh files no longer used:
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 		</triggered_effect>
 	</effect_group>
+	<effect_group tiered="false">
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.1">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="1"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.2">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="2"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.3">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="3"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.35">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="GTE" value="4"/></passive_effect>
+	</effect_group>
 </item>
 
 <item name="ammoArrowIron">
@@ -5702,6 +5717,16 @@ Mesh files no longer used:
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 		</triggered_effect>
 	</effect_group>
+	<effect_group tiered="false">
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.1">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="1"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.2">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="2"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.3">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="3"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.35">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="GTE" value="4"/></passive_effect>
+	</effect_group>
 </item>
 
 <item name="ammoArrowSteelAP">
@@ -5735,6 +5760,16 @@ Mesh files no longer used:
 			<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="1" target="other"/>
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 		</triggered_effect>
+	</effect_group>
+	<effect_group tiered="false">
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.1">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="1"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.2">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="2"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.3">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="3"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.35">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="GTE" value="4"/></passive_effect>
 	</effect_group>
 </item>
 
@@ -5892,6 +5927,16 @@ Mesh files no longer used:
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 		</triggered_effect>
 	</effect_group>
+	<effect_group tiered="false">
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.1">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="1"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.2">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="2"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.3">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="3"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.35">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="GTE" value="4"/></passive_effect>
+	</effect_group>
 </item>
 
 <item name="ammoCrossbowBoltIron">
@@ -5944,6 +5989,16 @@ Mesh files no longer used:
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 		</triggered_effect>
 	</effect_group>
+	<effect_group tiered="false">
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.1">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="1"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.2">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="2"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.3">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="3"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.35">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="GTE" value="4"/></passive_effect>
+	</effect_group>
 </item>
 
 <item name="ammoCrossbowBoltSteelAP">
@@ -5980,6 +6035,16 @@ Mesh files no longer used:
 			<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="1" target="other"/>
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 		</triggered_effect>
+	</effect_group>
+	<effect_group tiered="false">
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.1">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="1"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.2">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="2"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.3">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="3"/></passive_effect>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.35">
+			<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="GTE" value="4"/></passive_effect>
 	</effect_group>
 </item>
 
@@ -6684,8 +6749,8 @@ add knockdown resist to armor
 	<property name="ActivateObject" value="lightSource"/>
 	<property name="AlwaysActive" value="true"/>
 	<property name="Explosion.ParticleIndex" value="10"/>
-	<property name="Explosion.RadiusBlocks" value="2"/>
-	<property name="Explosion.RadiusEntities" value="2"/>
+	<property name="Explosion.RadiusBlocks" value="1"/>
+	<property name="Explosion.RadiusEntities" value="1"/>
 	<property name="Explosion.BlastPower" value="35"/>
 	<property name="Explosion.DamageBonus.stone" value=".1"/>
 	<property name="Explosion.DamageBonus.metal" value="0"/>
@@ -8815,6 +8880,7 @@ perkNightStalkerSilentNight
 
 <item name="apparelAviatorGoggles">
 	<property name="Extends" value="apparelShades"/>
+	<property name="Material" value="Mleather"/>
 	<property name="DisplayType" value="clothingAviatorGoggles"/>
 	<property class="UMA">
 		<property name="Mesh" value="aviator_goggles"/>
@@ -8830,6 +8896,7 @@ perkNightStalkerSilentNight
 
 <item name="apparelSkiGoggles">
 	<property name="Extends" value="apparelShades"/>
+	<property name="Material" value="MresourceScrapPolymers"/>
 	<property name="DisplayType" value="clothingSkiGoggles"/>
 	<property class="UMA">
 		<property name="Mesh" value="gear_goggles"/>
@@ -9588,7 +9655,7 @@ perkNightStalkerSilentNight
 <item name="apparelCoatJacketLetterZU"> <!-- collegeJacket -->
 	<property name="Extends" value="apparelCoatJacketGeneric"/>
 	<property name="DescriptionKey" value="apparelCoatJacketLetterZUDesc"/>
-	<property name="DisplayType" value="clothing"/>
+	<property name="DisplayType" value="clothingJacketLetter"/>
 	<property name="UnlockedBy" value="perkBatterUpGear"/>
 	<property class="UMA">
 		<property name="Mesh" value="letter_jacket"/>
@@ -9606,7 +9673,7 @@ perkNightStalkerSilentNight
 		<passive_effect name="ModSlots" operation="base_set" value="1"/>
 		<passive_effect name="HypothermalResist" operation="base_add" value="11.7,15.5"/>
 		<passive_effect name="HyperthermalResist" operation="base_add" value="1.5,2.5"/>
-		<passive_effect name="RunSpeed" operation="perc_add" value=".1"/>
+		<passive_effect name="RunSpeed" operation="perc_add" value=".1"/><display_value name="dRunSpeed" value=".1"/>
 		<passive_effect name="HealthLoss" operation="perc_add" value="-.025">
 			<requirement name="ProgressionLevel" progression_name="perkBatterUpGear" operation="Equals" value="1"/>
 		</passive_effect>

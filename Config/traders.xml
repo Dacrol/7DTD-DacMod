@@ -316,65 +316,65 @@ quality_mod: adjusts the price range of all items with a quality level.
 		</trader_item_group>
 
 		<trader_item_group name="groupArmorLight">
-			<item name="armorClothPants" prob=".7"/>
-			<item name="armorClothJacket" prob=".7"/>
-			<item name="armorClothBoots" prob=".7"/>
-			<item name="armorClothGloves" prob=".7"/>
-			<item name="armorLeatherBoots" prob=".2"/>
-			<item name="armorLeatherPants" prob=".2"/>
-			<item name="armorLeatherChest" prob=".2"/>
-			<item name="armorLeatherGloves" prob=".2"/>
-			<item name="armorMilitaryGloves" prob=".1"/>
-			<item name="armorMilitaryHelmet" mods="modArmorHelmetLight" mod_chance=".2" prob=".1"/>
-			<item name="armorMilitaryBoots" prob=".1"/>
-			<item name="armorMilitaryLegs" prob=".1"/>
-			<item name="armorMilitaryVest" prob=".1"/>
+			<item name="armorClothPants" prob=".7" quality="1,5"/>
+			<item name="armorClothJacket" prob=".7" quality="1,5"/>
+			<item name="armorClothBoots" prob=".7" quality="1,5"/>
+			<item name="armorClothGloves" prob=".7" quality="1,5"/>
+			<item name="armorLeatherBoots" prob=".2" quality="1,5"/>
+			<item name="armorLeatherPants" prob=".2" quality="1,5"/>
+			<item name="armorLeatherChest" prob=".2" quality="1,5"/>
+			<item name="armorLeatherGloves" prob=".2" quality="1,5"/>
+			<item name="armorMilitaryGloves" prob=".1" quality="1,4"/>
+			<item name="armorMilitaryHelmet" mods="modArmorHelmetLight" mod_chance=".2" prob=".1" quality="1,4"/>
+			<item name="armorMilitaryBoots" prob=".1" quality="1,4"/>
+			<item name="armorMilitaryLegs" prob=".1" quality="1,4"/>
+			<item name="armorMilitaryVest" prob=".1" quality="1,4"/>
 		</trader_item_group>
 
 		<trader_item_group name="groupArmorHeavy">
-			<item name="armorScrapBoots" prob=".7"/>
-			<item name="armorScrapLegs" prob=".7"/>
-			<item name="armorScrapGloves" prob=".7"/>
-			<item name="armorScrapChest" prob=".7"/>
-			<item name="armorScrapHelmet" prob=".7"/>
-			<item name="armorIronGloves" prob=".2"/>
-			<item name="armorIronHelmet" prob=".2"/>
-			<item name="armorIronBoots" prob=".2"/>
-			<item name="armorIronLegs" prob=".2"/>
-			<item name="armorIronChest" prob=".2"/>
-			<item name="armorSteelBoots" prob=".1"/>
-			<item name="armorSteelLegs" prob=".1"/>
-			<item name="armorSteelChest" prob=".1"/>
-			<item name="armorSteelGloves" prob=".1"/>
-			<item name="armorSwatHelmet" mods="modArmorHelmetLight" mod_chance=".2" prob=".1"/>
-			<item name="armorMiningHelmet" mods="modArmorHelmetLight" mod_chance="1"/>
+			<item name="armorScrapBoots" prob=".7" quality="1,5"/>
+			<item name="armorScrapLegs" prob=".7" quality="1,5"/>
+			<item name="armorScrapGloves" prob=".7" quality="1,5"/>
+			<item name="armorScrapChest" prob=".7" quality="1,5"/>
+			<item name="armorScrapHelmet" prob=".7" quality="1,5"/>
+			<item name="armorIronGloves" prob=".2" quality="1,5"/>
+			<item name="armorIronHelmet" prob=".2" quality="1,5"/>
+			<item name="armorIronBoots" prob=".2" quality="1,5"/>
+			<item name="armorIronLegs" prob=".2" quality="1,5"/>
+			<item name="armorIronChest" prob=".2" quality="1,5"/>
+			<item name="armorSteelBoots" prob=".1" quality="1,4"/>
+			<item name="armorSteelLegs" prob=".1" quality="1,4"/>
+			<item name="armorSteelChest" prob=".1" quality="1,4"/>
+			<item name="armorSteelGloves" prob=".1" quality="1,4"/>
+			<item name="armorSwatHelmet" mods="modArmorHelmetLight" mod_chance=".2" prob=".1" quality="1,4"/>
+			<item name="armorMiningHelmet" mods="modArmorHelmetLight" mod_chance="1" quality="1,4"/>
 		</trader_item_group>
 
 		<trader_item_group name="groupMilitaryArmor">
-			<item name="armorMilitaryGloves"/>
-			<item name="armorMilitaryHelmet" mods="modArmorHelmetLight" mod_chance=".2"/>
-			<item name="armorMilitaryBoots"/>
-			<item name="armorMilitaryLegs"/>
-			<item name="armorMilitaryVest"/>
+			<item name="armorMilitaryGloves" quality="1,4"/>
+			<item name="armorMilitaryHelmet" mods="modArmorHelmetLight" mod_chance=".2" quality="1,4"/>
+			<item name="armorMilitaryBoots" quality="1,4"/>
+			<item name="armorMilitaryLegs" quality="1,4"/>
+			<item name="armorMilitaryVest" quality="1,4"/>
 			<item name="resourceMilitaryFiber" count="1,5" prob="2"/>
 			<item name="apparelNightvisionGoggles"/>
 		</trader_item_group>
 
 		<trader_item_group name="groupIronArmor">
-			<item name="armorIronGloves"/>
-			<item name="armorIronHelmet"/>
-			<item name="armorIronBoots"/>
-			<item name="armorIronLegs"/>
-			<item name="armorIronChest"/>
+			<item name="armorIronGloves" quality="1,5"/>
+			<item name="armorIronHelmet" quality="1,5"/>
+			<item name="armorIronBoots" quality="1,5"/>
+			<item name="armorIronLegs" quality="1,5"/>
+			<item name="armorIronChest" quality="1,5"/>
 		</trader_item_group>
 
 		<trader_item_group name="steelArmor">
-			<item name="armorSteelBoots" />
-			<item name="armorSteelLegs" />
-			<item name="armorSteelChest" />
-			<item name="armorSteelGloves" />
-			<item name="armorSwatHelmet" mods="modArmorHelmetLight" mod_chance=".2" />
-			<item name="armorMiningHelmet" mods="modArmorHelmetLight" mod_chance="1"/>
+			<item name="armorSteelBoots"  quality="1,4"/>
+			<item name="armorSteelLegs"  quality="1,4"/>
+			<item name="armorSteelChest"  quality="1,4"/>
+			<item name="armorSteelGloves"  quality="1,4"/>
+			<item name="armorSwatHelmet" mods="modArmorHelmetLight" mod_chance=".2"  quality="1,4"/>
+			<item name="armorMiningHelmet" mods="modArmorHelmetLight" mod_chance="1" quality="1,4"/>
 		</trader_item_group>
 
 		<trader_item_group name="groupAllArmor/Cloth">
@@ -384,22 +384,17 @@ quality_mod: adjusts the price range of all items with a quality level.
 		</trader_item_group>
 
 		<trader_item_group name="weaponsMelee">
-			<item name="meleeToolKnifeIron" prob="0.5"/>
-			<item name="meleeToolKnifeMachete" prob="0.2"/>
-			<item name="meleeClubIron" prob="0.5"/>
-			<item name="meleeClubBaseballBat" prob="0.2"/>
-			<item name="meleeThrownSpearIron" prob="0.5"/>
-			<item name="meleeThrownSpearSteel" prob="0.2"/>
-			<item name="meleeToolSledgehammerIron" prob="0.3"/>
-			<item name="meleeToolSledgehammerSteel" prob="0.1"/>
-			<item name="meleeKnucklesIron" prob="0.5"/>
-			<item name="meleeKnucklesSteel" prob="0.2"/>
-			<item name="meleeStunBaton" prob="0.2"/>
-		</trader_item_group>
-
-		<trader_item_group name="weaponsCrossbow+ammo" count="all">
-			<item name="gunCrossbowIron" count="1"/>
-			<item name="ammoCrossbowBoltIron" count="10,30"/>
+			<item name="meleeToolKnifeIron" prob="0.5" quality="1,5"/>
+			<item name="meleeToolKnifeMachete" prob="0.2" quality="1,4"/>
+			<item name="meleeClubIron" prob="0.5" quality="1,5"/>
+			<item name="meleeClubBaseballBat" prob="0.2" quality="1,4"/>
+			<item name="meleeThrownSpearIron" prob="0.5" quality="1,5"/>
+			<item name="meleeThrownSpearSteel" prob="0.2" quality="1,4"/>
+			<item name="meleeToolSledgehammerIron" prob="0.3" quality="1,5"/>
+			<item name="meleeToolSledgehammerSteel" prob="0.1" quality="1,4"/>
+			<item name="meleeKnucklesIron" prob="0.5" quality="1,5"/>
+			<item name="meleeKnucklesSteel" prob="0.2" quality="1,4"/>
+			<item name="meleeStunBaton" prob="0.2" quality="1,5"/>
 		</trader_item_group>
 
 		<trader_item_group name="rareMedicine" count="1">
@@ -487,6 +482,7 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item name="bookBatterUpKnockdown"/>
 			<item name="bookBatterUpSlowPitch"/>
 			<item name="bookBatterUpMaintenance"/>
+			<item name="bookBatterUpConditioning"/>
 			<item name="bookEnforcerAPAmmo"/>
 			<item name="bookEnforcerApparel"/>
 			<item name="bookEnforcerCriminalPursuit"/>
@@ -669,7 +665,7 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item name="medicalFirstAidBandageSchematic"/>
 			<item name="medicalBloodDrawKitSchematic"/>
 			<item name="resourceMilitaryFiberSchematic"/>
-			<!--<item name="modGunMeleeTheHunterSchematic"/>-->
+			<item name="modGunMeleeTheHunterSchematic"/>
 			<!--<item name="modGunMeleeBlessedMetalSchematic"/>-->
 		</trader_item_group>
 
@@ -800,25 +796,25 @@ quality_mod: adjusts the price range of all items with a quality level.
 		</trader_item_group>
 
 		<trader_item_group name="weaponsGunsT2">
-			<item name="gunPistol"/>
-			<item name="gunJunkTurret" prob="0.7"/>
-			<item name="gunDoubleBarrelShotgun"/>
-			<item name="gunAK47" />
-			<item name="gunHuntingRifle"/>
-			<item name="gunBowWooden" prob="0.7"/>
-			<item name="gunCrossbowIron" prob="0.7"/>
+			<item name="gunPistol" quality="1,5"/>
+			<item name="gunJunkTurret" prob="0.7" quality="1,5"/>
+			<item name="gunDoubleBarrelShotgun" quality="1,5"/>
+			<item name="gunAK47"  quality="1,5"/>
+			<item name="gunHuntingRifle" quality="1,5"/>
+			<item name="gunBowWooden" prob="0.7" quality="1,5"/>
+			<item name="gunCrossbowIron" prob="0.7" quality="1,5"/>
 		</trader_item_group>
 
 		<trader_item_group name="weaponsGunsT3">
-			<item name="gunSMG5" prob="0.7"/>
-			<item name="gunJunkTurret" prob="0.7"/>
-			<item name="gunPumpShotgun" />
-			<item name="gunMR10" />
-			<item name="gunM60" />
-			<item name="gun44Magnum" prob="0.7"/>
-			<item name="gunRocketLauncher" />
-			<item name="gunBowCompound" prob="0.7"/>
-			<item name="gunCrossbowCompound" prob="0.7"/>
+			<item name="gunSMG5" prob="0.7" quality="1,4"/>
+			<item name="gunJunkTurret" prob="0.7" quality="1,4"/>
+			<item name="gunPumpShotgun"  quality="1,4"/>
+			<item name="gunMR10"  quality="1,4"/>
+			<item name="gunM60"  quality="1,4"/>
+			<item name="gun44Magnum" prob="0.7" quality="1,4"/>
+			<item name="gunRocketLauncher"  quality="1,4"/>
+			<item name="gunBowCompound" prob="0.7" quality="1,4"/>
+			<item name="gunCrossbowCompound" prob="0.7" quality="1,4"/>
 		</trader_item_group>
 
 		<trader_item_group name="weaponsGunParts">
@@ -1005,25 +1001,25 @@ quality_mod: adjusts the price range of all items with a quality level.
 		</trader_item_group>
 
 		<trader_item_group name="rareTools" count="1">
-			<item name="meleeToolChainsaw"/>
-			<item name="meleeToolAuger" prob="0.3"/>
+			<item name="meleeToolChainsaw" quality="1,4"/>
+			<item name="meleeToolAuger" prob="0.3" quality="1,4"/>
 			<item name="gunToolNailgun"/>
 			<item name="smallEngine"/>
-			<item name="meleeToolPickaxeSteel"/>
-			<item name="meleeToolFireaxeSteel"/>
-			<item name="meleeToolShovelSteel"/>
-			<item name="meleeToolSledgehammerSteel"/>
+			<item name="meleeToolPickaxeSteel" quality="1,4"/>
+			<item name="meleeToolFireaxeSteel" quality="1,4"/>
+			<item name="meleeToolShovelSteel" quality="1,4"/>
+			<item name="meleeToolSledgehammerSteel" quality="1,4"/>
 			<item name="toolForgeCrucible"/>
 		</trader_item_group>
 
 		<trader_item_group name="tools" count="1">
-			<item name="meleeToolPickaxeIron"/>
-			<item name="meleeToolShovelIron"/>
-			<item name="meleeToolFireaxeIron"/>
-			<item name="meleeToolSledgehammerIron"/>
+			<item name="meleeToolPickaxeIron" quality="1,5"/>
+			<item name="meleeToolShovelIron" quality="1,5"/>
+			<item name="meleeToolFireaxeIron" quality="1,5"/>
+			<item name="meleeToolSledgehammerIron" quality="1,5"/>
 			<!--<item name="meleeToolHoeIron"/>-->
-			<item name="meleeToolClawHammer"/>
-			<item name="meleeToolWrench" prob="0.8"/>
+			<item name="meleeToolClawHammer" quality="1,5"/>
+			<item name="meleeToolWrench" prob="0.8" quality="1,5"/>
 			<item name="resourceRepairKit" count="1,4"/>
 			<item name="toolAnvil" count="1"/>
 			<item name="toolBellows" prob="0.7"/>
@@ -1124,9 +1120,6 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item name="plantedHop1" count="1,5" prob="0.3"/>
 			<item name="resourcePaint" count="1,12"/> <!-- 50 -->
 			<item group="clothes" count="2,4"/>
-			<item group="weaponsMelee" count="1,3" prob="1.5"/>
-			<item group="weaponsCrossbow+ammo" count="1"/>
-			<item group="weaponsGunsT2" count="1" prob="1"/>
 			<item group="weaponsGunParts" count="1" prob=".4"/>
 			<item name="meleeToolFlashlight02"/>
 			<item group="books" count="1,3" prob="1"/>
@@ -1138,7 +1131,7 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item group="preparedFood" count="1,2"/>
 			<item group="preparedDrink" count="1"/>
 			<item group="constructionSupplies" count="1,3" prob="0.8"/>
-			<item group="rareTools" count="1" prob="0.2" quality="2,4"/>
+			<item group="rareTools" count="1" prob="0.2" quality="1,3"/>
 			<item group="rareMedicine" count="1" prob="0.3"/>
 			<item group="medicine" count="1,2" prob="1"/>
 			<item group="vehicleParts" count="1"/>
@@ -1238,14 +1231,30 @@ workstations
 			<item group="decorativeBlocks" count="2,7"/>
 			<item group="tools" count="1" quality="1,3"/>
 			<item group="tools" count="1"/>
-			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
-			<item group="weaponsGunsMixed" count="1"/>
+			<item group="weaponsMelee" count="1,3" quality="1,3"/>
+			<item group="weaponsGunsT2" count="1" quality="1,3"/>
 			<item group="weaponsGunParts" count="1"/>
 			<item group="clothes" count="1,4"/>
 			<item group="groupArmorLight" count="1,3" quality="1,4"/>
 			<item group="groupArmorHeavy" count="1,3" quality="1,4"/>
 			<item group="traderElectrical" count="1,2"/>
 			<item group="modAllT1SecretStash" count="1,2"/>
+
+<!--
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+			<item group="weaponsGunsMixed" count="1" quality="1,3"/>
+-->
 		</trader_items>
 
 		<tier_items level="1,499" count="all">  <!-- requires Perk 0 -->
@@ -1254,8 +1263,8 @@ workstations
 			<item group="weaponsGunsMixed" count="1,2" quality="2,4"/>
 			<item group="weaponsGunParts" count="1"/>
 			<item group="ammo" count="1,2"/>
-			<item group="groupArmorLight" count="1"/>
-			<item group="groupArmorHeavy" count="1"/>
+			<item group="groupArmorLight" count="1" quality="1,5"/>
+			<item group="groupArmorHeavy" count="1" quality="1,5"/>
 			<item group="commonBooks" count="1,2"/>
 			<item group="rareBooks" count="1"/>
 			<item group="perkBooks" count="1"/>
@@ -1269,9 +1278,10 @@ workstations
 			<!-- Bug: The count is overridden by "all" anyway so all probabilities are =1 -->
 			<item group="traderElectrical" count="2,3"/>
 			<item name="cntVendingMachine" count="1" />
-			<item group="tools" count="1" quality="3,5"/>
-			<item group="rareTools" count="1" quality="3,5"/>
-			<item group="weaponsGunsMixed" count="1,3" quality="3,5"/>
+			<item group="tools" count="1" quality="2,5"/>
+			<item group="rareTools" count="1" quality="2,4"/>
+			<item group="weaponsMelee" count="1,2" quality="2,5"/>
+			<item group="weaponsGunsMixed" count="1,2" quality="2,5"/>
 			<item group="ammo" count="2,5"/>
 			<item group="steelArmor" count="1,2"/>
 			<item group="groupArmorHeavy" count="1,2"/>
@@ -1289,9 +1299,10 @@ workstations
 		<tier_items level="4000,4999" count="all"> <!-- requires Perk 4 -->
 			<item group="traderElectrical" count="2,3"/>
 			<item name="cntVendingMachine" count="1" />
-			<item group="tools" count="1,2"  quality="4,6"/>
-			<item group="rareTools" count="1,2" quality="4,6"/>
-			<item group="weaponsGunsMixed" count="2,3" quality="4,6"/>
+			<item group="tools" count="1,2"  quality="2,5"/>
+			<item group="rareTools" count="1,2" quality="2,5"/>
+			<item group="weaponsMelee" count="2,3" quality="2,5"/>
+			<item group="weaponsGunsMixed" count="2,3" quality="2,5"/>
 			<item group="ammo" count="3,6"/>
 			<item group="steelArmor" count="1,2"/>
 			<item group="groupMilitaryArmor" count="1,2"/>
@@ -1306,12 +1317,13 @@ workstations
 		</tier_items>
 
 		<tier_items level="5000,-1" count="all"> <!-- requires Perk 5 -->
-			<item group="traderElectrical" count="3,4"/>
-			<item group="tools" count="1,2" quality="5,6"/>
-			<item group="rareTools" count="3,4" quality="5,6"/>
+			<item group="traderElectrical" count="3,5"/>
+			<item group="tools" count="1,2" quality="3,5"/>
+			<item group="rareTools" count="3,4" quality="4,5"/>
 			<item name="cntVendingMachine" count="2" />
-			<item group="weaponsGunsMixed" count="2,3" quality="5,6"/>
-			<item group="weaponsGunsT3" count="1" quality="3,6"/>
+			<item group="weaponsMelee" count="2,3" quality="3,5"/>
+			<item group="weaponsGunsMixed" count="2,3" quality="3,5"/>
+			<item group="weaponsGunsT3" count="1" quality="3,5"/>
 			<item group="ammo" count="5,8"/>
 			<item group="steelArmor" count="2,3"/>
 			<item group="groupMilitaryArmor" count="2,3"/>

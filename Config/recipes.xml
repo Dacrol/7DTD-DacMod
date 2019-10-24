@@ -620,7 +620,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="armorMiningHelmet" count="1" craft_area="workbench" tags="learnable,perkHeavyArmor">
+<recipe name="armorMiningHelmet" count="1" craft_area="workbench" tags="learnable,perkLightArmor">
 	<ingredient name="resourceScrapPolymers" count="15"/>
 	<ingredient name="resourceLeather" count="5"/>
 	<ingredient name="resourceDuctTape" count="1"/>
@@ -937,7 +937,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="drinkJarRiverWater" count="1"/>
 </recipe>
 
-<recipe name="drinkJarBoiledWater" count="1" craft_area="campfire" craft_time="40" tags="perkMasterChef,boiledWater">
+<recipe name="drinkJarBoiledWater" count="1" craft_area="campfire" craft_time="40" tags="perkMasterChef,perkChefBoiledWater,boiledWater">
 	<ingredient name="drinkJarRiverWater" count="1"/>
 </recipe>
 

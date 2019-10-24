@@ -294,6 +294,11 @@
 			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
 			<display_entry name="dStaminaRegen" title_key="statStaminaRegenRunning" display_type="Percent" display_leading_plus="true"/>
 		</item_display_info>
+		<item_display_info display_type="clothingJacketLetter" display_group="groupAttire" >
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+			<display_entry name="dRunSpeed" title_key="statRunSpeed" display_type="Percent" display_leading_plus="true"/>
+		</item_display_info>
 		<item_display_info display_type="clothingHazMat" display_group="groupAttire" >
 			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>

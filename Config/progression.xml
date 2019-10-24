@@ -3,7 +3,7 @@
 <progression>
 <!-- A17 intended:
 <level max_level="300" exp_to_level="11931" experience_multiplier="1.0149" skill_points_per_level="1"> -->
-<level max_level="300" exp_to_level="8000" experience_multiplier="1.02" skill_points_per_level="1">
+<level max_level="300" exp_to_level="10000" experience_multiplier="1.05" skill_points_per_level="1">
 
 <!-- XP to complete the current level will cap out at 2^32/2. (lvl 252 in A18) -->
 
@@ -366,10 +366,6 @@
 			Arrow gravity still in progress -->
 				<passive_effect name="ProjectileVelocity" operation="perc_add" level="1,5" value="0.1,.5"/>
 		</effect_group>
-		<effect_group name="Throw">
-			<!-- <requirement name="HoldingItemHasTags" tags="perkJavelinMaster"/> -->
-			<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="secondary"/>
-		</effect_group>
 		<effect_group>
 			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,4" tags="perkJavelinMaster"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="meleeThrownSpearIron"/>
@@ -455,7 +451,7 @@
 		<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="7" desc_key="reqPerceptionLevel07"/></level_requirements>
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="10" desc_key="reqPerceptionLevel10"/></level_requirements>
 		<effect_group>
-			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4,5" value="-.1,-.2,-.25,-.25,-.25">
+			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4,5" value="-.1,-.2,-.3,-.35,-.35">
 				<requirement name="HoldingItemHasTags" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner"/>
 			</passive_effect>
 
@@ -463,16 +459,8 @@
 			<passive_effect name="EntityPenetrationCount" operation="perc_add" level="3,5" value="1,3">
 				<requirement name="HoldingItemHasTags" tags="perkDeadEye"/>
 			</passive_effect>
+			<!--	All AP ammo has 1 penetration -->
 
-				<!--	All AP ammo has 1 penetration
-
-				The Penetrator
-				You find weak spots in a target's armor and can use AP bullets to shoot through multiple organic targets.
-					Ignore 10% of armor with all firearms.
-					Ignore 20% of armor with all firearms.
-					Ignore 25% of armor with all firearms.\nArmor-piercing rounds can penetrate an additional target when using Hunting or Marksman Rifles.
-					Ignore 25% of armor with all firearms.\nArmor-piercing rounds can penetrate two additional targets when using Hunting or Marksman Rifles.
-					Ignore 25% of armor with all firearms.\nArmor-piercing rounds can penetrate three additional targets when using Hunting or Marksman Rifles. -->
 			<effect_description level="1" desc_key="perkPenetratorRank1Desc" long_desc_key="perkPenetratorRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkPenetratorRank2Desc" long_desc_key="perkPenetratorRank2LongDesc"/>
 			<effect_description level="3" desc_key="perkPenetratorRank3Desc" long_desc_key="perkPenetratorRank3LongDesc"/>
@@ -787,9 +775,11 @@
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="10" desc_key="reqStrengthLevel10"/></level_requirements>
 
 		<effect_group>
+			<passive_effect name="CraftingTime" operation="perc_add" level="1,5" value="-.1,-.5" tags="perkMasterChef"/>
+			<passive_effect name="CraftingTime" operation="perc_add" level="1,5" value=".06,.3" tags="perkChefBoiledWater"/>
+
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1"
 				tags="foodBaconAndEggs,foodBoiledMeat,foodGrilledMeat,foodBakedPotato,foodCornBread,foodCornOnTheCob,drinkJarRedTea,drinkJarCoffee,drinkJarGoldenRodTea"/>
-			<passive_effect name="CraftingTime" operation="perc_add" level="1,5" value="-0.1,-.5" tags="perkMasterChef"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,5" value="1"
 				tags="foodSteakAndPotato,foodBlueberryPie,foodMeatStew,foodVegetableStew,foodPumpkinPie,foodPumpkinCheesecake,foodPumpkinBread"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="3,5" value="1"
@@ -1547,8 +1537,8 @@
 		<effect_group name="Holding a turret">
 			<requirement name="HoldingItemHasTags" tags="perkTurrets"/>
 				<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".3,.6,.9,1.2,1.2" tags="deployed" invert_tag_check="true"/>
-				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="4,5" value="0.15,0.3" tags="deployed" invert_tag_check="true"/>
-				<passive_effect name="MagazineSize" operation="base_add" level="1,5" value="20,200"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="4,5" value="0.1,0.2" tags="deployed" invert_tag_check="true"/>
+				<passive_effect name="MagazineSize" operation="base_add" level="1,5" value="10,50"/>
 		</effect_group>
 
 		<effect_group name="General and deployed turrets">
@@ -1562,7 +1552,7 @@
 			<passive_effect name="JunkTurretActiveCount" operation="base_set" value="0"/>
 			<passive_effect name="JunkTurretActiveCount" operation="base_add" level="5" value="1"/>
 				<!-- JunkTurretActiveCount,  default=1,  this is bugged. A value of 0 means that 1 turret is active. Value of 2 means 3 turrets will be active. -->
-			<passive_effect name="JunkTurretActiveRange" operation="base_set" level="0,1,2,3,4,5" value="20,30,40,60,80,100"/>
+			<passive_effect name="JunkTurretActiveRange" operation="base_set" level="0,1,2,3,4,5" value="10,14,15,16,17,18"/>
 
 			<effect_description level="1" desc_key="perkTurretsRank1Desc" long_desc_key="perkTurretsRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkTurretsRank2Desc" long_desc_key="perkTurretsRank2LongDesc"/>

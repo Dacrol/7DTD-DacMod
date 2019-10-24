@@ -922,10 +922,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<!--Do double damage to living enemies-->
 		<effect_group tiered="false">
-			<requirements compare_type="or">
-				<requirement name="EntityTagCompare" target="other" tags="player,animal"/>
-			</requirements>
-			<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
+			<requirement name="EntityTagCompare" target="other" tags="player,animal"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
@@ -1129,12 +1127,18 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 
 		<effect_group tiered="false">
 			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="20"/>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingZombie"/>
 		</effect_group>
 		<effect_group tiered="false" name="Power Attack">
 			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="40"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingZombie"/>
+		</effect_group>
+		<effect_group tiered="false" name="Always extend bleeding">
+			<requirement name="HasBuff" target="other" buff="buffInjuryBleeding"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
+
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
@@ -1280,14 +1284,15 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<item_modifier name="modMeleeFiremansAxeMod" installable_tags="axe" modifier_tags="damageDirt" type="attachment">
+	<item_modifier name="modMeleeFiremansAxeMod" installable_tags="axe" modifier_tags="damageDirt,damageStone,damageIron" type="attachment">
 		<property name="UnlockedBy" value="bookFiremansAlmanacAxes"/>
 		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
 		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="EntityDamage" operation="perc_add" value="-.25"/>
 			<passive_effect name="BlockDamage" operation="perc_add" value=".25"/>
-			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
@@ -1298,7 +1303,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="earth"/>
-			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
@@ -1309,7 +1315,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="stone"/>
-			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
@@ -1320,7 +1327,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="metal"/>
-			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
@@ -1331,7 +1339,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="wood"/>
-			<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
