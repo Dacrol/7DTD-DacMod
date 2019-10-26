@@ -176,13 +176,10 @@ Example of using the seed (creation time) on a weapon to activate an effect
 				<requirement name="ProgressionLevel" progression_name="perkUrbanCombatComplete" operation="Equals" value="1"/>
 			</passive_effect>
 
-			<passive_effect name="EntityDamage" operation="perc_add" value="-.15">
+			<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1">
 				<requirement name="RandomRoll" seed_type="Item" min_max="1,100" operation="LTE" value="80"/>
 			</passive_effect>
-			<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.25">
-				<requirement name="RandomRoll" seed_type="Item" min_max="1,100" operation="LTE" value="80"/>
-			</passive_effect>
-			<passive_effect name="MaxRange" operation="perc_add" value="-.25">
+			<passive_effect name="MaxRange" operation="perc_add" value="-.1">
 				<requirement name="RandomRoll" seed_type="Item" min_max="1,100" operation="LTE" value="80"/>
 			</passive_effect>
 
