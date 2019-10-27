@@ -5531,13 +5531,13 @@ Mesh files no longer used:
 	<property name="Group" value="Ammo/Weapons"/>
 	<property name="EconomicValue" value="5"/>
 	<effect_group name="ammoBlunderbuss" tiered="false">
-		<passive_effect name="EntityDamage" operation="base_set" value="11"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="15"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="1.6"/>
 		<passive_effect name="RoundRayCount" operation="base_set" value="8"/>
 		<passive_effect name="TargetArmor" operation="perc_add" value=".4"/><display_value name="dTargetArmor" value=".4"/>
 		<passive_effect name="DismemberChance" operation="perc_add" value="-.875"/>
-		<passive_effect name="MaxRange" operation="base_set" value="15"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="2"/>
+		<passive_effect name="MaxRange" operation="base_set" value="18"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="7"/>
 	</effect_group>
 </item>
 
