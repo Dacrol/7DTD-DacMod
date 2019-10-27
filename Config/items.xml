@@ -1707,13 +1707,13 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeStunBaton">
-		<passive_effect name="EntityDamage" operation="base_set" value="10.8"/> <!-- meleeStunBaton -->
+		<passive_effect name="EntityDamage" operation="base_set" value="13.8"/> <!-- meleeStunBaton -->
 		<passive_effect name="BlockDamage" operation="base_set" value="6"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="70"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="11.3" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="269,673" tier="1,6" tags="perkElectrocutioner"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkElectrocutioner"/>
-		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.1"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
@@ -1721,7 +1721,7 @@ Mesh files no longer used:
 		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.75" tier="2,6"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
