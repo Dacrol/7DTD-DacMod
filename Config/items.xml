@@ -1868,7 +1868,7 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeThrownSpearStone">
-		<passive_effect name="EntityDamage" operation="base_set" value="18.3"/> <!-- meleeThrownSpearStone -->
+		<passive_effect name="EntityDamage" operation="base_set" value="16.3"/> <!-- meleeThrownSpearStone -->
 		<passive_effect name="BlockDamage" operation="base_set" value="5"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="13.5" tags="primary"/>
@@ -2140,7 +2140,7 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolSledgehammerIron">
-		<passive_effect name="EntityDamage" operation="base_set" value="38.8"/> <!-- meleeToolSledgehammerIron -->
+		<passive_effect name="EntityDamage" operation="base_set" value="36.8"/> <!-- meleeToolSledgehammerIron -->
 		<passive_effect name="BlockDamage" operation="base_set" value="58.3"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="34"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="27.6" tags="primary"/>
@@ -2225,7 +2225,7 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolSledgehammerSteel">
-		<passive_effect name="EntityDamage" operation="base_set" value="52.2"/> <!-- meleeToolSledgehammerSteel -->
+		<passive_effect name="EntityDamage" operation="base_set" value="50.2"/> <!-- meleeToolSledgehammerSteel -->
 		<passive_effect name="BlockDamage" operation="base_set" value="85"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="34"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="27.6" tags="primary"/>
