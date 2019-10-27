@@ -329,8 +329,8 @@ Mesh files no longer used:
 		<passive_effect name="StaminaLoss" operation="base_set" value="15.6" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="188,641" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="MaxRange" operation="base_set" value="3.6"/>
-		<passive_effect name="BlockRange" operation="base_set" value="4"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.5"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.6"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
@@ -377,8 +377,8 @@ Mesh files no longer used:
 		<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="300,1100" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="MaxRange" operation="base_set" value="3.9"/>
-		<passive_effect name="BlockRange" operation="base_set" value="4"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.6"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.6"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
