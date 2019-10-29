@@ -26268,7 +26268,7 @@ NOT the TextureNumber.
 	<property name="Damage_received" value="33"/>
 	<property name="Material" value="MtrapSpikesIron"/>
 	<property name="DisplayType" value="blockHardened"/>
-	<property name="MaxDamage" value="132"/>
+	<property name="MaxDamage" value="264"/>
 
 	<property name="Shape" value="Ext3dModel"/> <property name="Texture" value="293"/>
 	<property name="Mesh" value="models"/>
