@@ -4398,8 +4398,8 @@ Mesh files no longer used:
 		<passive_effect name="MagazineSize" operation="base_add" value="15,40" tier="2,6"/>
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1"/>
 
-		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="5"/>
-		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="5"/>
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
 		<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.13"/>
 		<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value="-.05"/>
 		<passive_effect name="SpreadMultiplierWalking" operation="perc_add" value=".15"/>
