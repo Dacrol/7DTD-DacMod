@@ -4367,13 +4367,13 @@ Mesh files no longer used:
 		<property name="Turret" value="turretJunk"/>
 	</property>
 	<effect_group name="gunJunkTurret">
-		<passive_effect name="MaxRange" operation="base_set" value="100"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
+		<passive_effect name="MaxRange" operation="base_set" value="48"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="16"/>
 		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.1"/> <!-- random effective rng -->
-		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
+		<passive_effect name="BlockRange" operation="base_set" value="1.5"/>
 
-		<passive_effect name="EntityDamage" operation="base_set" value="14.8"/>
-		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
+		<passive_effect name="EntityDamage" operation="base_set" value="13.2"/>
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.1,.1"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkTurrets"/> <!-- random DegMax -->
@@ -4383,7 +4383,7 @@ Mesh files no longer used:
 		<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08"/> <!-- random WeaponHandling -->
 
-		<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+		<passive_effect name="BlockDamage" operation="base_set" value=".2"/>
 
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="105.6"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
