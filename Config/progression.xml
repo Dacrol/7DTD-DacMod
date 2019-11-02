@@ -1551,7 +1551,7 @@
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="gunJunkTurret"/>
 
 			<passive_effect name="EntityDamage" operation="perc_add" level="1,2,3,4,5" value=".1,.2,.3,.4,.4" tags="perkTurrets,deployed"/>
-			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".3,.7,1.1,1.5,1.5" tags="perkTurrets,deployed"/>
+			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".2,.4,.6,.8,.8" tags="perkTurrets,deployed"/>
 
 			<passive_effect name="JunkTurretActiveCount" operation="base_set" value="0"/>
 			<passive_effect name="JunkTurretActiveCount" operation="base_add" level="5" value="1"/>
