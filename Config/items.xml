@@ -3357,7 +3357,7 @@ Mesh files no longer used:
 		<property name="Class" value="Ranged"/>
 		<property name="Delay" value=".5"/> <!-- obsolete if rounds per minute exists -->
 		<property name="Magazine_items" value="ammo762mmBulletBall,ammo762mmBulletHP,ammo762mmBulletAP"/>
-		<property name="Reload_time" value="2.66"/>
+		<property name="Reload_time" value="2.33"/>
 		<property name="Sound_start" value="sniperrifle_fire"/>
 		<property name="Sound_repeat" value=""/>
 		<property name="Sound_end" value=""/>
@@ -4204,7 +4204,7 @@ Mesh files no longer used:
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".5"/> <!-- 3.4s -->
 		<passive_effect name="ProjectileVelocity" operation="perc_add" value="-.1"/>
 
-		<passive_effect name="EntityDamage" operation="base_add" value="-6"/>
+		<!-- <passive_effect name="EntityDamage" operation="base_add" value="-6"/> -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
@@ -4288,6 +4288,7 @@ Mesh files no longer used:
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".5"/> <!-- 3.4s -->
 
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
+		<passive_effect name="EntityDamage" operation="base_add" value="6"/>
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->

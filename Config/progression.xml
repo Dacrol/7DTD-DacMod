@@ -288,7 +288,7 @@
 
 				<passive_effect name="WeaponHandling" operation="perc_add" level="1,2,3,4,5" value=".1,.2,.32,.45,.60"/>
 
-				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1,5" value="0.1,0.3"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1,5" value="0.1,0.5"/>
 				<!-- aiming stamina buff in buffHoldBreathAiming01 -->
 
 				<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar=".DeadEyeDetector" operation="add" value="1">
@@ -1162,10 +1162,10 @@
 		<effect_group>
 			<requirement name="HoldingItemHasTags" tags="perkArchery"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
-				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.8"/>
 
 				<passive_effect name="WeaponHandling" operation="perc_add" level="1,5" value=".1,.5"/>
-				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1,5" value=".1,.5"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1,5" value=".1,.8"/>
 
 			<!--
 			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,5" value="0.2,0.5"/>
