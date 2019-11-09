@@ -360,7 +360,7 @@
 		<effect_group>
 			<requirement name="HoldingItemHasTags" tags="perkJavelinMaster"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
-				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.8"/>
 			<!--
 			<passive_effect name="ProjectileVelocity" operation="perc_add" level="3,5" value="0.1,0.2"/>
 			Arrow gravity still in progress -->
@@ -368,7 +368,7 @@
 		</effect_group>
 		<effect_group name="Throw">
 			<!-- <requirement name="HoldingItemHasTags" tags="perkJavelinMaster"/> -->
-			<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="secondary"/>
+			<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.8" tags="secondary"/>
 		</effect_group>
 		<effect_group>
 			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,5" tags="perkJavelinMaster"/>
