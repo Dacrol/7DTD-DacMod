@@ -509,7 +509,7 @@
 		</effect_group>
 		<effect_group>
 			<requirement name="HoldingItemHasTags" tags="perkSalvageOperations"/>
-				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
+				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1.5"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 				<!-- wrench (or other relevant tools) do a base_add=1 to hop on the salvage train -->
 				<passive_effect name="HarvestCount" operation="perc_add" level="1,5" value=".2,1" tags="salvageHarvest"/>
@@ -816,7 +816,7 @@
 
 		<effect_group>
 			<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
-				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".3,1.5"/>
+				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".3,2"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 
 			<effect_description level="1" desc_key="perkMiner69rRank1Desc" long_desc_key="perkMiner69rRank1LongDesc"/>
