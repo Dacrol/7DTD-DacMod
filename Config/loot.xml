@@ -3630,7 +3630,8 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 
 <!-- EntityLootContainerRegular, rare random drop off regular zombies -->
 <lootcontainer id="70" count="1,3" size="6,3" destroy_on_close="false" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1" loot_quality_template="qualBaseTemplate">
-	<item group="cannedfood" count="1,2" prob="13"/>
+	<item group="cannedfood" count="1,2" prob="5"/>
+	<item name="resourceBone" count="20,125" prob="3"/>
 	<item name="drinkJarBeer" count="1,3" prob="5"/>
 	<item name="drinkJarBoiledWater" count="1,4" prob="10"/>
 	<item group="books" prob="6"/>
