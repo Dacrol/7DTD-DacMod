@@ -1276,7 +1276,7 @@ group desc for stuff like metal siding
 		<property name="ToBlock" value="steelMaster"/>
 		<property name="Item" value="resourceForgedSteel"/>
 		<property name="ItemCount" value="10"/>
-		<property name="UpgradeHitCount" value="4"/>
+		<property name="UpgradeHitCount" value="7"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_metal"/>
 	<drop event="Harvest" name="resourceRockSmall" count="25" tag="allHarvest"/>
