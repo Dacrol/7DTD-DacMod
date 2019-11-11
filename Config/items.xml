@@ -4368,7 +4368,7 @@ Mesh files no longer used:
 		<property name="Turret" value="turretJunk"/>
 	</property>
 	<effect_group name="gunJunkTurret">
-		<passive_effect name="MaxRange" operation="base_set" value="32"/>
+		<passive_effect name="MaxRange" operation="base_set" value="36"/>
 		<passive_effect name="DamageFalloffRange" operation="base_set" value="13"/>
 		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.1"/> <!-- random effective rng -->
 		<passive_effect name="BlockRange" operation="base_set" value="1.5"/>
@@ -4415,7 +4415,7 @@ Mesh files no longer used:
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="0"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value="1"/>
 
-		<passive_effect name="JunkTurretActiveRange" operation="base_set" value="30"/>
+		<passive_effect name="JunkTurretActiveRange" operation="base_set" value="36"/>
 
 		<passive_effect name="DegradationMax" operation="base_set" value="250,600" tier="1,6" tags="perkTurrets"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="0.35" tags="perkTurrets"/>
