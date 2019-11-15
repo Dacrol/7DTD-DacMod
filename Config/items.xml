@@ -210,7 +210,7 @@ Mesh files no longer used:
 </item>
 
 <item name="gunToolNailgun"> <!-- T3 Tools -->
-	<property name="Tags" value="tool,nailgun,sideAttachments,selfLoading,canHaveCosmetic"/>
+	<property name="Tags" value="tool,nailgun,sideAttachments,selfLoading,canHaveCosmetic,perkMiner69r"/>
 	<property name="DisplayType" value="meleeRepairTool"/>
 	<property name="HoldType" value="37"/>
 	<property name="Meshfile" value="#Other/Items?Tools/nailgunPrefab.prefab"/>
@@ -3399,7 +3399,7 @@ Mesh files no longer used:
 		<passive_effect name="MaxRange" operation="base_set" value="150"/>
 		<passive_effect name="DamageFalloffRange" operation="base_set" value="70"/>
 		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2"/> <!-- random effective rng -->
-		<passive_effect name="EntityDamage" operation="base_add" value="15"/>
+		<passive_effect name="EntityDamage" operation="base_add" value="20"/>
 
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="120"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
@@ -15704,12 +15704,12 @@ perkNightStalkerSilentNight
 		<property name="LifeTime" value=".75"/>
 	</property>
 	<effect_group name="resourceNail" tiered="false"> <!-- nail -->
-		<passive_effect name="EntityDamage" operation="base_set" value="5"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="9"/>
 		<passive_effect name="BlockDamage" operation="base_set" value=".1"/>
 		<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/>
 		<passive_effect name="DamageModifier" operation="perc_set" value=".1" tags="wood"/>
 		<passive_effect name="ProjectileVelocity" operation="base_set" value="20"/>
-		<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+		<passive_effect name="ProjectileStickChance" operation="perc_set" value="0.5"/>
 	</effect_group>
 </item>
 
