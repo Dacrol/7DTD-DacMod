@@ -618,7 +618,7 @@
 			<display_entry name="Mass" title_key="statMass" negative_preferred="true"/>
 			<display_entry name="StabilityGlue" title_key="statStabilityGlue"/>
 			<display_entry name="MaxDamage" title_key="statMaxDamage"/>
-			<display_entry name="FertileLevel" title_key="FertileLevel"/>
+			<display_entry name="FertileLevel" title_key="statFertileLevel"/>
 		</item_display_info>
 
 		<item_display_info display_type="blockTerrainHardened" display_group="groupBlocks">
