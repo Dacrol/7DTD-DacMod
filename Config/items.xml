@@ -323,14 +323,14 @@ Mesh files no longer used:
 		<property name="SwingAngle" value="135"/>
 	</property>
 	<effect_group name="meleeToolFireaxeIron">
-		<passive_effect name="EntityDamage" operation="base_set" value="15.1"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="20.1"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="45.0"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="60"/> <!-- Gazz change 47 to 60 -->
 		<passive_effect name="StaminaLoss" operation="base_set" value="15.6" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="188,641" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
-		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.5"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.6"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
@@ -371,14 +371,14 @@ Mesh files no longer used:
 	<property name="Material" value="MmeleeToolAllSteel"/> <property name="Weight" value="6"/>
 
 	<effect_group name="meleeToolFireaxeSteel">
-		<passive_effect name="EntityDamage" operation="base_set" value="28.9"/> <!-- meleeToolFireaxeSteel -->
+		<passive_effect name="EntityDamage" operation="base_set" value="30.9"/> <!-- meleeToolFireaxeSteel -->
 		<passive_effect name="BlockDamage" operation="base_set" value="86.2"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="47"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="300,1100" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
-		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.6"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.6"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
@@ -507,14 +507,14 @@ Mesh files no longer used:
 	</property>
 	<property name="Group" value="Tools/Traps"/>
 	<effect_group name="meleeToolPickaxeSteel">
-		<passive_effect name="EntityDamage" operation="base_set" value="23.2"/> <!-- meleeToolPickaxeSteel -->
-		<passive_effect name="BlockDamage" operation="base_set" value="62.8"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="26.2"/> <!-- meleeToolPickaxeSteel -->
+		<passive_effect name="BlockDamage" operation="base_set" value="72.8"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/><!-- Gazz change 47 to 55 -->
 		<passive_effect name="StaminaLoss" operation="base_set" value="17" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="350,1287" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
-		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.2"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.8"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
@@ -1710,13 +1710,13 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeStunBaton">
-		<passive_effect name="EntityDamage" operation="base_set" value="10.8"/> <!-- meleeStunBaton -->
+		<passive_effect name="EntityDamage" operation="base_set" value="13.8"/> <!-- meleeStunBaton -->
 		<passive_effect name="BlockDamage" operation="base_set" value="6"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="70"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="11.3" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="269,673" tier="1,6" tags="perkElectrocutioner"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkElectrocutioner"/>
-		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.1"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
@@ -1724,7 +1724,7 @@ Mesh files no longer used:
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
 
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.75" tier="2,6"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
@@ -1871,13 +1871,13 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeThrownSpearStone">
-		<passive_effect name="EntityDamage" operation="base_set" value="10.3"/> <!-- meleeThrownSpearStone -->
+		<passive_effect name="EntityDamage" operation="base_set" value="16.3"/> <!-- meleeThrownSpearStone -->
 		<passive_effect name="BlockDamage" operation="base_set" value="5"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="13.5" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="60,88" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
-		<passive_effect name="MaxRange" operation="base_set" value="3.2"/>
+		<passive_effect name="MaxRange" operation="base_set" value="4"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
@@ -1918,13 +1918,13 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeThrownSpearIron">
-		<passive_effect name="EntityDamage" operation="base_set" value="12.4"/> <!-- meleeThrownSpearIron -->
+		<passive_effect name="EntityDamage" operation="base_set" value="20.4"/> <!-- meleeThrownSpearIron -->
 		<passive_effect name="BlockDamage" operation="base_set" value="7"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="15.3" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="212,423" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
-		<passive_effect name="MaxRange" operation="base_set" value="3.2"/>
+		<passive_effect name="MaxRange" operation="base_set" value="4.1"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
@@ -1966,13 +1966,13 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeThrownSpearSteel">
-		<passive_effect name="EntityDamage" operation="base_set" value="18.6"/> <!-- meleeThrownSpearSteel -->
+		<passive_effect name="EntityDamage" operation="base_set" value="26.6"/> <!-- meleeThrownSpearSteel -->
 		<passive_effect name="BlockDamage" operation="base_set" value="9"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="15.3" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="317,592" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
-		<passive_effect name="MaxRange" operation="base_set" value="3.2"/>
+		<passive_effect name="MaxRange" operation="base_set" value="4.2"/>
 		<passive_effect name="BlockRange" operation="base_set" value="4"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
@@ -2059,13 +2059,13 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolSledgehammerStone">
-		<passive_effect name="EntityDamage" operation="base_set" value="17.5"/> <!-- meleeToolSledgehammerStone -->
+		<passive_effect name="EntityDamage" operation="base_set" value="26.5"/> <!-- meleeToolSledgehammerStone -->
 		<passive_effect name="BlockDamage" operation="base_set" value="27.2"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/><!-- Gazz change 34 to 50 -->
 		<passive_effect name="StaminaLoss" operation="base_set" value="15.8" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="55,112" tier="1,6" tags="perkSkullCrusher"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
-		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.6"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
 		<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="primary"/>
 
@@ -2143,13 +2143,13 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolSledgehammerIron">
-		<passive_effect name="EntityDamage" operation="base_set" value="30.8"/> <!-- meleeToolSledgehammerIron -->
+		<passive_effect name="EntityDamage" operation="base_set" value="36.8"/> <!-- meleeToolSledgehammerIron -->
 		<passive_effect name="BlockDamage" operation="base_set" value="58.3"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="34"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="27.6" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="133,363" tier="1,6" tags="perkSkullCrusher"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
-		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.6"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
 		<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="primary"/>
 
@@ -2228,13 +2228,13 @@ Mesh files no longer used:
 		</property>
 	</property>
 	<effect_group name="meleeToolSledgehammerSteel">
-		<passive_effect name="EntityDamage" operation="base_set" value="46.2"/> <!-- meleeToolSledgehammerSteel -->
+		<passive_effect name="EntityDamage" operation="base_set" value="50.2"/> <!-- meleeToolSledgehammerSteel -->
 		<passive_effect name="BlockDamage" operation="base_set" value="85"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="34"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="27.6" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="207,581" tier="1,6" tags="perkSkullCrusher"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
-		<passive_effect name="MaxRange" operation="base_set" value="2.6"/>
+		<passive_effect name="MaxRange" operation="base_set" value="3.6"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
 		<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="primary"/>
 
@@ -3376,7 +3376,7 @@ Mesh files no longer used:
 		<property name="Class" value="Ranged"/>
 		<property name="Delay" value=".5"/> <!-- obsolete if rounds per minute exists -->
 		<property name="Magazine_items" value="ammo762mmBulletBall,ammo762mmBulletHP,ammo762mmBulletAP"/>
-		<property name="Reload_time" value="2.66"/>
+		<property name="Reload_time" value="2.33"/>
 		<property name="Sound_start" value="sniperrifle_fire"/>
 		<property name="Sound_repeat" value=""/>
 		<property name="Sound_end" value=""/>
@@ -4226,7 +4226,7 @@ Mesh files no longer used:
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".5"/> <!-- 3.4s -->
 		<passive_effect name="ProjectileVelocity" operation="perc_add" value="-.1"/>
 
-		<passive_effect name="EntityDamage" operation="base_add" value="-6"/>
+		<!-- <passive_effect name="EntityDamage" operation="base_add" value="-6"/> -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
@@ -4310,6 +4310,7 @@ Mesh files no longer used:
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".5"/> <!-- 3.4s -->
 
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
+		<passive_effect name="EntityDamage" operation="base_add" value="6"/>
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
@@ -4389,13 +4390,13 @@ Mesh files no longer used:
 		<property name="Turret" value="turretJunk"/>
 	</property>
 	<effect_group name="gunJunkTurret">
-		<passive_effect name="MaxRange" operation="base_set" value="15"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="10"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2"/> <!-- random effective rng -->
-		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
+		<passive_effect name="MaxRange" operation="base_set" value="36"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="13"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.1"/> <!-- random effective rng -->
+		<passive_effect name="BlockRange" operation="base_set" value="1.5"/>
 
-		<passive_effect name="EntityDamage" operation="base_set" value="11.8"/>
-		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15"/> <!-- random rng -->
+		<passive_effect name="EntityDamage" operation="base_set" value="12.2"/>
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.1,.1"/> <!-- random rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
 		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkTurrets"/> <!-- random DegMax -->
@@ -4405,7 +4406,7 @@ Mesh files no longer used:
 		<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08"/> <!-- random WeaponHandling -->
 
-		<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+		<passive_effect name="BlockDamage" operation="base_set" value=".2"/>
 
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="105.6"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
@@ -4416,12 +4417,12 @@ Mesh files no longer used:
 		<passive_effect name="MagazineSize" operation="base_add" value="2,10" tier="2,6"/>
 -->
 
-		<passive_effect name="MagazineSize" operation="base_set" value="62"/>
-		<passive_effect name="MagazineSize" operation="base_add" value="6,30" tier="2,6"/>
+		<passive_effect name="MagazineSize" operation="base_set" value="80"/>
+		<passive_effect name="MagazineSize" operation="base_add" value="15,40" tier="2,6"/>
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1"/>
 
-		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="5"/>
-		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="5"/>
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3"/>
 		<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.13"/>
 		<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value="-.05"/>
 		<passive_effect name="SpreadMultiplierWalking" operation="perc_add" value=".15"/>
@@ -4436,7 +4437,7 @@ Mesh files no longer used:
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="0"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value="1"/>
 
-		<passive_effect name="JunkTurretActiveRange" operation="base_set" value="30"/>
+		<passive_effect name="JunkTurretActiveRange" operation="base_set" value="36"/>
 
 		<passive_effect name="DegradationMax" operation="base_set" value="250,600" tier="1,6" tags="perkTurrets"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="0.35" tags="perkTurrets"/>
@@ -5553,13 +5554,13 @@ Mesh files no longer used:
 	<property name="Group" value="Ammo/Weapons"/>
 	<property name="EconomicValue" value="5"/>
 	<effect_group name="ammoBlunderbuss" tiered="false">
-		<passive_effect name="EntityDamage" operation="base_set" value="11"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="15"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="1.6"/>
 		<passive_effect name="RoundRayCount" operation="base_set" value="8"/>
 		<passive_effect name="TargetArmor" operation="perc_add" value=".4"/><display_value name="dTargetArmor" value=".4"/>
 		<passive_effect name="DismemberChance" operation="perc_add" value="-.875"/>
-		<passive_effect name="MaxRange" operation="base_set" value="15"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="2"/>
+		<passive_effect name="MaxRange" operation="base_set" value="18"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="7"/>
 	</effect_group>
 </item>
 

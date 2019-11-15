@@ -1440,7 +1440,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceScrapPolymers" count="10"/>
 	<ingredient name="resourceSpring" count="10"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunJunkTurretParts,resourceForgedIron,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,1.5" tags="gunJunkTurretParts,resourceForgedIron,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
 	</effect_group>
 </recipe>
 

@@ -1276,7 +1276,7 @@ group desc for stuff like metal siding
 		<property name="ToBlock" value="steelMaster"/>
 		<property name="Item" value="resourceForgedSteel"/>
 		<property name="ItemCount" value="10"/>
-		<property name="UpgradeHitCount" value="4"/>
+		<property name="UpgradeHitCount" value="7"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_metal"/>
 	<drop event="Harvest" name="resourceRockSmall" count="25" tag="allHarvest"/>
@@ -26263,7 +26263,7 @@ NOT the TextureNumber.
 	<property name="Damage_received" value="33"/>
 	<property name="Material" value="MtrapSpikesIron"/>
 	<property name="DisplayType" value="blockHardened"/>
-	<property name="MaxDamage" value="132"/>
+	<property name="MaxDamage" value="264"/>
 
 	<property name="Shape" value="Ext3dModel"/> <property name="Texture" value="293"/>
 	<property name="Mesh" value="models"/>
