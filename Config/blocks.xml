@@ -22744,7 +22744,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceElectricParts" count="3" tag="salvageHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-	<property name="OnlySimpleRotations" value="true"/>
+	<property name="OnlySimpleRotations" value="false"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="EconomicValue" value="310"/>
 	<property name="Group" value="Science"/>
