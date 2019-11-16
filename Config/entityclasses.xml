@@ -3411,7 +3411,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="Prefab" value="Backpack"/>
 	<property name="Class" value="EntityLootContainer"/>
 	<property name="Parent" value="Backpack"/>
-	<property name="TimeStayAfterDeath" value="60"/>
+	<property name="TimeStayAfterDeath" value="180"/>
 	<property name="IsEnemyEntity" value="false"/>
 	<property name="LootListOnDeath" value="4"/> <!-- used to determine container X/Y size -->
 	<property name="Faction" value="none"/>
@@ -3425,7 +3425,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="Class" value="EntityLootContainer"/>
 	<property name="Parent" value="Backpack"/>
 	<property name="IsEnemyEntity" value="false"/>
-	<property name="TimeStayAfterDeath" value="2400"/>
+	<property name="TimeStayAfterDeath" value="4800"/>
 	<property name="LootListOnDeath" value="70"/> <!-- used to determine container X/Y size -->
 	<property name="Faction" value="none"/>
 </entity_class>
@@ -3437,7 +3437,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="Class" value="EntityLootContainer"/>
 	<property name="Parent" value="Backpack"/>
 	<property name="IsEnemyEntity" value="false"/>
-	<property name="TimeStayAfterDeath" value="2400"/>
+	<property name="TimeStayAfterDeath" value="4800"/>
 	<property name="LootListOnDeath" value="71"/>
 	<property name="Faction" value="none"/>
 </entity_class>
@@ -3449,7 +3449,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="Class" value="EntityLootContainer"/>
 	<property name="Parent" value="Backpack"/>
 	<property name="IsEnemyEntity" value="false"/>
-	<property name="TimeStayAfterDeath" value="2400"/>
+	<property name="TimeStayAfterDeath" value="4800"/>
 	<property name="LootListOnDeath" value="73"/>
 	<property name="Faction" value="none"/>
 </entity_class>
@@ -3461,7 +3461,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="Class" value="EntityLootContainer"/>
 	<property name="Parent" value="Backpack"/>
 	<property name="IsEnemyEntity" value="false"/>
-	<property name="TimeStayAfterDeath" value="2400"/>
+	<property name="TimeStayAfterDeath" value="4800"/>
 	<property name="LootListOnDeath" value="74"/>
 	<property name="Faction" value="none"/>
 </entity_class>
