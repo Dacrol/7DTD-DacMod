@@ -23662,7 +23662,7 @@ NOT the TextureNumber.
 	<property name="OnlySimpleRotations" value="true"/> <!-- the targeting math will NOT work if it's not upright -->
 	<property name="AmmoItem" value="ammo9mmBulletBall"/>
 	<property name="TurnSpeed" value="22.5"/>
-	<property name="MaxDistance" value="30"/>
+	<property name="MaxDistance" value="36"/>
 	<property name="EntityDamage" value="32"/> <!-- 188 dps, 213 dps burst -->
 	<property name="BlockDamage" value="1"/>
 	<property name="RaySpread" value="2.6"/> <!-- Spread 2.6deg: 1m cone (55% hit) @ 22m -->
@@ -23674,8 +23674,8 @@ NOT the TextureNumber.
 	<property name="FallAsleepTime" value="10"/>
 	<property name="WakeUpTime" value="0.5"/>
 
-	<property name="YawRange" value="90"/>
-	<property name="PitchRange" value="90"/>
+	<property name="YawRange" value="179"/>
+	<property name="PitchRange" value="179"/>
 
 	<property name="ParticlesMuzzleFire" value="nozzleflashuzi"/>
 	<property name="ParticlesMuzzleSmoke" value="nozzlesmokeuzi"/>
