@@ -3734,7 +3734,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="YawRange" value="179"/> <!-- horizontal swivel range. Keep under 180. -->
 	<property name="PitchRange" value="179"/>
 	<property name="TurnSpeed" value="22.5"/>
-	<property name="MaxDistance" value="36"/>
+	<property name="MaxDistance" value="32"/>
 
 	<property name="EntityDamage" value="20"/>
 	<property name="BlockDamage" value="1"/>
