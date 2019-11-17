@@ -1702,7 +1702,7 @@
 	<property name="PainResistPerHit" value=".5"/><!-- Radiated -->
 	<property name="HandItem" value="meleeHandZombieCopRadiated"/>
 	<property name="Explosion.BlockDamage" value="750"/>
-	<property name="Explosion.EntityDamage" value="250"/>
+	<property name="Explosion.EntityDamage" value="200"/>
 
 	<property name="ExperienceGain" value="1500"/> <!-- XP strong radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
@@ -1904,8 +1904,8 @@
 	<property name="Explosion.ParticleIndex" value="2"/>
 	<property name="Explosion.RadiusBlocks" value="5"/>
 	<property name="Explosion.RadiusEntities" value="6"/>
-	<property name="Explosion.BlockDamage" value="5000"/>
-	<property name="Explosion.EntityDamage" value="800"/>
+	<property name="Explosion.BlockDamage" value="1000"/>
+	<property name="Explosion.EntityDamage" value="225"/>
 	<property name="Explosion.DamageBonus.earth" value=".1"/>
 	<property name="StompsSpikes" value="true"/>
 	<property name="ExplodeDelay" value="2"/>
