@@ -194,7 +194,6 @@ tbnsew:
 	<property name="Map.Color" value="35,80,45"/>
 	<!--property class="Map"> <property name="Color" value="44,48,26"/> <property name="Color2" value="44,60,25"/> <property name="ElevMinMax" value="50,80"/> </property-->
 	<property name="ImposterExclude" value="true"/>
-	<property name="PlaceAltBlockValue" value="terrForestFromDirt,terrForestWGrass1"/>
 	<property class="RepairItems"> <property name="resourceClayLump" value="14"/> </property>
 	<drop event="Harvest" name="resourceClayLump" count="22" tag="oreWoodHarvest"/>
 	<drop event="Harvest" name="resourceYuccaFibers" count="2" tag="allHarvest"/>
@@ -210,6 +209,7 @@ tbnsew:
 	<property name="SortOrder1" value="d0k0"/>
 	<property name="SortOrder2" value="0050"/>
 	<property name="DisplayType" value="blockTerrainFertile"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
 <block name="terrBurntForestGround">
@@ -220,7 +220,6 @@ tbnsew:
 	<property name="ImposterExclude" value="true"/>
 	<property name="LPHardnessScale" value="2"/>
 	<property name="Map.Color" value="55,55,50"/>
-	<property name="PlaceAltBlockValue" value="terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestFromDirt,terrBurntForestWGrass1"/>
 	<property class="RepairItems"> <property name="resourceClayLump" value="14"/> </property>
 	<drop event="Harvest" name="resourceClayLump" count="22" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="resourceYuccaFibers" count="1" prob="0.25"/>
@@ -235,6 +234,7 @@ tbnsew:
 	<property name="SortOrder1" value="d0k0"/>
 	<property name="SortOrder2" value="0050"/>
 	<property name="DisplayType" value="blockTerrainFertile"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
 <block name="terrDesertGround">
@@ -261,6 +261,7 @@ tbnsew:
 	<property name="SortOrder1" value="d0k0"/>
 	<property name="SortOrder2" value="0050"/>
 	<property name="DisplayType" value="blockTerrainFertile"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
 <block name="terrSand">
@@ -275,6 +276,7 @@ tbnsew:
 	<property name="Texture" value="185,184,184,184,184,184"/>
 	<property name="ImposterExclude" value="true"/>
 	<property name="Map.Color" value="107,78,57"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
 <block name="terrSnow">
@@ -297,33 +299,26 @@ tbnsew:
 	<property name="SortOrder1" value="d0k0"/>
 	<property name="SortOrder2" value="0050"/>
 	<property name="DisplayType" value="blockTerrainFertile"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
-<block name="terrIce">
-	<property name="Material" value="Msnow"/>
-	<property name="Shape" value="Terrain"/>
-	<property name="Mesh" value="terrain"/>
-	<property name="Texture" value="178"/>
-	<property name="ImposterExclude" value="true"/>
-	<property name="CanMobsSpawnOn" value="true"/>
-	<property name="FilterTags" value="fterrain"/>
-	<property name="SortOrder1" value="d0k0"/>
-	<property name="SortOrder2" value="0050"/>
-	<property name="DisplayType" value="blockTerrainFertile"/>
+<block name="terrIce"><!-- deprecated -->
+	<property name="Extends" value="terrSnow"/>
+	<property name="CreativeMode" value="None"/>
+	<property name="CustomIcon" value="terrSnow"/>
 </block>
 
 <block name="terrTopSoil">
-	<property name="Extends" value="terrDirt"/>
+	<property name="Extends" value="terrDirt" param1="DescriptionKey"/>
 	<property name="Texture" value="10"/>
 	<property name="CustomIcon" value="terrForestGround"/>
 	<property name="CreativeMode" value="Player"/>
 </block>
 
-<block name="terrSnowyStone">
-	<property name="Extends" value="terrStone"/>
-	<property name="CreativeMode" value="Dev"/>
-	<property name="Texture" value="6,1,1,1,1,1"/>
-	<property name="Map.Color" value="230,230,255"/>
+<block name="terrSnowyStone"><!-- deprecated -->
+	<property name="Extends" value="terrSnow"/>
+	<property name="CreativeMode" value="None"/>
+	<property name="CustomIcon" value="terrSnow"/>
 </block>
 
 <block name="terrDestroyedStone">
@@ -363,6 +358,7 @@ tbnsew:
 	<property name="CanMobsSpawnOn" value="true"/>
 	<property name="FilterTags" value="fterrain,fconstruction,fdestruction"/>
 	<property name="DisplayType" value="blockTerrain"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
 <block name="terrGravel">
@@ -439,52 +435,18 @@ tbnsew:
 	<property name="SortOrder1" value="d0k0"/>
 	<property name="SortOrder2" value="0050"/>
 	<property name="DisplayType" value="blockTerrainHardened"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
-<!-- <block name="terrClay">
-	<property name="CreativeMode" value="None"/>
-	<property name="Material" value="MresourceClayLump"/>
-	<property name="LPHardnessScale" value="2"/>
-	<property name="Shape" value="Terrain"/>
-	<property name="Mesh" value="terrain"/>
-	<property name="Texture" value="301,570,570,570,570,570"/>
-	<property name="ImposterExclude" value="true"/>
-	<property class="RepairItems"> <property name="resourceClayLump" value="30"/> </property>
-	<drop event="Harvest" name="resourceClayLump" count="30" tag="oreWoodHarvest"/>
-	<drop event="Destroy" name="resourceYuccaFibers" count="1"/>
-	<drop event="Fall" name="resourceClayLump" count="30" prob="0.5" stick_chance="0"/>
-	<property name="CanMobsSpawnOn" value="true"/>
-	<property name="Map.Color" value="107,78,57"/>
-	<property name="EconomicValue" value="5"/>
-	<property name="EconomicBundleSize" value="1"/>
-	<property name="SellableToTrader" value="false"/>
-	<property name="FilterTags" value="fterrain"/>
-	<property name="SortOrder1" value="d0l0"/>
-	<property name="SortOrder2" value="0050"/>
-	<property name="DisplayType" value="blockTerrain"/>
-</block>
-
-<block name="terrClayInSandstone">
-	<property name="Extends" value="terrClay"/>
-	<property name="CustomIcon" value="terrClay"/>
-	<property name="CustomIconTint" value="00a0a0"/>
-	<property name="Texture" value="301,184,184,184,184,184"/>
-	<property name="FilterTags" value="fterrain"/>
-	<property name="DisplayType" value="blockTerrain"/>
-</block> -->
-
-<block name="terrStoneUnstable">
+<block name="terrStoneUnstable"><!-- deprecated -->
 	<property name="Extends" value="terrStone"/>
-	<property name="Material" value="MstoneUnstable"/>
-	<property name="CreativeMode" value="Player"/>
+	<property name="CreativeMode" value="None"/>
 	<property name="CustomIcon" value="terrStone"/>
 </block>
 
-<block name="terrSandStoneUnstable">
+<block name="terrSandStoneUnstable"><!-- deprecated -->
 	<property name="Extends" value="terrSandStone"/>
-	<property name="Material" value="MstoneUnstable"/>
-	<property name="DescriptionKey" value="terrStoneUnstableDesc"/>
-	<property name="CreativeMode" value="Player"/>
+	<property name="CreativeMode" value="None"/>
 	<property name="CustomIcon" value="terrSandStone"/>
 </block>
 
@@ -507,6 +469,7 @@ tbnsew:
 	<drop event="Harvest" name="resourceRawDiamond" prob=".005" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
 	<drop event="Harvest" name="resourceSilverNugget" prob=".01" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
 	<drop event="Harvest" name="resourceGoldNugget" prob=".007" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
 <block name="terrOreLead">
@@ -532,6 +495,7 @@ tbnsew:
 	<drop event="Harvest" name="resourceRawDiamond" prob=".005" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
 	<drop event="Harvest" name="resourceSilverNugget" prob=".01" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
 	<drop event="Harvest" name="resourceGoldNugget" prob=".007" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
 <block name="terrOreCoal">
@@ -554,6 +518,7 @@ tbnsew:
 	<drop event="Harvest" name="resourceRawDiamond" prob=".005" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
 	<drop event="Harvest" name="resourceSilverNugget" prob=".01" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
 	<drop event="Harvest" name="resourceGoldNugget" prob=".007" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
 <block name="terrOrePotassiumNitrate">
@@ -575,6 +540,7 @@ tbnsew:
 	<drop event="Harvest" name="resourceRawDiamond" prob=".005" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
 	<drop event="Harvest" name="resourceSilverNugget" prob=".01" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
 	<drop event="Harvest" name="resourceGoldNugget" prob=".007" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
 <block name="terrOreOilDeposit">
@@ -598,52 +564,20 @@ tbnsew:
 	<drop event="Harvest" name="resourceRawDiamond" prob=".005" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
 	<drop event="Harvest" name="resourceSilverNugget" prob=".01" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
 	<drop event="Harvest" name="resourceGoldNugget" prob=".007" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
 </block>
 
-<block name="terrOreSilver">
-	<property name="CustomIcon" value="terrOreSilver"/>
-	<property name="Tags" value="ore"/>
-	<property name="Material" value="Msteel"/> <property name="MaxDamage" value="1500"/>
-	<property name="Shape" value="Terrain"/>
-	<property name="Mesh" value="terrain"/>
-	<property name="Texture" value="96"/>
-	<property name="ImposterExclude" value="true"/>
-	<drop event="Harvest" name="resourceSilverNugget" count="3,8" tag="oreWoodHarvest"/>
-	<drop event="Harvest" name="resourceRockSmall" count="14" tag="oreWoodHarvest"/>
-	<drop event="Destroy" count="0"/>
-	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
-	<property name="CanMobsSpawnOn" value="true"/>
-	<property name="FilterTags" value="fterrain"/>
-	<property name="SortOrder1" value="d0l0"/>
-	<property name="SortOrder2" value="0050"/>
-	<property name="DisplayType" value="blockTerrain"/>
-	<drop event="Harvest" name="resourceRawDiamond" prob=".005" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
-	<drop event="Harvest" name="resourceSilverNugget" prob=".01" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
-	<drop event="Harvest" name="resourceGoldNugget" prob=".007" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
+<block name="terrOreSilver"><!-- deprecated -->
+	<property name="Extends" value="terrGravel"/>
+	<property name="CreativeMode" value="None"/>
 </block>
-
-<block name="terrOreGold">
-	<property name="Extends" value="terrOreSilver" param1="Harvest"/>
-	<property name="Tags" value="ore"/>
-	<drop event="Harvest" name="resourceGoldNugget" count="2,6" tag="oreWoodHarvest"/>
-	<drop event="Harvest" name="resourceRockSmall" count="14" tag="oreWoodHarvest"/>
-	<drop event="Destroy" count="0"/>
-	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
-	<drop event="Harvest" name="resourceRawDiamond" prob=".005" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
-	<drop event="Harvest" name="resourceSilverNugget" prob=".01" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
-	<drop event="Harvest" name="resourceGoldNugget" prob=".007" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
+<block name="terrOreGold"><!-- deprecated -->
+	<property name="Extends" value="terrOreSilver"/>
+	<property name="CreativeMode" value="None"/>
 </block>
-
-<block name="terrOreDiamond">
-	<property name="Extends" value="terrOreSilver" param1="Harvest"/>
-	<property name="Tags" value="ore"/>
-	<drop event="Harvest" name="resourceRawDiamond" count="2,4" tag="oreWoodHarvest"/>
-	<drop event="Harvest" name="resourceRockSmall" count="14" tag="oreWoodHarvest"/>
-	<drop event="Destroy" count="0"/>
-	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
-	<drop event="Harvest" name="resourceRawDiamond" prob=".005" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
-	<drop event="Harvest" name="resourceSilverNugget" prob=".01" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
-	<drop event="Harvest" name="resourceGoldNugget" prob=".007" count="1" tag="artOfMiningLuckyStrikeHarvest"/>
+<block name="terrOreDiamond"><!-- deprecated -->
+	<property name="Extends" value="terrOreSilver"/>
+	<property name="CreativeMode" value="None"/>
 </block>
 
 <block name="terrOreStoneIronRandom"> <!-- used in deco_ore_vein POIs -->
@@ -668,25 +602,19 @@ tbnsew:
 	<property name="CreativeMode" value="Player"/>
 </block>
 
-<block name="terrFertileDirt"> <!-- not in prefabs but used to extend -->
+<block name="terrFertileDirt"> <!-- deprecated, not used in prefabs -->
 	<property name="Extends" value="terrDirt"/>
-	<property name="CreativeMode" value="None"/>
-	<property name="Class" value="UpgradeRated"/>
-	<property name="UpgradeRated.ToBlock" value="terrFertileGrass"/>
-	<property name="UpgradeRated.Rate" value="3"/> <!-- The coder told me that "63 or maybe more" is max for this timer. -->
-	<property name="FilterTags" value="fterrain"/>
-</block>
-
-<block name="terrForestFromDirt">
-	<property name="Extends" value="terrDirt"/>
-	<property name="CreativeMode" value="None"/>
 	<property name="CustomIcon" value="terrDirt"/>
-	<property name="Class" value="UpgradeRated"/>
-	<property name="UpgradeRated.ToBlock" value="terrForestGround"/>
-	<property name="UpgradeRated.Rate" value="3"/>
-	<property name="FilterTags" value="fterrain"/>
+	<property name="CreativeMode" value="None"/>
 </block>
 
+<block name="terrForestFromDirt"> <!-- deprecated, not used in prefabs -->
+	<property name="Extends" value="terrForestGround"/>
+	<property name="CustomIcon" value="terrForestGround"/>
+	<property name="CreativeMode" value="None"/>
+</block>
+
+<!-- Example of a terrain block that will grow grass on top of itself
 <block name="terrFertileGrass">
 	<property name="Extends" value="terrForestGround"/>
 	<property name="CustomIcon" value="terrForestGround"/>
@@ -701,84 +629,52 @@ tbnsew:
 	<property name="PlantGrowing.IsGrowOnTopEnabled" value="true"/>
 	<property name="FilterTags" value="fterrain"/>
 </block>
+-->
 
-<block name="terrForestWGrass1">
-	<property name="Extends" value="terrFertileDirt"/>
-	<property name="CreativeMode" value="None"/>
-	<property name="CustomIcon" value="terrDirt"/>
-	<property name="UpgradeRated.ToBlock" value="terrForestWGrass2"/>
-	<property name="FilterTags" value="fterrain"/>
-</block>
-
-<block name="terrForestWGrass2">
-	<property name="Extends" value="terrFertileGrass"/>
-	<property name="CreativeMode" value="None"/>
+<block name="terrFertileGrass"> <!-- deprecated, not used in prefabs -->
+	<property name="Extends" value="terrForestGround"/>
 	<property name="CustomIcon" value="terrForestGround"/>
-	<property name="Texture" value="195"/>
-	<property name="Map.Color" value="35,80,45"/>
-	<property name="PlantGrowing.Next" value="terrForestGround"/>
-	<property name="PlantGrowing.GrowOnTop" value="treeTallGrassDiagonal"/>
-	<property name="FilterTags" value="fterrain"/>
+	<property name="CreativeMode" value="None"/>
 </block>
 
-<!-- commenting out for optimization
-<block name="terrGore">
-	<property name="CreativeMode" value="Dev"/>
-	<property name="Class" value="Gore"/>
-	<property name="Material" value="Morganic"/>
-	<property name="Shape" value="Terrain"/>
-	<property name="Mesh" value="terrain"/>
-	<property name="Texture" value="22"/>
-	<property name="BlockTag" value="Gore"/>
-	<property name="IsTerrainDecoration" value="true"/>
-	<property name="Density" value="0.9"/>
-	<property name="FallDamage" value=".9"/>
-	<drop event="Destroy" count="0" prob="1"/>
-	<property name="UpgradeRated.ToBlock" value="air"/>
-	<property name="UpgradeRated.Rate" value="15"/>
-	<property name="DisplayType" value="blockTerrain"/>
-</block>-->
-
-<block name="terrBurntForestFromDirt">
-	<property name="Extends" value="terrForestFromDirt"/>
+<block name="terrForestWGrass1"> <!-- deprecated, not used in prefabs -->
+	<property name="Extends" value="terrForestGround"/>
+	<property name="CustomIcon" value="terrForestGround"/>
 	<property name="CreativeMode" value="None"/>
-	<property name="CustomIcon" value="terrDirt"/>
-	<property name="UpgradeRated.ToBlock" value="terrBurntForestGround"/>
-	<property name="FilterTags" value="fterrain"/>
 </block>
 
-<block name="terrBurntForestWGrass1">
-	<property name="Extends" value="terrFertileDirt"/>
+<block name="terrForestWGrass2"> <!-- deprecated, not used in prefabs -->
+	<property name="Extends" value="terrForestGround"/>
+	<property name="CustomIcon" value="terrForestGround"/>
 	<property name="CreativeMode" value="None"/>
-	<property name="CustomIcon" value="terrDirt"/>
-	<property name="UpgradeRated.ToBlock" value="terrBurntForestWGrass2"/>
-	<property name="FilterTags" value="fterrain"/>
 </block>
 
-<block name="terrBurntForestWGrass2">
-	<property name="Extends" value="terrFertileGrass"/>
-	<property name="CreativeMode" value="None"/>
+<block name="terrBurntForestFromDirt"> <!-- deprecated BUT USED IN PREFABS -->
+	<property name="Extends" value="terrBurntForestGround"/>
 	<property name="CustomIcon" value="terrBurntForestGround"/>
-	<property name="Texture" value="288"/>
-	<property name="Map.Color" value="55,55,50"/>
-	<property name="PlantGrowing.Next" value="terrBurntForestGround"/>
-	<property name="PlantGrowing.GrowOnTop" value="treeBrownGrassDiagonal"/>
-	<property name="FilterTags" value="fterrain"/>
+	<property name="CreativeMode" value="None"/>
 </block>
 
-<block name="terrStoneRandomLootHelper"> <!-- unused -->
+<block name="terrBurntForestWGrass1"> <!-- deprecated BUT USED IN PREFABS -->
+	<property name="Extends" value="terrBurntForestGround"/>
+	<property name="CustomIcon" value="terrBurntForestGround"/>
+	<property name="CreativeMode" value="None"/>
+</block>
+
+<block name="terrBurntForestWGrass2"> <!-- deprecated, not used in prefabs -->
+	<property name="Extends" value="terrBurntForestGround"/>
+	<property name="CustomIcon" value="terrBurntForestGround"/>
+	<property name="CreativeMode" value="None"/>
+</block>
+
+<block name="terrStoneRandomLootHelper"> <!-- deprecated -->
 	<property name="Extends" value="terrStone"/>
 	<property name="CreativeMode" value="None"/>
-	<property name="CustomIcon" value="terrStone"/> <property name="CustomIconTint" value="ff8080"/>
-	<property name="CustomIconTint" value="00a0a0"/>
-	<property name="FilterTags" value="fdesign,fterrain"/>
-	<property name="SortOrder1" value="d0m0"/>
-	<property name="SortOrder2" value="0050"/>
-	<property name="DisplayInfo" value="Name"/>
+	<property name="CustomIcon" value="terrStone"/>
 </block>
 
 <block name="terrStoneHelper">
-	<property name="Extends" value="terrStone"/>
+	<property name="Extends" value="terrStone" param1="DescriptionKey"/>
 	<property name="CreativeMode" value="Dev"/>
 	<property name="CustomIcon" value="terrStone"/> <property name="CustomIconTint" value="ff8080"/>
 	<property name="CustomIconTint" value="00a0a0"/>
@@ -787,61 +683,6 @@ tbnsew:
 	<property name="SortOrder2" value="0050"/>
 	<property name="DisplayInfo" value="Name"/>
 </block>
-
-
-<!-- ore block visualisation start.  Uncomment this section to make underground ores visible.
-
-<block name="terrStoneUnstable">
-	<property name="Extends" value="glassShowerBlock"/>
-	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
-</block>
-
-<block name="terrSandStoneUnstable">
-	<property name="Extends" value="terrStoneUnstable"/>
-</block>
-
-<block name="terrOreIron">
-	<property name="Extends" value="rConcreteCTREighth"/>
-	<property name="Texture" value="355"/>
-	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
-</block>
-
-<block name="terrOrePotassiumNitrate">
-	<property name="Extends" value="concretePyramid"/>
-	<property name="Texture" value="535"/>
-	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
-</block>
-
-<block name="terrOreLead">
-	<property name="Extends" value="scrapIronBlock"/>
-	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
-</block>
-
-<block name="terrOreCoal">
-	<property name="Extends" value="woodGable1m"/>
-	<property name="Texture" value="552"/>
-	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
-</block>
-
-<block name="terrOreOilDeposit">
-	<property name="Extends" value="woodCNRRamp"/>
-	<property name="Texture" value="552"/>
-	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
-</block>
-
-<block name="terrOreSilver">
-	<property name="Extends" value="cntQuestTestLoot"/>
-	<property name="Material" value="Mwood_regular"/>
-	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
-</block>
-<block name="terrOreGold">
-	<property name="Extends" value="terrOreSilver"/>
-</block>
-<block name="terrOreDiamond">
-	<property name="Extends" value="terrOreSilver"/>
-</block>
-
-ore block visualisation end -->
 
 <!-- IDs 0-255 ARE RESERVED FOR TERRAIN BLOCKS -->
 
@@ -1276,7 +1117,7 @@ group desc for stuff like metal siding
 		<property name="ToBlock" value="steelMaster"/>
 		<property name="Item" value="resourceForgedSteel"/>
 		<property name="ItemCount" value="10"/>
-		<property name="UpgradeHitCount" value="7"/>
+		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_metal"/>
 	<drop event="Harvest" name="resourceRockSmall" count="25" tag="allHarvest"/>
@@ -1335,7 +1176,7 @@ group desc for stuff like metal siding
 	<property name="Group" value="Building,advBuilding"/>
 	<property name="Material" value="Mstone"/>
 	<property name="Texture" value="8"/>
-	<property name="DescriptionKey" value="buildingBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="2"/> -->
 	<property name="CreativeMode" value="None"/>
 	<!-- <property class="RepairItems"> <property name="resourceCement" value="7"/> </property> -->
@@ -1624,6 +1465,7 @@ group desc for stuff like metal siding
 	<property name="OnlySimpleRotations" value="true"/>
 	<property name="BlockTag" value="TreeTrunk"/>
 	<property name="IsPlant" value="true"/> <!-- the biome decorator will only place this if underground.fertile_level GT 0 -->
+	<property name="Tags" value="wood"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="resourceYuccaFibers" count="0" prob="1" stick_chance="0"/>
@@ -1660,7 +1502,7 @@ group desc for stuff like metal siding
 	<property class="RepairItems"> <property name="resourceWood" value="3"/> </property>
 	<drop event="Destroy" name="resourceWood" count="1,3"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.3" stick_chance="1"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="EconomicValue" value="5"/>
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
@@ -1678,7 +1520,7 @@ group desc for stuff like metal siding
 	<drop event="Harvest" name="resourceScrapIron" count="10" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="EconomicValue" value="5"/>
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
@@ -1696,7 +1538,7 @@ group desc for stuff like metal siding
 	<property class="RepairItems"> <property name="resourceScrapPolymers" value="3"/> </property>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="resourceScrapPolymers" count="3" prob="0.3" stick_chance="0"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="EconomicValue" value="5"/>
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
@@ -2331,7 +2173,7 @@ group desc for stuff like metal siding
 
 <block name="woodQuarter">
 	<property name="Extends" value="woodNoUpgradeMaster"/>
-	<property name="DescriptionKey" value="buildingBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="Shape" value="New"/>
 	<property name="LightOpacity" value="0"/>
 	<property name="Model" value="cube_quarter"/>
@@ -3119,7 +2961,7 @@ group desc for stuff like metal siding
 	<property name="Extends" value="paperPillar100" param1="Harvest,Destroy"/>
 	<property name="Texture" value="436"/>
 	<property name="ImposterExchange" value="imposterBlock" param1="42"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<drop event="Harvest" name="resourceCloth" count="40" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceCloth" count="10" prob="1"/>
 </block>
@@ -3128,7 +2970,7 @@ group desc for stuff like metal siding
 	<property name="Extends" value="paperPillar50" param1="Harvest,Destroy"/>
 	<property name="Texture" value="436"/>
 	<property name="ImposterExchange" value="imposterDontBlockCTRQuarter" param1="42"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<drop event="Harvest" name="resourceCloth" count="40" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceCloth" count="10" prob="1"/>
 </block>
@@ -9358,7 +9200,7 @@ group desc for stuff like metal siding
 	<property name="SortOrder2" value="0910"/> <!-- SortShape -->
 	<property name="UseGlobalUV" value="Local"/>
 	<property name="ImposterExclude" value="true"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fbuilding,fwood,fdecor"/>
 	<drop event="Fall" count="0" prob="0"/>
 </block>
@@ -9468,7 +9310,7 @@ group desc for stuff like metal siding
 </block>
 
 <block name="metalTrussingSCTR">
-	<property name="Extends" value="metalTrussingBlock" param1="DescriptionKey"/>
+	<property name="Extends" value="metalTrussingBlock"/>
 	<property name="Model" value="trussing_uncentered"/>
 	<property name="SortOrder2" value="0705"/> <!-- SortShape -->
 	<drop event="Fall" count="0" prob="0"/>
@@ -11564,7 +11406,7 @@ group desc for stuff like metal siding
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="SortOrder2" value="0911"/> <!-- SortShape -->
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fconstruction,fdestruction"/>
 	<drop event="Fall" count="0" prob="0"/>
 </block>
@@ -12062,7 +11904,7 @@ NOT the TextureNumber.
 
 <block name="woodTrellisDiamond">
 	<property name="Extends" value="woodNoUpgradeMaster"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<!--<property name="DisplayType" value="blockShootThrough"/>-->
 	<property name="Class" value="Ladder"/>
 	<property name="Material" value="Mwood_ladders"/>
@@ -12697,15 +12539,9 @@ NOT the TextureNumber.
 	<property name="Model" value="Buildings/chainlink_top_pole" param1="main_mesh"/>
 </block>
 
-<block name="chainLinkPole">
+<block name="chainLinkFenceTopPole2">
 	<property name="Extends" value="chainLink"/>
-	<property name="Model" value="Buildings/chainlink_pole" param1="main_mesh"/>
-	<property name="Path" value="edge"/>
-</block>
-
-<block name="chainLinkCornerTop">
-	<property name="Extends" value="chainLink"/>
-	<property name="Model" value="Buildings/chainlink_corner_top" param1="main_mesh"/>
+	<property name="Model" value="Buildings/chainlink_top_pole2" param1="main_mesh"/>
 </block>
 
 <block name="chainLinkCornerBottom">
@@ -12713,9 +12549,15 @@ NOT the TextureNumber.
 	<property name="Model" value="Buildings/chainlink_corner_bottom" param1="main_mesh"/>
 </block>
 
-<block name="chainLinkFenceTopPole2">
+<block name="chainLinkCornerTop">
 	<property name="Extends" value="chainLink"/>
-	<property name="Model" value="Buildings/chainlink_top_pole2" param1="main_mesh"/>
+	<property name="Model" value="Buildings/chainlink_corner_top" param1="main_mesh"/>
+</block>
+
+<block name="chainLinkPole">
+	<property name="Extends" value="chainLink"/>
+	<property name="Model" value="Buildings/chainlink_pole" param1="main_mesh"/>
+	<property name="Path" value="edge"/>
 </block>
 
 <block name="roadRailing">
@@ -12775,6 +12617,7 @@ NOT the TextureNumber.
 
 <block name="metalRivetSheet">
 	<property name="DisplayType" value="blockHardened"/>
+	<property name="DescriptionKey" value="scrapIronGroupDesc"/>
 	<property name="Material" value="Mmetal_hard"/>
 	<property name="Shape" value="New"/>
 	<property name="Model" value="billboard"/> <!-- <property name="HandleFace" value="South"/> -->
@@ -12946,7 +12789,6 @@ NOT the TextureNumber.
 <block name="treeJuniper4m">
 	<property name="Extends" value="treeMaster"/>
 	<property name="Model" value="#Entities/Trees?Hollywood_Juniper15mPrefab.prefab"/>
-	<property name="IsDistantDecoration" value="false"/>
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,4,1"/>
 	<property name="BigDecorationRadius" value="3"/>
@@ -13077,7 +12919,8 @@ NOT the TextureNumber.
 </block>
 
 <block name="treePlantedOak1m">
-	<property name="Extends" value="treeMasterGrowing" param1="CustomIcon,DescriptionKey,Harvest"/>
+	<property name="Extends" value="treeMasterGrowing" param1="CustomIcon,Harvest"/>
+	<property name="DescriptionKey" value="treePlantedSeed1mDesc"/>
 	<property name="CreativeMode" value="Player"/>
 	<property name="MaxDamage" value="10"/>
 	<property name="Material" value="Mplants"/>
@@ -13346,7 +13189,8 @@ NOT the TextureNumber.
 </block>
 
 <block name="treePlantedMountainPine1m">
-	<property name="Extends" value="treeMasterGrowing" param1="CustomIcon,DescriptionKey,Harvest"/>
+	<property name="Extends" value="treeMasterGrowing" param1="CustomIcon,Harvest"/>
+	<property name="DescriptionKey" value="treePlantedSeed1mDesc"/>
 	<property name="CreativeMode" value="Player"/>
 	<property name="MaxDamage" value="10"/>
 	<property name="Material" value="Mplants"/>
@@ -14023,6 +13867,7 @@ NOT the TextureNumber.
 
 <block name="plantedMushroom3HarvestPlayer">
 	<property name="Extends" value="plantedMushroom3Harvest"/>
+	<property name="DescriptionKey" value="plantedMushroom3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedMushroom3Harvest"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="foodCropMushrooms" count="1" tag="cropHarvest"/>
@@ -14069,6 +13914,7 @@ NOT the TextureNumber.
 
 <block name="plantedYucca3HarvestPlayer">
 	<property name="Extends" value="plantedYucca3Harvest"/>
+	<property name="DescriptionKey" value="plantedYucca3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedYucca1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="foodCropYuccaFruit" count="1" tag="cropHarvest"/>
@@ -14112,6 +13958,7 @@ NOT the TextureNumber.
 
 <block name="plantedCotton3HarvestPlayer">
 	<property name="Extends" value="plantedCotton3Harvest"/>
+	<property name="DescriptionKey" value="plantedCotton3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedCotton1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="resourceCropCottonPlant" count="1" tag="cropHarvest"/>
@@ -14155,6 +14002,7 @@ NOT the TextureNumber.
 
 <block name="plantedCoffee3HarvestPlayer">
 	<property name="Extends" value="plantedCoffee3Harvest"/>
+	<property name="DescriptionKey" value="plantedCoffee3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedCoffee1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="resourceCropCoffeeBeans" count="1" tag="cropHarvest"/>
@@ -14198,6 +14046,7 @@ NOT the TextureNumber.
 
 <block name="plantedGoldenrod3HarvestPlayer">
 	<property name="Extends" value="plantedGoldenrod3Harvest"/>
+	<property name="DescriptionKey" value="plantedGoldenrod3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedGoldenrod1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="resourceCropGoldenrodPlant" count="1" tag="cropHarvest"/>
@@ -14245,6 +14094,7 @@ NOT the TextureNumber.
 
 <block name="plantedAloe3HarvestPlayer">
 	<property name="Extends" value="plantedAloe3Harvest"/>
+	<property name="DescriptionKey" value="plantedAloe3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedAloe1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="resourceCropAloeLeaf" count="1" tag="cropHarvest"/>
@@ -14290,6 +14140,7 @@ NOT the TextureNumber.
 
 <block name="plantedBlueberry3HarvestPlayer">
 	<property name="Extends" value="plantedBlueberry3Harvest"/>
+	<property name="DescriptionKey" value="plantedBlueberry3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedBlueberry1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="foodCropBlueberries" count="1" tag="cropHarvest"/>
@@ -14335,6 +14186,7 @@ NOT the TextureNumber.
 
 <block name="plantedPotato3HarvestPlayer">
 	<property name="Extends" value="plantedPotato3Harvest"/>
+	<property name="DescriptionKey" value="plantedPotato3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedPotato1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="foodCropPotato" count="1" tag="cropHarvest"/>
@@ -14377,6 +14229,7 @@ NOT the TextureNumber.
 
 <block name="plantedChrysanthemum3HarvestPlayer">
 	<property name="Extends" value="plantedChrysanthemum3Harvest"/>
+	<property name="DescriptionKey" value="plantedChrysanthemum3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedChrysanthemum1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="resourceCropChrysanthemumPlant" count="1" tag="cropHarvest"/>
@@ -14433,6 +14286,7 @@ NOT the TextureNumber.
 
 <block name="plantedCorn3HarvestPlayer">
 	<property name="Extends" value="plantedCorn3Harvest"/>
+	<property name="DescriptionKey" value="plantedCorn3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedCorn1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="foodCropCorn" count="1" tag="cropHarvest"/>
@@ -14441,6 +14295,7 @@ NOT the TextureNumber.
 
 <block name="plantedCorn2Deco"> <!-- stage 2, non-growing deco block for POI -->
 	<property name="Extends" value="plantedCorn3Harvest"/>
+	<property name="DescriptionKey" value="plantedCorn3HarvestDesc"/>
 	<property name="DisplayInfo" value="Description"/>
 	<property name="CustomIcon" value="plantedCorn2"/>
 	<property name="CreativeMode" value="Dev"/>
@@ -14518,6 +14373,7 @@ NOT the TextureNumber.
 
 <block name="plantedGraceCorn3HarvestPlayer">
 	<property name="Extends" value="plantedGraceCorn3Harvest"/>
+	<property name="DescriptionKey" value="plantedGraceCorn3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedCorn1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="foodCropGraceCorn" count="1" tag="cropHarvest"/>
@@ -14563,6 +14419,7 @@ NOT the TextureNumber.
 
 <block name="plantedHop3HarvestPlayer">
 	<property name="Extends" value="plantedHop3Harvest"/>
+	<property name="DescriptionKey" value="plantedHop3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedHop1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="resourceCropHopsFlower" count="1" tag="cropHarvest"/>
@@ -14597,6 +14454,7 @@ NOT the TextureNumber.
 
 <block name="plantedSnowberry3HarvestPlayer">
 	<property name="Extends" value="plantedSnowberry3Harvest"/>
+	<property name="DescriptionKey" value="plantedSnowberry3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedSnowberry1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="resourceCropSnowberryPlant" count="1" tag="cropHarvest"/>
@@ -14643,6 +14501,7 @@ NOT the TextureNumber.
 
 <block name="plantedPumpkin3HarvestPlayer">
 	<property name="Extends" value="plantedPumpkin3Harvest"/>
+	<property name="DescriptionKey" value="plantedPumpkin3HarvestDesc"/>
 	<property name="CustomIcon" value="plantedPumpkin1"/>
 	<property name="CreativeMode" value="None"/>
 	<drop event="Harvest" name="foodCropPumpkin" count="1" tag="cropHarvest"/>
@@ -15061,7 +14920,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" name="resourceScrapIron" count="5,15" prob="1"/>
 	<property name="FilterTags" value="fdecor,fsigns,fother"/>
 	<!--<property name="SortOrder1" value="70t0"/>-->
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="signRoadAZ260eastSpeed65">
@@ -15352,7 +15211,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" name="resourceWood" count="1,2"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="EconomicValue" value="5"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fsigns,fother"/>
 	<property name="SortOrder1" value="70s0"/>
 </block>
@@ -15372,7 +15231,7 @@ NOT the TextureNumber.
 	<property name="FilterTags" value="fdecor,fsigns,fother"/>
 	<property name="SortOrder1" value="70s0"/>
 	<drop event="Fall" count="0" prob="0"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="signShopTraderJoel1x3Wall">
@@ -15400,7 +15259,7 @@ NOT the TextureNumber.
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="fdecor,fsigns,fother"/>
 	<property name="SortOrder1" value="70s0"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="signShopGasLit">
@@ -15459,7 +15318,7 @@ NOT the TextureNumber.
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="fdecor,fsigns,fother"/>
 	<property name="SortOrder1" value="70s0"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="signShopGunStoreLit">
@@ -15527,7 +15386,7 @@ NOT the TextureNumber.
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="FilterTags" value="fdecor,fsigns,fother"/>
 	<property name="SortOrder1" value="70s0"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="signShopBookStoreLit">
@@ -15594,7 +15453,7 @@ NOT the TextureNumber.
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="FilterTags" value="fdecor,fsigns,fother"/>
 	<property name="SortOrder1" value="70s0"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="signShopPharmacyLit">
@@ -15661,7 +15520,7 @@ NOT the TextureNumber.
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="FilterTags" value="fdecor,fsigns,fother"/>
 	<property name="SortOrder1" value="70s0"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="signShopToolStoreLit">
@@ -15730,7 +15589,7 @@ NOT the TextureNumber.
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="FilterTags" value="fdecor,fsigns,fother"/>
 	<property name="SortOrder1" value="70s0"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="signShopGroceryLit">
@@ -16123,11 +15982,11 @@ NOT the TextureNumber.
 	<property name="UseGlobalUV" value="L,L,G,G,G,G"/>
 	<property class="RepairItems"> <property name="resourceWood" value="10"/> </property>
 	<drop event="Destroy" count="0"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="floot"/>
 </block>
 
-<block name="treasureChest"> <!-- do not rename -->
+<block name="treasureChest"> <!-- do not rename, used for treasure_taylor etc -->
 	<property name="Class" value="Loot"/>
 	<property name="CustomIcon" value="cntChest01"/>
 	<property name="Material" value="MwoodReinforced"/>
@@ -16521,7 +16380,7 @@ NOT the TextureNumber.
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="EconomicValue" value="300"/>
 	<property name="FilterTags" value="floot,ffurniture,fdesign"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="cntMicrowaveOvenVer1Closed">
@@ -16599,7 +16458,7 @@ NOT the TextureNumber.
 	<property name="Group" value="Tools/Traps,Food/Cooking"/>
 	<property name="EconomicValue" value="12"/>
 	<property name="FilterTags" value="fdecor,fother,ffurniture"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="cntRetroFridgeVer1Closed">
@@ -16644,7 +16503,8 @@ NOT the TextureNumber.
 </block>
 
 <block name="cntRetroFridgeRandomLootHelper">
-	<property name="Extends" value="cntRetroFridgeVer1Closed" param1="DescriptionKey,MultiBlockDim,Class,LootList"/>
+	<property name="Extends" value="cntRetroFridgeVer1Closed" param1="MultiBlockDim,Class,LootList"/>
+	<property name="DescriptionKey" value="cntFridgeRandomLootHelperDesc"/>
 	<property name="CustomIcon" value="cntRetroFridgeVer1Closed"/> <property name="CustomIconTint" value="ff8080"/>
 	<property name="CreativeMode" value="Dev"/>
 	<property name="FilterTags" value="floot,ffurniture,fdesign"/>
@@ -16664,7 +16524,8 @@ NOT the TextureNumber.
 </block>
 
 <block name="cntFridgeStainlessSteelRandomLootHelper">
-	<property name="Extends" value="cntFridgeStainlessSteel" param1="DescriptionKey,MultiBlockDim,Class,LootList"/>
+	<property name="Extends" value="cntFridgeStainlessSteel" param1="MultiBlockDim,Class,LootList"/>
+	<property name="DescriptionKey" value="cntFridgeRandomLootHelperDesc"/>
 	<property name="CustomIcon" value="cntFridgeStainlessSteel"/> <property name="CustomIconTint" value="ff8080"/>
 	<property name="CreativeMode" value="Dev"/>
 	<property name="DisplayInfo" value="Name"/>
@@ -16772,7 +16633,7 @@ NOT the TextureNumber.
 	<property name="Path" value="solid"/>
 	<property name="ImposterExclude" value="true"/>
 	<property name="IsTerrainDecoration" value="true"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="4" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceScrapIron" count="10" tag="salvageHarvest"/>
@@ -16802,8 +16663,8 @@ NOT the TextureNumber.
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="1,4" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,3" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceElectricParts" count="0,1" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,3" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceElectricParts" count="1,1" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="5"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="EconomicValue" value="60"/> <!-- disassemble value -->
@@ -16827,8 +16688,8 @@ NOT the TextureNumber.
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="1,4" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,3" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceElectricParts" count="0,1" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,3" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceElectricParts" count="1" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="5"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
@@ -16914,7 +16775,7 @@ NOT the TextureNumber.
 	<property name="Weight" value="24"/>
 	<property name="EconomicValue" value="40"/> <!-- disassemble value -->
 	<property name="FilterTags" value="fdecor,fother,ffurniture"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="faucet04">
@@ -16933,7 +16794,7 @@ NOT the TextureNumber.
 	<property name="Weight" value="25"/>
 	<property name="EconomicValue" value="125"/> <!-- disassemble value -->
 	<property name="FilterTags" value="fdecor,fother,ffurniture"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="faucetBrass04">
@@ -16954,7 +16815,7 @@ NOT the TextureNumber.
 	<property name="Weight" value="24"/>
 	<property name="EconomicValue" value="40"/> <!-- disassemble value -->
 	<property name="FilterTags" value="fdecor,fother,ffurniture"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="cntToilet01">
@@ -16999,7 +16860,7 @@ NOT the TextureNumber.
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Appliances/radiatorPrefab"/> <property name="Place" value="TowardsPlacerInverted"/>
 	<property name="IsTerrainDecoration" value="true"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="Group" value="Resources,Decor/Miscellaneous"/>
 	<property name="FilterTags" value="fdecor,fother,ffurniture"/>
 </block>
@@ -17024,8 +16885,8 @@ NOT the TextureNumber.
 		<property name="resourceElectricParts" value="1"/>
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,3" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceElectricParts" count="0,1" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,3" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceElectricParts" count="1" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="5"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="EconomicValue" value="60"/> <!-- disassemble value -->
@@ -17046,8 +16907,8 @@ NOT the TextureNumber.
 	<property name="VehicleHitScale" value="999"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="LootList" value="10"/>
-	<drop event="Harvest" name="resourcePaper" count="1,2" prob="0.3" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceScrapPolymers" count="1,2" prob="0.2" tag="allHarvest"/>
+	<drop event="Harvest" name="resourcePaper" count="1,3" prob="0.5" tag="allHarvest"/>
+	<drop event="Destroy" name="resourceScrapPolymers" count="1,3" prob="0.6" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceMilitaryFiber" prob="0.02" count="1,2" tag="WasteTreasuresCompleteHarvest"/>
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="FilterTags" value="floot,ftrash"/>
@@ -17156,11 +17017,11 @@ NOT the TextureNumber.
 	<property name="VehicleHitScale" value="999"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="LootList" value="16"/>
+	<property class="RepairItems"> <property name="resourceScrapIron" value="10"/> </property>
 	<drop event="Destroy" name="resourceScrapIron" count="5" prob="1"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
 </block>
-
 
 <block name="cntBin">
 	<property name="Class" value="Loot"/>
@@ -17173,6 +17034,7 @@ NOT the TextureNumber.
 	<property name="ImposterExchange" value="imposterCTREighth" param1="77"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="LootList" value="10"/>
+	<property class="RepairItems"> <property name="resourceScrapIron" value="10"/> </property>
 	<drop event="Destroy" name="resourceScrapIron" count="5" prob="1"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
@@ -17204,7 +17066,7 @@ NOT the TextureNumber.
 	<property name="Path" value="solid"/>
 	<property name="IsDecoration" value="true"/>
 	<property name="ImposterExchange" value="imposterDontBlockCTRQuarter" param1="12"/>
-	<property class="RepairItems"> <property name="resourceScrapIron" value="30"/> </property>
+	<property class="RepairItems"> <property name="resourceScrapIron" value="20"/> </property>
 	<drop event="Destroy" name="resourceScrapIron" count="1,15"/>
 	<drop event="Fall" count="0" stick_chance="0"/>
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
@@ -17310,7 +17172,7 @@ NOT the TextureNumber.
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="1,4" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,2" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceScrapPolymers" count="2,4" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapPolymers" count="2"/>
 	<drop event="Fall" count="0" stick_chance="0"/>
@@ -17601,7 +17463,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" name="resourceScrapIron" count="1,15"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="EconomicValue" value="60"/> <!-- disassemble value -->
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother,ffurniture"/>
 </block>
 
@@ -17620,7 +17482,7 @@ NOT the TextureNumber.
 	<property name="DowngradeBlock" value="cntWallSafeInsecure"/>
 		<property name="LockPickItem" value="resourceLockPick"/>
 		<property name="LockPickTime" value="15"/>
-		<property name="LockPickBreakChance" value="0.65"/>
+		<property name="LockPickBreakChance" value="0.75"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="Group" value="Building,advBuilding"/>
@@ -17696,7 +17558,7 @@ NOT the TextureNumber.
 	<property name="DowngradeBlock" value="cntGunSafeInsecure"/>
 		<property name="LockPickItem" value="resourceLockPick"/>
 		<property name="LockPickTime" value="20"/>
-		<property name="LockPickBreakChance" value="0.65"/>
+		<property name="LockPickBreakChance" value="0.75"/>
 	<property class="RepairItems"> <property name="resourceForgedIron" value="30"/> </property>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
@@ -17749,7 +17611,7 @@ NOT the TextureNumber.
 	<property name="DowngradeBlock" value="cntHardenedChestInsecure"/>
 		<property name="LockPickItem" value="resourceLockPick"/>
 		<property name="LockPickTime" value="15"/>
-		<property name="LockPickBreakChance" value="0.65"/>
+		<property name="LockPickBreakChance" value="0.75"/>
 	<property class="RepairItems"> <property name="resourceForgedIron" value="60"/> </property>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
@@ -17835,6 +17697,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceCloth" count="6" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<property name="FilterTags" value="floot"/>
+	<property name="DescriptionKey" value="cntWeaponsBagSmallDesc"/>
 </block>
 
 <block name="cntWeaponsBagLarge">
@@ -17879,7 +17742,7 @@ NOT the TextureNumber.
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Path" value="solid"/>
 	<property name="Model" value="Entities/Crafting/ChemSetBPrefab"/>
-	<property name="Material" value="Mglass"/>
+	<property name="Material" value="Mtrash"/>
 	<property name="ImposterDontBlock" value="true"/>
 	<drop event="Destroy" count="0"/>
 	<property name="FilterTags" value="fdecor,fother"/>
@@ -17901,7 +17764,7 @@ NOT the TextureNumber.
 </block>
 
 <block name="cntMedicLootPileA">
-	<property name="Material" value="Mwood_weak"/>
+	<property name="Material" value="Mtrash"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="#Entities/LootContainers?medic_loot_pile_APrefab.prefab"/>
 	<property name="StabilitySupport" value="false"/> <!-- build restriction -->
@@ -17911,6 +17774,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" name="resourceScrapPolymers" count="1,4"/>
 	<drop event="Harvest" name="resourceAcid" prob=".05" count="1" tag="WasteTreasuresAcidHarvest"/>
 	<property name="FilterTags" value="floot"/>
+	<property name="DescriptionKey" value="cntLootPileGroupDesc"/>
 </block>
 
 <block name="cntMedicLootPileB">
@@ -17971,7 +17835,7 @@ NOT the TextureNumber.
 	<property name="FilterTags" value="fdecor,fother"/>
 	<property name="SortOrder1" value="7000"/>
 	<property name="SortOrder2" value="0002"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="hiddenSafePaintingBen">
@@ -18397,7 +18261,7 @@ NOT the TextureNumber.
 	<property name="OnlySimpleRotations" value="true"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 	<property name="EconomicValue" value="60"/> <!-- disassemble value -->
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother,ffurniture"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 </block>
@@ -18517,7 +18381,7 @@ NOT the TextureNumber.
 	<property name="Model" value="Furniture/pew_segment01" param1="main_mesh"/>
 	<property name="ImposterExchange" value="imposterQuarter" param1="154"/>
 	<property name="IsTerrainDecoration" value="true"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother,ffurniture"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 </block>
@@ -18593,7 +18457,7 @@ NOT the TextureNumber.
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="FilterTags" value="fdecor,ffurniture"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="wineBarrelSet">
@@ -18700,7 +18564,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceBrokenGlass" count="3" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" count="0" stick_chance="0"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="EconomicValue" value="5"/>
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
@@ -18729,7 +18593,7 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/OutdoorDecor/metal_slidePrefab"/>
 	<property name="MultiBlockDim" value="1,4,4"/><property name="DisplayType" value="blockMulti"/>
 	<property name="IsTerrainDecoration" value="true"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 </block>
@@ -18740,7 +18604,7 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/OutdoorDecor/swing_setPrefab"/>
 	<property name="MultiBlockDim" value="5,3,3"/><property name="DisplayType" value="blockMulti"/>
 	<property name="IsTerrainDecoration" value="true"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 </block>
@@ -19001,7 +18865,7 @@ NOT the TextureNumber.
 	<property name="EconomicValue" value="1330"/>
 	<property name="FilterTags" value="fdecor,fother,ffurniture"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="hospitalBed">
@@ -19023,8 +18887,8 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceMetalPipe" count="2" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="2" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceScrapIron" count="20" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceElectricParts" count="0,3" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,3" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceElectricParts" count="1,3" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,3" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceScrapPolymers" count="3,6" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="5"/>
 </block>
@@ -19043,7 +18907,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceBone" count="5,10" tag="butcherHarvest"/>
 	<drop event="Destroy" name="resourceScrapPolymers" count="1,2"/>
 	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.5" stick_chance="1"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 </block>
 
@@ -19101,7 +18965,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="EconomicValue" value="284"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
 </block>
 
@@ -19123,7 +18987,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="EconomicValue" value="164"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
 </block>
 
@@ -19425,7 +19289,7 @@ NOT the TextureNumber.
 	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
 	<property name="EconomicValue" value="56"/>
 	<property name="FilterTags" value="fdecor,fother,ffurniture"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="cntBathTubGore">
@@ -19864,7 +19728,7 @@ NOT the TextureNumber.
 	<property class="RepairItems"> <property name="resourceForgedIron" value="2"/> <property name="resourceWood" value="3"/> </property>
 	<drop event="Destroy" name="resourceScrapIron" count="5"/>
 	<property name="EconomicValue" value="12"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="floot,foutdoor,ffurniture"/>
 </block>
 
@@ -19963,7 +19827,7 @@ NOT the TextureNumber.
 	<property name="LootList" value="36"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapPolymers" count="2,8" tag="salvageHarvest"/>
-	<drop event="Destroy" count="0"/>
+	<drop event="Destroy" name="resourceScrapPolymers" count="1,2"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
 </block>
 
@@ -20114,7 +19978,7 @@ NOT the TextureNumber.
 	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
 	<property name="EconomicValue" value="56"/>
 	<property name="FilterTags" value="fdecor,fother,foutdoor,ffurniture"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="cntBirdnest">
@@ -20136,7 +20000,7 @@ NOT the TextureNumber.
 </block>
 
 <block name="driftwood">
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="Material" value="Mwood_weak"/>
 	<property name="StabilitySupport" value="false"/> <!-- build restriction -->
 	<property name="Shape" value="Ext3dModel"/> <property name="Texture" value="293"/>
@@ -20167,7 +20031,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.3" stick_chance="1"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother,foutdoor"/>
 </block>
 
@@ -20636,9 +20500,8 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Appliances/ac_unitPrefab"/> <property name="HandleFace" value="Bottom"/>
 	<property name="ImposterExchange" value="imposterBlock" param1="52"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceElectricParts" count="3,7" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceElectricParts" count="0,5" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,4" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceElectricParts" count="3,12" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,4" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="1,5" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceScrapIron" count="1,10" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="1,15"/>
@@ -20656,9 +20519,8 @@ NOT the TextureNumber.
 	<property name="HandleFace" value="Bottom"/>
 	<property name="ImposterExchange" value="imposterPlate" param1="168"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceElectricParts" count="3,7" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceElectricParts" count="0,5" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,4" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceElectricParts" count="3,12" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,4" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="1,5" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceScrapIron" count="1,10" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="1,15"/>
@@ -20672,9 +20534,8 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Appliances/vent_fan_doublePrefab"/>
 	<property name="MultiBlockDim" value="2,1,1"/><property name="DisplayType" value="blockMulti"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceElectricParts" count="3,7" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceElectricParts" count="0,5" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,4" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceElectricParts" count="3,12" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,4" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="1,5" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceScrapIron" count="1,10" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="1,15"/>
@@ -20833,7 +20694,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceWood" count="3" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.5" stick_chance="1"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 </block>
 
@@ -20879,10 +20740,10 @@ NOT the TextureNumber.
 	<property name="Collide" value="sight,movement,melee,bullet,arrow,rocket"/>
 	<property name="Path" value="solid"/>
 	<drop event="Harvest" name="resourcePaper" count="1,3" tag="allHarvest"/>
-	<drop event="Harvest" name="resourceScrapPolymers" count="2,4" tag="allHarvest"/>
+	<drop event="Harvest" name="resourceScrapPolymers" count="1,3" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 </block>
 
@@ -20919,7 +20780,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceRockSmall" count="50" tag="oreWoodHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.5" stick_chance="1"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 </block>
 
@@ -20968,7 +20829,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceWood" count="3" tag="allHarvest"/>
 	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.5" stick_chance="1"/>
 	<drop event="Destroy" count="0"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 </block>
 
@@ -20996,7 +20857,7 @@ NOT the TextureNumber.
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Industrial/palletPrefab"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 </block>
 
@@ -21006,7 +20867,7 @@ NOT the TextureNumber.
 	<property name="Path" value="solid"/>
 	<property name="Model" value="Entities/Industrial/pallet_stackPrefab"/>
 	<property name="Collide" value="sight,movement,melee,bullet,arrow,rocket"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 </block>
 
@@ -21137,7 +20998,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.75" stick_chance="1"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="FilterTags" value="floot,fdecor,ffurniture"/>
 	<property name="SortOrder1" value="70i0"/>
@@ -21224,7 +21085,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="FilterTags" value="floot,fdecor,ffurniture"/>
 	<property name="SortOrder1" value="70i0"/>
@@ -21309,7 +21170,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="FilterTags" value="floot,fdecor,ffurniture"/>
 	<property name="SortOrder1" value="70i0"/>
@@ -21403,7 +21264,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="FilterTags" value="floot,fdecor,ffurniture"/>
 	<property name="SortOrder1" value="70i0"/>
@@ -21497,7 +21358,7 @@ NOT the TextureNumber.
 
 <block name="cntGarageStorage">
 	<property name="CustomIcon" value="cntGarageStorage"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="Class" value="Loot"/>
 	<property name="Material" value="MCardboardLoot"/>
 	<property name="Path" value="solid"/>
@@ -21573,7 +21434,7 @@ NOT the TextureNumber.
 	<property name="DowngradeBlock" value="cntLootChestHeroInsecure"/>
 		<property name="LockPickItem" value="resourceLockPick"/>
 		<property name="LockPickTime" value="15"/>
-		<property name="LockPickBreakChance" value="0.65"/>
+		<property name="LockPickBreakChance" value="0.75"/>
 	<drop event="Harvest" name="resourceScrapIron" count="10,20" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
@@ -21672,7 +21533,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="cntCar03SedanDamage0Master" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceHeadlight" count="1" prob="0.2" tag="salvageHarvest"/>
 	<drop event="Destroy" count="0"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,2" prob="0.1" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,2" prob="0.1" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceElectricParts" count="0,2" prob="0.1" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceElectricParts" count="0,2" prob="0.1" tag="salvageHarvest"/>
 	<!-- <drop event="Fall" name="cntCar03SedanDamage1Master" count="1" prob="1.0" stick_chance="1"/> -->
@@ -22251,10 +22112,10 @@ NOT the TextureNumber.
 	<property name="LootList" value="103"/>
 </block>
 
-<block name="cntQuestLootBox">
+<block name="cntQuestLootBox"> <!-- deprecated -->
 	<property name="Extends" value="cntChest01"/>
 	<property name="CustomIcon" value="cntChest01"/> <property name="CustomIconTint" value="80ff80"/>
-	<property name="CreativeMode" value="Dev"/>
+	<property name="CreativeMode" value="None"/>
 	<property name="LootList" value="34"/>
 </block>
 
@@ -22591,7 +22452,7 @@ NOT the TextureNumber.
 		<property name="resourceMechanicalParts" value="2"/>
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,2" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest"/>
 </block>
 
 <block name="chandelierLight">
@@ -22642,6 +22503,7 @@ NOT the TextureNumber.
 
 <block name="endTableLamp">
 	<property name="Extends" value="porchLight01" param1="HandleFace"/>
+	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="Stacknumber" value="3"/>
 	<property name="Path" value="solid"/>
 	<property name="Model" value="Entities/Lighting/end_table_lightPrefab"/>
@@ -22667,12 +22529,13 @@ NOT the TextureNumber.
 	<drop event="Destroy" name="resourceScrapIron" count="3,12"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="fdecor,fother,ffurniture,felectrical"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>
 
 <block name="deskLampLight">
-	<property name="Extends" value="porchLight01" param1="HandleFace"/>
+	<property name="Extends" value="porchLight04Brass" param1="HandleFace"/>
 	<property name="Model" value="Entities/Lighting/desk_lampPrefab"/>
+	<drop event="Destroy" name="resourceScrapBrass" count="8,18" prob="1"/>
 </block>
 
 <block name="tableLampLight">
@@ -22744,7 +22607,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceElectricParts" count="3" tag="salvageHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
-	<property name="OnlySimpleRotations" value="false"/>
+	<property name="OnlySimpleRotations" value="true"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="EconomicValue" value="310"/>
 	<property name="Group" value="Science"/>
@@ -22814,7 +22677,7 @@ NOT the TextureNumber.
 <block name="wallTorchLight">
 	<property name="CreativeMode" value="Dev"/>
 	<property name="Class" value="Light"/>
-	<property name="Material" value="Mwood_weak"/>
+	<property name="Material" value="Mpaper"/>
 	<property name="MaxDamage" value="1"/>
 	<property name="StabilitySupport" value="false"/> <!-- build restriction -->
 	<property name="IsTerrainDecoration" value="true"/>
@@ -22857,7 +22720,7 @@ NOT the TextureNumber.
 	<property name="CreativeMode" value="Dev"/>
 	<property name="Class" value="Light"/>
 	<property name="IsTerrainDecoration" value="true"/>
-	<property name="Material" value="Mwood_weak"/>
+	<property name="Material" value="Mpaper"/>
 	<property name="MaxDamage" value="1"/>
 	<property name="StabilitySupport" value="false"/> <!-- build restriction -->
 	<property name="Shape" value="ModelEntity"/>
@@ -23114,7 +22977,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="FilterTags" value="floot,fdecor,ffurniture"/>
 </block>
@@ -23180,7 +23043,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="FilterTags" value="floot,fdecor,ffurniture"/>
 </block>
@@ -23257,7 +23120,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="FilterTags" value="floot,fdecor,ffurniture"/>
 </block>
@@ -23331,8 +23194,8 @@ NOT the TextureNumber.
 		<property name="resourceElectricParts" value="1"/>
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceElectricParts" count="0,1" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,1" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceElectricParts" count="1" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="5,20" prob="1"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="TakeDelay" value="5"/>
@@ -23361,8 +23224,8 @@ NOT the TextureNumber.
 		<property name="resourceElectricParts" value="4"/>
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceElectricParts" count="0,1" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,1" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceElectricParts" count="1" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceScrapIron" count="20,100" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
@@ -23662,7 +23525,7 @@ NOT the TextureNumber.
 	<property name="OnlySimpleRotations" value="true"/> <!-- the targeting math will NOT work if it's not upright -->
 	<property name="AmmoItem" value="ammo9mmBulletBall"/>
 	<property name="TurnSpeed" value="22.5"/>
-	<property name="MaxDistance" value="36"/>
+	<property name="MaxDistance" value="30"/>
 	<property name="EntityDamage" value="32"/> <!-- 188 dps, 213 dps burst -->
 	<property name="BlockDamage" value="1"/>
 	<property name="RaySpread" value="2.6"/> <!-- Spread 2.6deg: 1m cone (55% hit) @ 22m -->
@@ -23674,8 +23537,8 @@ NOT the TextureNumber.
 	<property name="FallAsleepTime" value="10"/>
 	<property name="WakeUpTime" value="0.5"/>
 
-	<property name="YawRange" value="179"/>
-	<property name="PitchRange" value="179"/>
+	<property name="YawRange" value="90"/>
+	<property name="PitchRange" value="90"/>
 
 	<property name="ParticlesMuzzleFire" value="nozzleflashuzi"/>
 	<property name="ParticlesMuzzleSmoke" value="nozzlesmokeuzi"/>
@@ -23813,7 +23676,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceAnimalFat" count="1,2" prob="1" tag="butcherHarvest"/>
 	<drop event="Harvest" name="resourcePotassiumNitratePowder" count="4,8" tag="butcherHarvest"/>
 	<drop event="Destroy" name="resourceBone" count="5,10" tag="butcherHarvest"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 	<property name="SortOrder1" value="7000"/>
 	<property name="SortOrder2" value="0002"/>
@@ -23835,7 +23698,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="foodRottingFlesh" count="1,2" prob="1" tag="butcherHarvest"/>
 	<drop event="Harvest" name="resourcePotassiumNitratePowder" count="4,8" tag="butcherHarvest"/>
 	<drop event="Destroy" name="resourceBone" count="5,10" tag="butcherHarvest"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 	<!-- <property name="DroppedEntityClass" value="EvisceratedRemains"/>
 	Would drop this entity on destruction, containing any loot the block had. -->
@@ -23873,7 +23736,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="goreBlockHumanBones" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="resourcePotassiumNitratePowder" count="2,4" tag="butcherHarvest"/>
 	<drop event="Destroy" name="resourceBone" count="5,10" tag="butcherHarvest"/>
-	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="FilterTags" value="fdecor,fother"/>
 </block>
 
@@ -24126,7 +23989,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceScrapIron" count="20,60" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Destroy" name="resourceSpring" count="0,2" prob="1" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="0,2" prob="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="1,2" prob="1" tag="salvageHarvest"/>
 </block>
 
 <block name="jailDoorStaticCentered">
@@ -24139,7 +24002,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="resourceScrapIron" count="20,60" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Destroy" name="resourceSpring" count="0,2" prob="1" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="0,2" prob="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="1,2" prob="1" tag="salvageHarvest"/>
 </block>
 
 <block name="secureDoorWooden">
@@ -25930,7 +25793,7 @@ NOT the TextureNumber.
 	<property name="Place" value="TowardsPlacerInverted"/>
 	<property name="Texture" value="580"/>
 	<property name="UseGlobalUV" value="L,D,D,D,D,D"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<drop event="Destroy" name="resourceScrapPolymers" count="1,2"/>
 	<property name="EconomicValue" value="20"/>
 	<property name="FilterTags" value="fdecor,fwindows"/>
@@ -25951,7 +25814,7 @@ NOT the TextureNumber.
 	<property name="Place" value="TowardsPlacerInverted"/>
 	<property name="Mesh" value="cutout"/>
 	<property name="Texture" value="416"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<drop event="Destroy" name="resourceScrapPolymers" count="1,2"/>
 	<property name="EconomicValue" value="20"/>
 	<property name="FilterTags" value="fdecor,fwindows"/>
@@ -26009,7 +25872,7 @@ NOT the TextureNumber.
 </block>
 
 <block name="sidingWhiteBurntCTRPlate">
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="Material" value="Mwood_regular"/>
 	<property name="Shape" value="New"/>
 	<property name="Model" value="plate_centered"/> <property name="Place" value="TowardsPlacerInverted"/>
@@ -26263,7 +26126,7 @@ NOT the TextureNumber.
 	<property name="Damage_received" value="33"/>
 	<property name="Material" value="MtrapSpikesIron"/>
 	<property name="DisplayType" value="blockHardened"/>
-	<property name="MaxDamage" value="264"/>
+	<property name="MaxDamage" value="132"/>
 
 	<property name="Shape" value="Ext3dModel"/> <property name="Texture" value="293"/>
 	<property name="Mesh" value="models"/>
@@ -26599,7 +26462,7 @@ NOT the TextureNumber.
 </block>
 
 <block name="looseBoardsTrapPlate1x1">
-	<property name="Extends" value="looseBoardsTrapBlock1x1" param1="CustomIcon,DescriptionKey,Path"/>
+	<property name="Extends" value="looseBoardsTrapBlock1x1" param1="CustomIcon,Path"/>
 	<property name="Model" value="Plate"/>
 	<property name="SortOrder2" value="0150"/> <!-- SortShape -->
 	<!-- <property name="CustomIcon" value="looseBoardsTrapPlate1x1"/> -->
@@ -26627,7 +26490,7 @@ NOT the TextureNumber.
 	<property name="DisplayType" value="blockMulti"/>
 	<property name="MultiBlockDim" value="3,1,3"/>
 	<property name="FilterTags" value="fdecor,ftraps,fconstruction,fdestruction"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="ShowModelOnFall" value="false"/>
 </block>
@@ -26748,7 +26611,7 @@ NOT the TextureNumber.
 	<property name="MaxDamage" value="4"/>
 	<property name="TriggerDelay" value="0.5"/>
 	<property name="TriggerSound" value="landmine_trigger"/>
-	<property name="Explosion.ParticleIndex" value="1"/>
+	<property name="Explosion.ParticleIndex" value="11"/>
 	<property name="Explosion.RadiusBlocks" value="2"/>
 	<property name="Explosion.RadiusEntities" value="4"/>
 	<property name="Explosion.BlockDamage" value="10"/>
@@ -26783,7 +26646,7 @@ NOT the TextureNumber.
 	<property name="MaxDamage" value="4"/>
 	<property name="TriggerDelay" value="0.5"/>
 	<property name="TriggerSound" value="landmine_trigger"/>
-	<property name="Explosion.ParticleIndex" value="1"/>
+	<property name="Explosion.ParticleIndex" value="11"/>
 	<property name="Explosion.RadiusBlocks" value="2"/>
 	<property name="Explosion.RadiusEntities" value="3"/>
 	<property name="Explosion.BlockDamage" value="10"/>
@@ -26905,22 +26768,25 @@ NOT the TextureNumber.
 	<property name="Extends" value="cntBarrelMetalMaster" param1="CustomIcon"/>
 	<property name="Model" value="Entities/Industrial/barrelAcidPrefab"/>
 	<property name="LootList" value="120"/>
-	<property name="Explosion.ParticleIndex" value="13"/>
+	<property name="Explosion.ParticleIndex" value="14"/>
 </block>
 
 <block name="cntBarrelAcidSingle45">
 	<property name="Extends" value="cntBarrelAcidSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelAcid45Prefab"/>
+	<property name="Explosion.ParticleIndex" value="15"/>
 </block>
 
 <block name="cntBarrelAcidQuadA">
-<property name="Extends" value="cntBarrelAcidSingle00"/>
+	<property name="Extends" value="cntBarrelAcidSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelAcidQuadAPrefab"/>
+	<property name="Explosion.ParticleIndex" value="15"/>
 </block>
 
 <block name="cntBarrelAcidQuadB">
 	<property name="Extends" value="cntBarrelAcidSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelAcidQuadBPrefab"/>
+	<property name="Explosion.ParticleIndex" value="15"/>
 </block>
 
 
@@ -27449,7 +27315,7 @@ NOT the TextureNumber.
 	<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
 	<property name="ItemTypeIcon" value="all_blocks"/>
 	<property name="SelectAlternates" value="true" />
-	<property name="PlaceAltBlockValue" value="railingBlackSheet,wroughtIronFenceSheet,metalRailing,metalRailing3d,metalRailing3dBroke,roadRailing,roadRailingPole,roadRailingEnd,roadRailingEnd2"/>
+	<property name="PlaceAltBlockValue" value="railingBlackSheet,wroughtIronFenceSheet,metalRailing,metalRailing3d,metalRailing3dBroke,roadRailing,roadRailingPole,roadRailingEnd,roadRailingEnd2,chainLink,chainLinkFenceBottomPole,chainLinkFenceTop,chainLinkFenceTopPole,chainLinkFenceTopPole2,chainLinkCornerBottom,chainLinkCornerTop,chainLinkPole"/>
 </block>
 
 <block name="sectionalLeatherCouchSofaBlockVariantHelper">
@@ -27565,7 +27431,7 @@ NOT the TextureNumber.
 	<property name="DescriptionKey" value="metalFurnitureBlockVariantHelperDesc"/>
 	<property name="ItemTypeIcon" value="all_blocks"/>
 	<property name="SelectAlternates" value="true" />
-	<property name="PlaceAltBlockValue" value="storeShelving01,storeShelving01Top,storeShelving01Double,storeShelving01TopDouble,cntLockersTallClosed,cntLockersShortClosed,cntLockersTallDoubleClosed,cntLockersTallMixClosed,cntLockersTallMixLinkClosed,cntMetalDesk02Closed,cntMetalDesk02Open,rustyIronTable,rScrapIronTable,cntMailBox01,cntMailBox02,cntMailBox03,cntMailbox,radiatorHouse01Player,showerHead"/>
+	<property name="PlaceAltBlockValue" value="storeShelving01,storeShelving01Top,storeShelving01Double,storeShelving01TopDouble,cntLockersTallClosed,cntLockersShortClosed,cntLockersTallDoubleClosed,cntLockersTallMixClosed,cntLockersTallMixLinkClosed,cntMetalDesk02Closed,cntMetalDesk02Open,rustyIronTable,rScrapIronTable,cntMailBox01,cntMailBox02,cntMailBox03,cntMailbox,cntBin,cntTrash_can01,cntDomedTrashCanFull,radiatorHouse01Player,showerHead,faucet04,faucet02"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 </block>
 
@@ -27704,7 +27570,7 @@ NOT the TextureNumber.
 	<property name="Model" value="#Entities/Vehicles?Raft/raftPrefab.prefab"/>
 	<property name="Collide" value="sight,movement,melee,bullet,arrow,rocket"/>
 	<drop event="Destroy" count="0"/>
-	<property name="DescriptionKey" value="decorationBlockGroupDesc"/>
+	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 </block>-->
 
 <block name="rampCornerCutoutTest">
@@ -27833,6 +27699,50 @@ NOT the TextureNumber.
 	<property name="Model" value="crown_mitered"/>
 	<property name="CreativeMode" value="Test"/>
 </block>
+
+
+<!-- ore block visualisation start.  Uncomment this section to make underground ores visible.
+
+<block name="terrStoneUnstable">
+	<property name="Extends" value="glassShowerBlock"/>
+	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
+</block>
+
+<block name="terrSandStoneUnstable">
+	<property name="Extends" value="terrStoneUnstable"/>
+</block>
+
+<block name="terrOreIron">
+	<property name="Extends" value="rConcreteCTREighth"/>
+	<property name="Texture" value="355"/>
+	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
+</block>
+
+<block name="terrOrePotassiumNitrate">
+	<property name="Extends" value="concretePyramid"/>
+	<property name="Texture" value="535"/>
+	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
+</block>
+
+<block name="terrOreLead">
+	<property name="Extends" value="scrapIronBlock"/>
+	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
+</block>
+
+<block name="terrOreCoal">
+	<property name="Extends" value="woodGable1m"/>
+	<property name="Texture" value="552"/>
+	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
+</block>
+
+<block name="terrOreOilDeposit">
+	<property name="Extends" value="woodCNRRamp"/>
+	<property name="Texture" value="552"/>
+	<property name="DisplayInfo" value="Name"/><property name="ActivationDistance" value="50"/>
+</block>
+
+ore block visualisation end -->
+
 
 <!--
 <block name=" BlockVariantHelper">
