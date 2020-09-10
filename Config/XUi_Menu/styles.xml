@@ -55,18 +55,18 @@
 	<!--LABELS-->
 	<style type="label">
 		<style_entry name="color" value="[labelColor]"/>
-		<style_entry name="font_face" value="AgencyB_32p"/>
+		<style_entry name="font_face" value="ReferenceFont"/>
 		<style_entry name="font_size" value="28"/>
 		<style_entry name="justify" value="left"/>
 		<style_entry name="effect" value="none"/>
 		<style_entry name="pivot" value="topleft"/>
 		<style_entry name="text" value=""/>
-		<style_entry name="upper_case" value="true" />
+		<style_entry name="upper_case" value="false" />
 	</style>
 	
 	<style type="textlist">
 		<style_entry name="color" value="[labelColor]"/>
-		<style_entry name="font_face" value="AgencyB_32p"/>
+		<style_entry name="font_face" value="ReferenceFont"/>
 		<style_entry name="font_size" value="28"/>
 		<style_entry name="justify" value="left"/>
 		<style_entry name="effect" value="none"/>
@@ -251,6 +251,7 @@
 		<style_entry name="pos" value="42,-6"/>
 		<style_entry name="size" value="250,32"/>
 		<style_entry name="font_size" value="32"/>
+		<style_entry name="upper_case" value="true"/>
 	</style>
 	
 	<style name="header.timer" type="label">

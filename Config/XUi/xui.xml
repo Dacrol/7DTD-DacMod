@@ -83,12 +83,17 @@
 		
 		<window_group name="compass" actionSet="false">
 			<window name="windowCompass" />
-			<!--<window name="windowTargetBar" anchor="CenterTop" />-->
+			<window name="windowTargetBar" anchor="CenterTop" />
+			<window name="onScreenIcons" />
 		</window_group>
 		
 		<window_group name="toolTip" actionSet="false">
 			<window name="toolTip" />
 			<window name="popupMenu" />
+		</window_group>
+		
+		<window_group name="interactionPrompt" actionSet="false">
+			<window name="interactionPrompt" />
 		</window_group>
 		
 		<window_group name="tipWindow">
@@ -250,6 +255,10 @@
 
 		<window_group name="spawnMenu">
 			<window name="spawnMenu" />
+		</window_group>
+		
+		<window_group name="poiTeleportMenu">
+			<window name="poiTeleportMenu" />
 		</window_group>
 		
 		<window_group name="ingameMenu">
