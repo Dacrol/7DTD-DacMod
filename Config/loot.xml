@@ -4659,7 +4659,16 @@ treasureTemplate
 	<item name="drinkJarRiverWater" count="1,2"/>
 </lootcontainer>
 
+<!--Service Trucks TEMP LOOT TABLE-->
+<lootcontainer id="144" size="7,4" sound_open="UseActions/open_vehicle" sound_close="UseActions/close_vehicle" open_time="4" loot_quality_template="qualBaseTemplate">
+	<item group="workingStiffsBox"/>
+</lootcontainer>
 
+<!--Ambulance TEMP LOOT TABLE-->
+<lootcontainer id="145" size="7,4" sound_open="UseActions/open_vehicle" sound_close="UseActions/close_vehicle" open_time="4" loot_quality_template="qualBaseTemplate">
+	<item group="labEquipment" prob="16"/>
+	<item name="resourcePaper" count="5,15"/>
+</lootcontainer>
 
   <!-- the max cap for lootcontainer id is 1023 -->
 </lootcontainers>

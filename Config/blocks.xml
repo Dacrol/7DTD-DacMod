@@ -30818,7 +30818,7 @@ NOT the TextureNumber.
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Traps/hubcapPrefab"/>
 	<property name="IsTerrainDecoration" value="true"/>
-	<property name="OnlySimpleRotations" value="true"/>
+	<!-- <property name="OnlySimpleRotations" value="true"/> --> <!-- These are for decoration only and don't need to be restricted. -->
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 	<drop event="Destroy" name="resourceScrapIron" count="3,7"/>
 	<property name="FilterTags" value="fdecor,fother,ftraps"/>
@@ -32191,6 +32191,40 @@ ore block visualisation end -->
 	<property name="Model" value="Entities/Buildings/chimneyBlackPrefab"/>
 </block>
 
+	
+<block name="cntAmbulanceTruck01">
+	<property name="Extends" value="cntBusSchool"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="#Entities/Vehicles?Truck/ambulanceTruck01Prefab.prefab"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="MultiBlockDim" value="3,3,7"/>
+	<property name="ModelOffset" value="0,0,0"/>
+	<property name="VerticalOffset" value="0.5"/>
+	<property name="LootList" value="145"/>
+</block>
+
+<block name="cntServiceTruckMoPower">
+	<property name="Extends" value="cntBusSchool"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="#Entities/Vehicles?Truck/serviceTruckMoPowerPrefab.prefab"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="MultiBlockDim" value="3,3,7"/>
+	<property name="ModelOffset" value="0,0,0"/>
+	<property name="VerticalOffset" value="0.5"/>
+	<property name="LootList" value="144"/>
+</block>
+
+<block name="cntServiceTruckWorkingStiffTools">
+	<property name="Extends" value="cntBusSchool"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="#Entities/Vehicles?Truck/serviceTruckWorkingStiffToolsPrefab.prefab"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="MultiBlockDim" value="3,3,7"/>
+	<property name="ModelOffset" value="0,0,0"/>
+	<property name="VerticalOffset" value="0.5"/>
+	<property name="LootList" value="144"/>
+</block>
+	
 </blocks>
 
 <!-- Block limit: There can be 32k blocks in the game.  0-255 are reserved for air/terrain blocks.

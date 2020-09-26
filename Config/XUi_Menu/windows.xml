@@ -1200,9 +1200,9 @@
 
         <rect />
 
-        <audiooption name="DynamicMusicEnabled" type="ComboBoxBool" localization_prefix="xuiComboYesNo" visible="{notinlinux}" />
+        <audiooption name="DynamicMusicEnabled" type="ComboBoxBool" localization_prefix="xuiComboYesNo" />
 
-        <audiooption name="DynamicMusicDailyTimeAllotted" type="ComboBoxFloat" value_increment="0.05" value_wrap="false" format_string="0%" visible="{notinlinux}" />
+        <audiooption name="DynamicMusicDailyTimeAllotted" type="ComboBoxFloat" value_increment="0.05" value_wrap="false" format_string="0%" />
 
         <rect />
 
